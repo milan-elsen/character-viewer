@@ -1,0 +1,88 @@
+name: UI smoke test
+
+# Launches the built app on a macOS runner, drives it with keystrokes, and publishes screenshots plus logs to the
+# `ci-artifacts` branch. Run it manually from the Actions tab.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  smoke:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build (Debug)
+        run: |
+          set -o pipefail
+          xcodebuild -project Glyphfinder.xcodeproj -scheme Glyphfinder -configuration Debug \
+            -destination 'platform=macOS' -derivedDataPath build build 2>&1 | tail -n 5
+
+      - name: Launch and drive the app
+        continue-on-error: true
+        run: |
+          mkdir -p out
+          APP=build/Build/Products/Debug/Glyphfinder.app
+          say() { echo "### $*" | tee -a out/log.txt; }
+          sw_vers | tee -a out/log.txt
+          system_profiler SPDisplaysDataType 2>/dev/null | grep -i resolution | tee -a out/log.txt || true
+
+          say "launch"
+          open "$APP"; sleep 10
+          pgrep -lx Glyphfinder | tee -a out/log.txt || say "NOT RUNNING after launch"
+          screencapture -x out/1-launch.png
+
+          say "search in main window"
+          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "thin space"' 2>&1 | tee -a out/log.txt; sleep 2
+          screencapture -x out/2-main-search.png
+
+          say "copy selected character with command-return"
+          osascript -e 'tell application "System Events" to key code 36 using {command down}' 2>&1 | tee -a out/log.txt; sleep 1
+          pbpaste | xxd | tee -a out/log.txt
+          screencapture -x out/3-after-copy.png
+
+          say "global hotkey: control-option-space"
+          osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/4-quick-open.png
+          osascript -e 'tell application "System Events" to keystroke "em dash"' 2>&1 | tee -a out/log.txt; sleep 2
+          screencapture -x out/5-quick-search.png
+          osascript -e 'tell application "System Events" to key code 36' 2>&1 | tee -a out/log.txt; sleep 2
+          say "clipboard after quick lookup (expect e2 80 94 = em dash)"
+          pbpaste | xxd | tee -a out/log.txt
+          screencapture -x out/6-quick-after.png
+
+          say "settings"
+          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "," using command down' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/7-settings.png
+
+          say "still running?"
+          pgrep -lx Glyphfinder | tee -a out/log.txt || say "NOT RUNNING at end"
+
+      - name: Collect logs
+        if: always()
+        continue-on-error: true
+        run: |
+          mkdir -p out
+          ls -la ~/Library/Logs/DiagnosticReports 2>/dev/null | tee -a out/log.txt || true
+          cp ~/Library/Logs/DiagnosticReports/Glyphfinder* out/ 2>/dev/null || true
+          /usr/bin/log show --last 5m --style compact --predicate 'process == "Glyphfinder"' 2>/dev/null | tail -n 150 > out/system-log.txt || true
+
+      - name: Publish to ci-artifacts branch
+        if: always()
+        run: |
+          set -e
+          mkdir -p /tmp/publish && cp -R out/. /tmp/publish/
+          cd /tmp/publish
+          git init -q
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git checkout -q -b ci-artifacts
+          git add .
+          git commit -q -m "UI smoke test output for ${GITHUB_SHA}"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push -f origin ci-artifacts
