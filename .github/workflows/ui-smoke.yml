@@ -65,6 +65,21 @@ jobs:
           osascript -e 'tell application "System Events" to keystroke "euro"' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/9-euro.png
 
+          say "menu bar item"
+          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 2
+          screencapture -x out/10-menubar.png
+          osascript -e 'tell application "System Events" to key code 53' 2>&1 | tee -a out/log.txt; sleep 1
+
+          say "dark mode"
+          osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true' 2>&1 | tee -a out/log.txt; sleep 4
+          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 2
+          screencapture -x out/11-dark-main.png
+          osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
+          osascript -e 'tell application "System Events" to keystroke "arrow"' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/12-dark-quick.png
+          osascript -e 'tell application "System Events" to key code 53' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to false' 2>&1 | tee -a out/log.txt; sleep 2
+
           say "settings"
           osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "," using command down' 2>&1 | tee -a out/log.txt; sleep 3
