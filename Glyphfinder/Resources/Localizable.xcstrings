@@ -791,6 +791,23 @@
         }
       }
     },
+    "Find…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchen …"
+          }
+        }
+      }
+    },
     "Font": {
       "extractionState": "manual",
       "localizations": {

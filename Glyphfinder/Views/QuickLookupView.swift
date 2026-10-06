@@ -33,18 +33,21 @@ struct QuickLookupView: View {
             footer
         }
         .frame(width: 640)
-        .containerBackground(.regularMaterial, for: .window)
+        .background(.regularMaterial, in: panelShape)
+        .overlay { panelShape.strokeBorder(.separator) }
+        .clipShape(panelShape)
+        .shadow(color: .black.opacity(0.28), radius: 18, y: 8)
+        .padding(28)   // room for the shadow: the window itself is transparent and chromeless
         .background { hiddenShortcuts }
         .toast(model.toast)
         .onAppear {
             model.adopt(openWindow: openWindow, dismissWindow: dismissWindow)
             model.quickLookupDidAppear()
             query = ""
-            updateResults()
             searchFocused = true
         }
         .onDisappear { model.quickLookupDidDisappear() }
-        .onChange(of: query) { _, _ in updateResults() }
+        .task(id: query) { await refreshResults() }
         .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeKeyNotification)) { _ in
             searchFocused = true
         }
@@ -135,15 +138,20 @@ struct QuickLookupView: View {
 
     // MARK: Behavior
 
-    private func updateResults() {
-        let trimmed = query.trimmingCharacters(in: .whitespaces)
+    private var panelShape: RoundedRectangle { RoundedRectangle(cornerRadius: 16, style: .continuous) }
+
+    /// Runs whenever the query changes; the previous run is cancelled automatically.
+    private func refreshResults() async {
         if query.isEmpty {
             results = model.recents.prefix(8).compactMap { model.record(for: $0) }
-        } else if trimmed.isEmpty && query.unicodeScalars.count > 1 {
-            results = []
-        } else {
-            results = model.search(query, limit: 40)
+            selectedIndex = 0
+            return
         }
+        try? await Task.sleep(for: .milliseconds(25))
+        if Task.isCancelled { return }
+        let found = await model.searchAsync(query, limit: 40)
+        if Task.isCancelled { return }
+        results = found
         selectedIndex = 0
     }
 

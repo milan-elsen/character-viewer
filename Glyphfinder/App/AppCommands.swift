@@ -30,6 +30,11 @@ struct AppCommands: Commands {
                 .keyboardShortcut("l", modifiers: [.command, .option])
         }
 
+        CommandGroup(after: .textEditing) {
+            Button("Find…") { model.focusSearchRequest += 1 }
+                .keyboardShortcut("f", modifiers: .command)
+        }
+
         CommandMenu("Character") {
             Button("Copy Character") {
                 if let selected { model.copy(selected) }

@@ -29,7 +29,7 @@ struct SidebarView: View {
             if let database = model.database {
                 Section("Collections") {
                     ForEach(database.collections) { collection in
-                        Label(LocalizedStringKey("collection.\(collection.id)"), systemImage: collection.symbol)
+                        Label(AppModel.collectionTitle(collection.id), systemImage: collection.symbol)
                             .tag(SidebarItem.collection(collection.id))
                     }
                 }

@@ -171,17 +171,36 @@ final class AppModel {
         return boosts
     }
 
-    /// Search used by Quick Lookup (it keeps its own query).
-    func search(_ text: String, limit: Int) -> [CharacterRecord] {
+    /// Search used by Quick Lookup (it keeps its own query). Runs on a background thread.
+    func searchAsync(_ text: String, limit: Int) async -> [CharacterRecord] {
         guard let engine, let database else { return [] }
-        return engine.search(text, limit: limit, boosts: searchBoosts()).compactMap { database.record(for: $0.codePoint) }
+        let boosts = searchBoosts()
+        return await Task.detached(priority: .userInitiated) {
+            engine.search(text, limit: limit, boosts: boosts).compactMap { database.record(for: $0.codePoint) }
+        }.value
     }
 
+    @ObservationIgnored private var searchTask: Task<Void, Never>?
+
+    /// Incremented by the Find command; the main window focuses its search field when it changes.
+    var focusSearchRequest = 0
+
     func refreshResults() {
+        searchTask?.cancel()
         guard let database, let engine else { results = []; return }
         if !query.isEmpty {
-            results = engine.search(query, limit: 800, boosts: searchBoosts()).map(\.codePoint)
-            if let first = results.first { selection = first }
+            // Search off the main thread so typing never stalls, and drop answers for outdated queries.
+            let text = query
+            let boosts = searchBoosts()
+            searchTask = Task { [weak self] in
+                try? await Task.sleep(for: .milliseconds(20))
+                if Task.isCancelled { return }
+                let hits = await Task.detached(priority: .userInitiated) {
+                    engine.search(text, limit: 800, boosts: boosts).map(\.codePoint)
+                }.value
+                if Task.isCancelled { return }
+                self?.applySearch(hits)
+            }
             return
         }
         switch sidebar {
@@ -199,13 +218,24 @@ final class AppModel {
         }
     }
 
+    /// Localised name of a collection. Looked up with a runtime string key (not a SwiftUI literal), because an
+    /// interpolated `LocalizedStringKey` would become the key "collection.%@".
+    static func collectionTitle(_ id: String) -> String {
+        NSLocalizedString("collection." + id, comment: "Name of a collection of characters")
+    }
+
+    private func applySearch(_ hits: [UInt32]) {
+        results = hits
+        if let first = hits.first { selection = first }
+    }
+
     var title: String {
         if !query.isEmpty { return String(localized: "Search Results") }
         switch sidebar {
         case .all: return String(localized: "All Characters")
         case .favorites: return String(localized: "Favorites")
         case .recents: return String(localized: "Recents")
-        case .collection(let id): return NSLocalizedString("collection.\(id)", comment: "Collection name")
+        case .collection(let id): return Self.collectionTitle(id)
         case .block(let index): return database?.blockNames[index] ?? ""
         }
     }

@@ -6,6 +6,7 @@ struct MainView: View {
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismissWindow) private var dismissWindow
     @AppStorage(SettingsKey.showInspector) private var showInspector = true
+    @FocusState private var searchFocused: Bool
 
     var body: some View {
         @Bindable var model = model
@@ -23,6 +24,8 @@ struct MainView: View {
                 }
         }
         .searchable(text: $model.query, placement: .toolbar, prompt: "Search by name, code or description")
+        .searchFocused($searchFocused)
+        .onChange(of: model.focusSearchRequest) { _, _ in searchFocused = true }
         .searchSuggestions {
             if model.query.isEmpty {
                 Text("thin space").searchCompletion("thin space")

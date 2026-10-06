@@ -100,6 +100,7 @@ T = {
     "Quit Glyphfinder": ("Stop Glyphfinder", "Glyphfinder beenden"),
     # Commands
     "Character": ("Teken", "Zeichen"),
+    "Find…": ("Zoek…", "Suchen …"),
     "Copy Code Point": ("Kopieer codepunt", "Codepunkt kopieren"),
     "Copy HTML Entity": ("Kopieer HTML-entiteit", "HTML-Entität kopieren"),
     "Copy Name": ("Kopieer naam", "Name kopieren"),

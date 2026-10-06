@@ -24,7 +24,7 @@ struct GlyphfinderApp: App {
             QuickLookupView()
                 .environment(model)
         }
-        .windowStyle(.hiddenTitleBar)
+        .windowStyle(.plain)
         .windowResizability(.contentSize)
         .windowLevel(.floating)
         .windowBackgroundDragBehavior(.enabled)
