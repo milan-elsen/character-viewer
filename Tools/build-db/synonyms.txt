@@ -22,7 +22,7 @@
 2007 | figure space; digit space; numeric space; tabular space
 2008 | punctuation space
 205F | medium mathematical space; mmsp; math space
-200B | zero width space; zwsp; invisible space; word separator; break opportunity; zero-width space; nulbreedte spatie
+200B | zero width space; invisible character; invisible; hidden space; zwsp; invisible space; word separator; break opportunity; zero-width space; nulbreedte spatie
 200C | zero width non-joiner; zwnj; non joiner; zero-width non-joiner
 200D | zero width joiner; zwj; joiner; emoji joiner; zero-width joiner
 2060 | word joiner; wj; invisible glue; no break
@@ -36,12 +36,7 @@ FEFF | byte order mark; bom; zero width no-break space; zwnbsp; utf-8 bom
 180E | mongolian vowel separator
 3000 | ideographic space; full width space; fullwidth space; cjk space; wide cjk space
 3164 | hangul filler; invisible character; blank character; empty character; invisible letter
-115F | hangul choseong filler; invisible character
-1160 | hangul jungseong filler; invisible character
-FFA0 | halfwidth hangul filler; invisible character
 2800 | braille blank; empty braille; braille space; invisible braille
-17B4 | khmer inherent vowel aq; invisible
-17B5 | khmer inherent vowel aa; invisible
 200E | left to right mark; lrm; ltr mark; left-to-right mark
 200F | right to left mark; rlm; rtl mark; right-to-left mark
 202A | left to right embedding; lre; bidi control
@@ -53,14 +48,14 @@ FFA0 | halfwidth hangul filler; invisible character
 2067 | right to left isolate; rli; bidi control
 2068 | first strong isolate; fsi; bidi control
 2069 | pop directional isolate; pdi; bidi control
-2028 | line separator; ls; line break unicode
+2028 | line separator; ls; line break; unicode line break
 2029 | paragraph separator; ps
 2423 | open box; visible space; blank symbol; space symbol
 2420 | symbol for space; visible space
 2400 | symbol for null
 0000 | null; nul; null character
 0009 | tab; tab character; horizontal tab; character tabulation; tabulator
-000A | line feed; newline; lf; new line; unix newline; linefeed
+000A | line feed; newline; line break; lf; new line; unix newline; linefeed
 000D | carriage return; cr; return; windows newline
 001B | escape character; esc; ansi escape; escape sequence
 007F | delete character; del; rubout

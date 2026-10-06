@@ -99,6 +99,16 @@ final class SearchTests: XCTestCase {
         assertFinds("  thin space  ", 0x2009)
     }
 
+    func testEverydayWordsForUnicodeTerms() {
+        assertFinds("backwards question mark", 0x2E2E, within: 3)
+        assertFinds("o umlaut", 0x00F6, within: 3)
+        assertFinds("a umlaut", 0x00E4, within: 3)
+        assertFinds("upside down exclamation mark", 0x00A1, within: 2)
+        assertFinds("line break", 0x000A, within: 4)
+        assertFinds("invisible", 0x200B, within: 3)
+        assertFinds("tick", 0x2713, within: 4)
+    }
+
     func testNaturalLanguageQueries() {
         assertFinds("the space that is narrower than a normal one", 0x2009, within: 12)
         assertFinds("i need an invisible character", 0x200B, within: 25)

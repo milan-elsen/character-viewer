@@ -63,6 +63,23 @@ final class SearchEngine: @unchecked Sendable {
         "show", "with", "than", "which", "looks", "like", "how", "do", "type", "char", "please", "key",
     ]
 
+    /// Everyday phrases that Unicode spells differently. Applied to the folded query before tokenising.
+    private static let phraseReplacements: [(String, String)] = [
+        ("upside down", "inverted"), ("upside-down", "inverted"), ("turned over", "turned"),
+        ("back to front", "reversed"), ("left to right", "left-to-right"),
+    ]
+
+    /// Single words with the Unicode term (or terms) that mean the same thing.
+    private static let tokenAlternates: [String: [String]] = [
+        "backwards": ["reversed"], "backward": ["reversed"], "mirrored": ["reversed"], "flipped": ["turned", "inverted"],
+        "umlaut": ["diaeresis"], "trema": ["diaeresis"], "dieresis": ["diaeresis"],
+        "quote": ["quotation"], "quotes": ["quotation"], "tick": ["check"], "checkmark": ["check"],
+        "hyphen": ["dash"], "dash": ["hyphen"], "parenthesis": ["parenthesis", "bracket"], "paren": ["parenthesis"],
+        "brace": ["curly"], "braces": ["curly"], "hat": ["circumflex"], "caret": ["circumflex"],
+        "squiggle": ["tilde"], "wavy": ["tilde", "wave"], "backtick": ["grave"], "accent": ["acute", "grave"],
+        "currency": ["sign"], "ligature": ["ligature"], "enter": ["return"], "newline": ["line"],
+    ]
+
     init(database: CharacterDatabase) {
         self.database = database
         build()
@@ -220,7 +237,9 @@ final class SearchEngine: @unchecked Sendable {
     }
 
     private func textSearch(_ query: String, limit: Int, boosts: [UInt32: Double]) -> [SearchResult] {
-        var tokens = Self.tokens(query)
+        var folded = Self.fold(query)
+        for (phrase, replacement) in Self.phraseReplacements { folded = folded.replacingOccurrences(of: phrase, with: replacement) }
+        var tokens = Self.tokens(folded)
         if tokens.isEmpty { return [] }
         let filtered = tokens.filter { !Self.stopWords.contains($0) }
         if !filtered.isEmpty { tokens = filtered }
@@ -232,7 +251,10 @@ final class SearchEngine: @unchecked Sendable {
         var coverage: [Int32: Int] = [:]
 
         for token in tokens {
-            let termMatches = matches(for: token)
+            var termMatches = matches(for: token)
+            for alt in Self.tokenAlternates[token] ?? [] where alt != token {
+                termMatches += matches(for: alt).map { TermMatch(term: $0.term, factor: $0.factor * 0.9) }
+            }
             var best: [Int32: Double] = [:]
             for m in termMatches {
                 guard let list = postings[m.term] else { continue }
