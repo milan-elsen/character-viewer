@@ -186,7 +186,8 @@ final class AppModel {
         }
         switch sidebar {
         case .all:
-            results = database.records.map(\.codePoint)
+            // Control characters stay searchable (and live in the Spaces collection) but make a poor first impression.
+            results = database.records.filter { $0.category != "Cc" }.map(\.codePoint)
         case .favorites:
             results = favorites.filter { database.record(for: $0) != nil }
         case .recents:
@@ -194,7 +195,7 @@ final class AppModel {
         case .collection(let id):
             results = database.collection(id: id).map { database.records(in: $0).map(\.codePoint) } ?? []
         case .block(let index):
-            results = database.records(inBlock: index).map(\.codePoint)
+            results = database.records(inBlock: index).filter { $0.category != "Cc" }.map(\.codePoint)
         }
     }
 
