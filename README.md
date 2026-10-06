@@ -15,6 +15,14 @@ For each character it shows:
 - for blank characters (thin space, hair space, NBSP, ZWJ …) an **em-width ruler**, so you can see how they differ;
 - which installed fonts contain the glyph.
 
+![Main window: É and how to type it](docs/screenshots/main-window.png)
+
+| Quick Lookup (dark mode) | Invisible characters with em-width ruler |
+|---|---|
+| ![Quick Lookup](docs/screenshots/quick-lookup-dark.png) | ![Thin space](docs/screenshots/invisible-characters.png) |
+
+*(Screenshots are taken from the real app on a macOS runner by the UI smoke test, at 1024×768.)*
+
 ## Using it
 
 | | |
@@ -90,10 +98,26 @@ ruby Tools/generate_xcodeproj.rb                        # regenerate the Xcode p
 Search quality lives mostly in `Tools/build-db/synonyms.txt` (everyday names Unicode does not use) and is guarded by
 `Core/Tests/GlyphCoreTests/SearchTests.swift`. Add a synonym and a test together.
 
+## What has been verified
+
+Continuous integration (`.github/workflows/`) runs on every push:
+
+- **Core tests**: 39 tests on Linux (Swift 6.1) and on macOS.
+- **Builds**: Debug, Release and Release-Direct with Xcode 16.4 / macOS 15 SDK, with no compiler errors or warnings.
+- **UI smoke test** (run manually: *Actions ▸ UI smoke test*): launches the built, sandboxed app on macOS 15, drives it with
+  keystrokes and checks the result. It covers launch (no crash), search in the main window, Copy, the global shortcut,
+  Quick Lookup typing and copy (clipboard checked byte for byte), the dead-key instructions for É (⌥E, ⇧E) and € (⌥⇧2) on
+  the US layout, the Settings window, the menu bar menu and dark mode. Screenshots and logs are published to the
+  `ci-artifacts` branch (safe to delete).
+
+Not verified: signing/notarization and App Store submission (they need your Apple Developer account), launch at login, the
+Accessibility-based paste of the Direct build, and keyboard layouts other than US (the mapper is covered by unit tests with a
+fake dead-key layout, and reads the real layout through `UCKeyTranslate`).
+
 ## Known limitations
 
-- The Mac-specific layer (SwiftUI views, Carbon, CoreText) was written without access to a Mac; it is type-checked by
-  Xcode when you build. The logic underneath it (Core) is built and tested on every change.
 - The global shortcut is picked from a short list rather than recorded freely (a free-form recorder needs AppKit).
+- With *Launch at login* enabled the main window also opens at login.
 - CJK ideographs, Hangul syllables and other algorithmically named ranges are not included: they have no names to search.
-- Search is lexical (names, aliases, CLDR keywords in en/nl/de/fr/es, curated synonyms). There is no embedding search yet.
+- Search is lexical (names, aliases, CLDR keywords in en/nl/de/fr/es, curated synonyms) with typo tolerance. There is no
+  embedding search yet.

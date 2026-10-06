@@ -13,8 +13,8 @@
 > | Floating window via `NSPanel` fallback | Pure SwiftUI `Window` with `.windowLevel(.floating)` | macOS 15 API; the AppKit fallback remains available if focus behavior needs it |
 > | Sparkle auto-update | Not included | The Mac App Store handles updates; add Sparkle only for the direct build |
 >
-> The Mac-specific layer could not be compiled during development (the cloud environment runs Linux); the logic
-> in `Core/` is built and tested on every change with `swift test`.
+> The development environment ran Linux, so the Mac-specific layer was compiled, launched and driven by CI on macOS
+> runners (see "What has been verified" in `README.md`); `Core/` is also built and tested on Linux with `swift test`.
 
 Working name: **Glyphfinder** (placeholder).
 
