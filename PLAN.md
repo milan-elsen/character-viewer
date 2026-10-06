@@ -1,5 +1,21 @@
 # Character Viewer: build plan
 
+> **Status (implementation notes).** The app described below is built; see `README.md` for how to build and use it.
+> Deviations from the original plan, with reasons:
+>
+> | Plan | As built | Why |
+> |---|---|---|
+> | SQLite + FTS5 via GRDB | In-memory database loaded from `Data/characters.json`, own inverted-index search | Zero dependencies, loads in well under a second, fully testable with `swift test` on any OS |
+> | `KeyboardShortcuts` package, free-form recorder | Carbon `RegisterEventHotKey` with a short list of presets in a SwiftUI `Picker` | No third-party dependency; a free-form recorder would need AppKit |
+> | Direct distribution only (auto-paste) | **Both**: sandboxed Mac App Store build (copy to clipboard) and a `Release-Direct` configuration with auto-paste | The App Store sandbox cannot post paste events |
+> | Semantic search (embeddings / Foundation Models) | Not built; search is lexical + curated synonyms + CLDR keywords (en, nl, de, fr, es) + typo tolerance | Quality is dominated by the synonym list; embeddings can be added later behind `SearchEngine` |
+> | CJK behind a toggle | CJK ideographs and Hangul syllables are not included | They have no names to search; a toggle would do nothing |
+> | Floating window via `NSPanel` fallback | Pure SwiftUI `Window` with `.windowLevel(.floating)` | macOS 15 API; the AppKit fallback remains available if focus behavior needs it |
+> | Sparkle auto-update | Not included | The Mac App Store handles updates; add Sparkle only for the direct build |
+>
+> The Mac-specific layer could not be compiled during development (the cloud environment runs Linux); the logic
+> in `Core/` is built and tested on every change with `swift test`.
+
 Working name: **Glyphfinder** (placeholder).
 
 A native macOS utility for finding Unicode characters by natural-language search. It covers everything the system emoji viewer doesn't (thin spaces, dashes, quotes, combining marks, invisibles) and excludes emoji. For each character it shows code points, related and alternate glyphs, and how to type it on the **currently active keyboard layout**.
