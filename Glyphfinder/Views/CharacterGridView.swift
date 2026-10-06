@@ -82,7 +82,26 @@ struct CharacterCell: View {
     let size: CGFloat
     let isSelected: Bool
 
+    private var shape: RoundedRectangle { RoundedRectangle(cornerRadius: 10, style: .continuous) }
+    private var fillColor: Color { isSelected ? Color.accentColor.opacity(0.22) : Color.clear }
+    private var borderColor: Color { isSelected ? Color.accentColor : Color.clear }
+    private var traits: AccessibilityTraits { isSelected ? [.isButton, .isSelected] : [.isButton] }
+    private var helpText: String { record.titleCasedName + "  " + CodeFormats.codePoint(record.codePoint) }
+
     var body: some View {
+        content
+            .contentShape(shape)
+            .draggable(record.string)
+            .contextMenu { CharacterContextMenu(record: record) }
+            .help(helpText)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
+            .accessibilityValue(CodeFormats.codePoint(record.codePoint))
+            .accessibilityAddTraits(traits)
+            .accessibilityAction(named: Text("Copy Character")) { model.copy(record) }
+    }
+
+    private var content: some View {
         VStack(spacing: 4) {
             GlyphView(record: record, pointSize: size * 0.42, fontName: fontName)
                 .frame(height: size * 0.52)
@@ -95,23 +114,8 @@ struct CharacterCell: View {
         }
         .padding(6)
         .frame(width: size, height: size + 10)
-        .background {
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(isSelected ? Color.accentColor.opacity(0.22) : Color.clear)
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .strokeBorder(isSelected ? Color.accentColor : Color.clear, lineWidth: 1.5)
-        }
-        .contentShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-        .draggable(record.string)
-        .contextMenu { CharacterContextMenu(record: record) }
-        .help(record.titleCasedName + "  " + CodeFormats.codePoint(record.codePoint))
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
-        .accessibilityValue(CodeFormats.codePoint(record.codePoint))
-        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
-        .accessibilityAction(named: "Copy Character") { model.copy(record) }
+        .background { shape.fill(fillColor) }
+        .overlay { shape.strokeBorder(borderColor, lineWidth: 1.5) }
     }
 }
 
