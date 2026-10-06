@@ -1,0 +1,373 @@
+# Curated search synonyms.
+#
+# Format:  <code points> | term; term; term
+#   <code points>  space/comma separated hex values or ranges (2000-200A), optional "U+" prefix
+#   terms          everyday names that Unicode itself does not use (English, Dutch, German, ...)
+#
+# These get the highest search weight, so keep them precise.
+
+# ---- spaces and invisibles -------------------------------------------------
+0020 | space; spacebar; blank; regular space; normal space; spatie; Leerzeichen
+00A0 | nbsp; non breaking space; non-breaking space; no-break space; hard space; fixed space; option space; harde spatie; vaste spatie; geschütztes Leerzeichen
+202F | narrow nbsp; narrow non breaking space; narrow no-break space; french thin space; thin non-breaking space; nnbsp; smalle harde spatie
+2009 | thin space; thinsp; narrow space; one fifth em; smalle spatie; Schmales Leerzeichen
+200A | hair space; hairsp; very thin space; thinnest space; extra thin space; haarspatie
+2002 | en space; ensp; half em space; half-em space
+2003 | em space; emsp; wide space; quad; em quad
+2001 | em quad
+2000 | en quad
+2004 | three-per-em space; third em space; one third em space; thick space
+2005 | four-per-em space; quarter em space; mid space
+2006 | six-per-em space; sixth em space
+2007 | figure space; digit space; numeric space; tabular space
+2008 | punctuation space
+205F | medium mathematical space; mmsp; math space
+200B | zero width space; zwsp; invisible space; word separator; break opportunity; zero-width space; nulbreedte spatie
+200C | zero width non-joiner; zwnj; non joiner; zero-width non-joiner
+200D | zero width joiner; zwj; joiner; emoji joiner; zero-width joiner
+2060 | word joiner; wj; invisible glue; no break
+FEFF | byte order mark; bom; zero width no-break space; zwnbsp; utf-8 bom
+00AD | soft hyphen; shy; discretionary hyphen; optional hyphen; zacht streepje; weiches Trennzeichen
+034F | combining grapheme joiner; cgj
+2061 | function application; invisible function application
+2062 | invisible times
+2063 | invisible separator; invisible comma
+2064 | invisible plus
+180E | mongolian vowel separator
+3000 | ideographic space; full width space; fullwidth space; cjk space; wide cjk space
+3164 | hangul filler; invisible character; blank character; empty character; invisible letter
+115F | hangul choseong filler; invisible character
+1160 | hangul jungseong filler; invisible character
+FFA0 | halfwidth hangul filler; invisible character
+2800 | braille blank; empty braille; braille space; invisible braille
+17B4 | khmer inherent vowel aq; invisible
+17B5 | khmer inherent vowel aa; invisible
+200E | left to right mark; lrm; ltr mark; left-to-right mark
+200F | right to left mark; rlm; rtl mark; right-to-left mark
+202A | left to right embedding; lre; bidi control
+202B | right to left embedding; rle; bidi control
+202C | pop directional formatting; pdf; bidi control
+202D | left to right override; lro; bidi control
+202E | right to left override; rlo; bidi control; reverse text
+2066 | left to right isolate; lri; bidi control
+2067 | right to left isolate; rli; bidi control
+2068 | first strong isolate; fsi; bidi control
+2069 | pop directional isolate; pdi; bidi control
+2028 | line separator; ls; line break unicode
+2029 | paragraph separator; ps
+2423 | open box; visible space; blank symbol; space symbol
+2420 | symbol for space; visible space
+2400 | symbol for null
+0000 | null; nul; null character
+0009 | tab; tab character; horizontal tab; character tabulation; tabulator
+000A | line feed; newline; lf; new line; unix newline; linefeed
+000D | carriage return; cr; return; windows newline
+001B | escape character; esc; ansi escape; escape sequence
+007F | delete character; del; rubout
+
+# ---- dashes and hyphens ----------------------------------------------------
+002D | hyphen minus; hyphen-minus; dash; hyphen; minus; keyboard dash; streepje; Bindestrich; koppelteken
+2010 | hyphen; true hyphen; typographic hyphen
+2011 | non-breaking hyphen; non breaking hyphen; no break hyphen; nbh; harde koppelteken
+2012 | figure dash; digit dash; phone number dash
+2013 | en dash; endash; ndash; en-dash; range dash; short dash; number range; gedachtestreepje; Bis-Strich; Gedankenstrich; halfgeviertstrich
+2014 | em dash; emdash; mdash; em-dash; long dash; sentence dash; Geviertstrich; lange streep; gedachtestreep
+2015 | horizontal bar; quotation dash
+2212 | minus; minus sign; subtraction; math minus; true minus; subtract; min; Minuszeichen
+2E3A | two-em dash; double long dash
+2E3B | three-em dash; triple long dash
+2043 | hyphen bullet
+2053 | swung dash
+301C | wave dash; japanese tilde
+FE58 | small em dash
+FF0D | fullwidth hyphen minus
+
+# ---- quotes ----------------------------------------------------------------
+0022 | straight double quote; double quote; quotation mark; dumb quote; inch mark; dubbele aanhalingsteken; Anführungszeichen
+0027 | straight single quote; single quote; apostrophe; dumb apostrophe; enkele aanhalingsteken; Apostroph
+0060 | backtick; grave accent; backquote; back quote; markdown code; accent grave
+00B4 | acute accent; acute; spacing acute; accent aigu
+2018 | left single quote; opening single quote; curly single quote; single quote left; smart quote; typographic quote; open single quote; enkele aanhalingsteken links
+2019 | right single quote; closing single quote; curly apostrophe; typographic apostrophe; apostrophe; smart apostrophe; single quote right; smart quote; close single quote; apostrof; enkele aanhalingsteken rechts
+201A | low single quote; single low-9 quote; low-9 quote; German single opening quote
+201B | single high reversed 9 quote; reversed single quote
+201C | left double quote; opening double quote; curly quote; smart quote; double quote left; typographic quote; open double quote; Anführungszeichen oben; dubbele aanhalingsteken links
+201D | right double quote; closing double quote; curly quote; smart quote; double quote right; close double quote; dubbele aanhalingsteken rechts
+201E | low double quote; double low-9 quote; German opening quote; Dutch opening quote; bottom quotes; Anführungszeichen unten; aanhalingsteken onder
+201F | double high reversed 9 quote
+00AB | guillemet left; left guillemet; double angle quote left; french quote left; chevron left; guillemets; left pointing double angle quote; Chevrons
+00BB | guillemet right; right guillemet; double angle quote right; french quote right; chevron right; guillemets; right pointing double angle quote
+2039 | single guillemet left; single angle quote left; left single guillemet
+203A | single guillemet right; single angle quote right; right single guillemet
+300C | corner bracket; japanese quote; left corner bracket; kagikakko
+300D | corner bracket; japanese quote; right corner bracket; kagikakko
+300E | white corner bracket; japanese double quote
+300F | white corner bracket; japanese double quote
+2033 | double prime; seconds; inches; inch mark; arcsecond
+2032 | prime; minutes; feet; foot mark; arcminute
+
+# ---- punctuation and typography -------------------------------------------
+2022 | bullet; bullet point; list dot; black dot; list bullet; opsommingsteken
+00B7 | middle dot; interpunct; centered dot; centre dot; mid dot; punt
+2026 | ellipsis; horizontal ellipsis; three dots; dot dot dot; omission; beletselteken; Auslassungspunkte; ellips
+2027 | hyphenation point
+2219 | bullet operator; small dot operator
+22C5 | dot operator; math dot; multiplication dot
+2024 | one dot leader
+2025 | two dot leader
+2E31 | word separator middle dot
+00A1 | inverted exclamation; spanish exclamation; upside down exclamation; upside-down exclamation
+00BF | inverted question mark; spanish question mark; upside down question mark; upside-down question mark
+203D | interrobang; question exclamation
+2E18 | inverted interrobang
+00A7 | section sign; section; silcrow; double s; paragraaf; Paragraph; paragraafteken
+00B6 | pilcrow; paragraph sign; paragraph mark; paragraph; alinea; Absatzzeichen
+2020 | dagger; obelisk; footnote; cross reference
+2021 | double dagger; double obelisk
+2030 | per mille; permille; per thousand; promille
+2031 | per ten thousand; basis point
+2116 | numero; numero sign; no.; nr; number
+00B0 | degree; degrees; degree sign; temperature; graden; graad; Gradzeichen
+2103 | degrees celsius; celsius; degree c
+2109 | degrees fahrenheit; fahrenheit; degree f
+0023 | number sign; hash; pound sign; hashtag; octothorpe; sharp sign; hekje; Raute
+0040 | at sign; at; commercial at; arobase; apenstaartje; at-teken; Klammeraffe
+0026 | ampersand; and sign; et; en-teken; Et-Zeichen
+002A | asterisk; star; sterretje; Sternchen
+0025 | percent; percent sign; procent; Prozent
+0021 | exclamation mark; bang; exclamation point; uitroepteken; Ausrufezeichen
+003F | question mark; vraagteken; Fragezeichen
+003B | semicolon; puntkomma; Semikolon
+003A | colon; dubbele punt; Doppelpunkt
+002C | comma; komma; Komma
+002E | period; full stop; dot; point; punt; Punkt
+007E | tilde; swung dash; twiddle; slangetje
+005E | caret; circumflex; hat; up caret; dakje
+005F | underscore; low line; underline; understrike; lage streep; Unterstrich
+007C | pipe; vertical bar; vertical line; verticale streep; senkrechter Strich
+00A6 | broken bar; broken pipe
+002F | slash; solidus; forward slash; division slash; schuine streep; Schrägstrich
+005C | backslash; reverse solidus; back slash; omgekeerde schuine streep
+2044 | fraction slash; fraction bar
+2215 | division slash; math slash
+2016 | double vertical line; parallel; norm; double pipe
+0024 | dollar; dollar sign; dollarteken
+2605 | black star; star; filled star; ster
+2606 | white star; outline star; empty star
+263A | smiley; smiling face; happy face
+2639 | frown; frowning face; sad face
+2665 | heart; heart suit; black heart suit; love; hartje; Herz
+2661 | white heart; empty heart; outline heart
+2660 | spade; spades suit; schoppen
+2663 | club; clubs suit; klaveren
+2666 | diamond; diamonds suit; ruiten
+2603 | snowman
+2699 | gear; cog; settings
+26A0 | warning; warning sign; caution
+2622 | radioactive; radiation; nuclear
+2623 | biohazard
+262E | peace; peace symbol
+262F | yin yang; taijitu
+2620 | skull and crossbones; poison; danger
+2640 | female sign; venus; woman symbol
+2642 | male sign; mars; man symbol
+266A | eighth note; music note; quaver; achtste noot
+266B | beamed eighth notes; music notes; double note
+266D | flat; music flat; flat sign; mol
+266E | natural; music natural; natural sign
+266F | sharp; music sharp; sharp sign; kruis
+1D11E | treble clef; g clef; violin clef; sol key
+1D122 | bass clef; f clef
+
+# ---- check marks and shapes -----------------------------------------------
+2713 | check mark; tick; checkmark; check; yes; done; vinkje; Häkchen
+2714 | heavy check mark; bold tick; bold checkmark
+2717 | ballot x; cross; wrong; x mark; kruisje
+2718 | heavy ballot x; bold cross
+2610 | ballot box; empty checkbox; unchecked box; checkbox; empty box
+2611 | checked box; ballot box with check; checkbox ticked; ticked box
+2612 | ballot box with x; cross box; crossed box
+25CF | black circle; filled circle; dot; solid circle
+25CB | white circle; empty circle; hollow circle; outline circle
+25A0 | black square; filled square; solid square
+25A1 | white square; empty square; hollow square
+25B2 | black up triangle; filled triangle up
+25BC | black down triangle; filled triangle down
+25B6 | black right triangle; play button
+25C0 | black left triangle; reverse play
+25C6 | black diamond; filled diamond; lozenge
+
+# ---- legal and marks ------------------------------------------------------
+2122 | trademark; tm; trade mark; trademark sign; handelsmerk
+00AE | registered; registered trademark; r in circle; registered sign; gedeponeerd
+00A9 | copyright; copyright sign; c in circle; (c); auteursrecht; Urheberrecht
+2117 | sound recording copyright; phonogram copyright; p in circle
+2120 | service mark; sm
+
+# ---- math ------------------------------------------------------------------
+00D7 | multiplication sign; times; multiply; cross; by; dimension sign; maal; Mal-Zeichen; maalteken
+00F7 | division sign; divide; obelus; divided by; deel; delen; Geteilt-Zeichen
+00B1 | plus minus; plus-minus; plus or minus; plusminus
+2213 | minus plus; minus-or-plus
+2260 | not equal; not equal to; unequal; ne; does not equal; ongelijk
+2248 | approximately equal; almost equal; approx; about equal; tilde equals; ongeveer gelijk; ungefähr gleich
+2245 | approximately equal to; congruent
+2264 | less than or equal; less or equal; leq; at most; kleiner of gelijk
+2265 | greater than or equal; geq; at least; groter of gelijk
+003C | less than; left angle bracket; kleiner dan
+003E | greater than; right angle bracket; groter dan
+003D | equals; equal sign; gelijkteken; Gleichheitszeichen
+002B | plus; plus sign; add; plusteken
+221E | infinity; infinite; lemniscate; oneindig; unendlich
+221A | square root; radical; root; sqrt; wortel; Wurzel
+221B | cube root
+2211 | summation; sum; sigma sum; n-ary sum; sommatie
+220F | product; n-ary product; pi product
+222B | integral; integration; integraal
+2202 | partial derivative; partial differential; partial
+2206 | delta; increment; laplace
+2207 | nabla; del; gradient
+03C0 | pi; pi constant; 3.14
+03A0 | capital pi; product pi
+03A3 | capital sigma; sum sigma
+2126 | ohm; ohm sign; resistance; omega ohm
+00B5 | micro; micro sign; mu micro
+03BC | mu; micro
+2200 | for all; universal quantifier; forall
+2203 | there exists; existential quantifier; exists
+2204 | there does not exist
+2205 | empty set; null set; diameter; empty
+2208 | element of; in set; member of; belongs to
+2209 | not an element of; not in set
+2282 | subset of; subset
+2283 | superset of; superset
+222A | union; set union; cup
+2229 | intersection; set intersection; cap
+2234 | therefore; dot triangle
+2235 | because
+2227 | logical and; wedge; and
+2228 | logical or; vee; or
+00AC | not sign; logical not; negation; not
+2261 | identical to; congruent; triple bar; equivalent; identical
+223C | tilde operator; similar to
+221D | proportional to; proportional
+2220 | angle
+22A5 | perpendicular; up tack; orthogonal
+2225 | parallel to
+2191 | up arrow; upwards arrow; arrow up; pijl omhoog; Pfeil nach oben
+2190 | left arrow; leftwards arrow; arrow left; pijl links; Pfeil nach links
+2192 | right arrow; rightwards arrow; arrow right; pijl rechts; Pfeil nach rechts
+2193 | down arrow; downwards arrow; arrow down; pijl omlaag; Pfeil nach unten
+2194 | left right arrow; double headed arrow; both ways arrow; bidirectional arrow
+2195 | up down arrow; vertical double arrow
+21D2 | implies; double right arrow; rightwards double arrow; therefore implies; material implication
+21D0 | double left arrow; leftwards double arrow; implied by
+21D4 | if and only if; iff; double left right arrow; equivalence; biconditional
+21A9 | return arrow; leftwards arrow with hook
+21B5 | carriage return arrow; downwards arrow with corner leftwards
+21E5 | tab; tab right; rightwards arrow to bar; tab key
+21E4 | back tab; shift tab; leftwards arrow to bar
+21EA | caps lock; capslock; upwards white arrow from bar
+21E7 | shift; shift key; upwards white arrow
+00BD | half; one half; fraction half; helft; Hälfte
+00BC | quarter; one quarter; fraction quarter; kwart; Viertel
+00BE | three quarters; three fourths; fraction three quarters
+2153 | one third; third; fraction third
+2154 | two thirds
+00B2 | squared; superscript two; power of 2; kwadraat; hoch zwei
+00B3 | cubed; superscript three; power of 3; derde macht
+00B9 | superscript one
+2070 | superscript zero
+2074 | superscript four
+
+# ---- currency --------------------------------------------------------------
+20AC | euro; euro sign; eur; euroteken; Eurozeichen
+00A3 | pound; pound sterling; british pound; gbp; ponden; Pfund
+00A5 | yen; yuan; jpy; cny; renminbi
+00A2 | cent; cent sign
+00A4 | generic currency sign; scarab; currency
+20BF | bitcoin; btc; crypto
+20B9 | indian rupee; rupee; inr
+20BD | russian ruble; rouble; rub
+20A9 | won; korean won; krw
+20BA | turkish lira; try lira
+20A4 | lira; lira sign
+20B4 | hryvnia; ukrainian hryvnia
+20AA | new shekel; israeli shekel; ils
+20AB | dong; vietnamese dong
+20B1 | peso; philippine peso
+20B5 | cedi
+20A6 | naira; nigerian naira
+0E3F | baht; thai baht
+FDFC | rial; rial sign
+
+# ---- Mac keyboard ----------------------------------------------------------
+F8FF | apple logo; apple symbol; apple; mac logo; option shift k; apple glyph
+2318 | command; cmd; place of interest sign; looped square; mac command key; command key; commandtoets
+2325 | option; alt; option key; alt key; optietoets; Wahltaste
+2303 | control; ctrl; up arrowhead; control key; controltoets
+238B | escape; esc; broken circle with northwest arrow; escape key
+232B | delete; backspace; erase to the left; delete backward; delete key; wissen
+2326 | forward delete; erase to the right; delete forward
+23CE | return; return symbol; enter; return key
+2324 | enter; enter key; up arrowhead between two horizontal bars; numeric enter
+2388 | helm; control wheel
+23CF | eject; eject key
+2387 | alternative key symbol
+2318 | place of interest
+
+# ---- letters and diacritics -----------------------------------------------
+00DF | sharp s; eszett; german double s; scharfes s; ess-zet; dubbel s
+1E9E | capital sharp s; capital eszett; large sharp s
+00E6 | ae ligature; ash; ae; æ
+00C6 | capital ae ligature; capital ash
+0153 | oe ligature; œ; ethel
+0152 | capital oe ligature
+00F8 | o with stroke; slashed o; danish o; norwegian o; o slash; Ø
+00D8 | capital o with stroke; capital slashed o
+00E5 | a with ring; scandinavian a; swedish a
+00F1 | n with tilde; spanish enye; eñe; ñ
+00E7 | c cedilla; ç; french c
+0142 | polish l; l with stroke; slashed l
+00F0 | eth; icelandic eth; ð
+00FE | thorn; icelandic thorn; þ
+0131 | dotless i; turkish dotless i
+2113 | script l; liter; litre sign
+00A8 | diaeresis; umlaut; double dot; trema; tréma; dieresis; trema teken
+00AF | macron; overline; bar above; streepje boven
+02D8 | breve
+02C7 | caron; háček; hacek; wedge; hachek
+02DA | ring above; ring; ringetje
+02DC | small tilde; spacing tilde
+00B8 | cedilla; spacing cedilla
+02DD | double acute accent; hungarian umlaut
+0300 | combining grave; grave combining; grave accent combining
+0301 | combining acute; acute combining; acute accent combining
+0302 | combining circumflex; circumflex combining; hat combining
+0303 | combining tilde; tilde combining
+0308 | combining diaeresis; combining umlaut; umlaut combining; trema combining
+030A | combining ring above; ring combining
+030C | combining caron; háček combining; hacek combining
+0327 | combining cedilla; cedilla combining
+0328 | combining ogonek; ogonek combining
+0307 | combining dot above; dot above combining
+0338 | combining long solidus overlay; strikethrough slash; slash through; negation overlay
+0336 | combining long stroke overlay; strikethrough; strike through; strike
+0332 | combining low line; underline combining; underline
+0305 | combining overline; overline; bar above combining
+20E3 | combining enclosing keycap; keycap; enclosing keycap
+20DD | combining enclosing circle; circled; circle around
+FE0E | text presentation selector; vs15; text variation selector
+FE0F | emoji presentation selector; vs16; emoji variation selector
+
+# ---- Greek letters ---------------------------------------------------------
+03B1 | alpha
+03B2 | beta
+03B3 | gamma
+03B4 | delta
+03B5 | epsilon
+03B8 | theta
+03BB | lambda
+03C6 | phi
+03C9 | omega
+03A9 | omega capital; ohm
