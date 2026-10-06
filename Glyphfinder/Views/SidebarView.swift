@@ -4,10 +4,18 @@ struct SidebarView: View {
     @Environment(AppModel.self) private var model
     @State private var blocksExpanded = false
 
-    var body: some View {
-        @Bindable var model = model
+    /// `List(selection:)` wants an optional binding; clicking empty space must not deselect the sidebar.
+    private var selection: Binding<SidebarItem?> {
+        Binding(
+            get: { model.sidebar },
+            set: { newValue in
+                if let newValue { model.sidebar = newValue }
+            }
+        )
+    }
 
-        List(selection: $model.sidebar) {
+    var body: some View {
+        List(selection: selection) {
             Section("Library") {
                 Label("All Characters", systemImage: "character.book.closed")
                     .tag(SidebarItem.all)

@@ -77,16 +77,28 @@ final class AppModel {
     private(set) var database: CharacterDatabase?
     @ObservationIgnored private var engine: SearchEngine?
 
+    // `@Observable` rewrites stored properties, so the "recompute on change" behavior is written as a computed
+    // property over private storage instead of using `didSet`.
+    private var storedQuery = ""
+    private var storedSidebar: SidebarItem = .all
+
     /// Search field text. Changing it recomputes `results`.
-    var query = "" {
-        didSet { if query != oldValue { refreshResults() } }
+    var query: String {
+        get { storedQuery }
+        set {
+            guard newValue != storedQuery else { return }
+            storedQuery = newValue
+            refreshResults()
+        }
     }
 
-    var sidebar: SidebarItem = .all {
-        didSet {
-            guard sidebar != oldValue else { return }
-            UserDefaults.standard.set(sidebar.storageString, forKey: SettingsKey.lastSidebar)
-            if !query.isEmpty { query = "" } else { refreshResults() }
+    var sidebar: SidebarItem {
+        get { storedSidebar }
+        set {
+            guard newValue != storedSidebar else { return }
+            storedSidebar = newValue
+            UserDefaults.standard.set(newValue.storageString, forKey: SettingsKey.lastSidebar)
+            if !storedQuery.isEmpty { query = "" } else { refreshResults() }
         }
     }
 
@@ -116,7 +128,7 @@ final class AppModel {
         favorites = (defaults.array(forKey: SettingsKey.favorites) as? [Int] ?? []).compactMap { UInt32(exactly: $0) }
         recents = (defaults.array(forKey: SettingsKey.recents) as? [Int] ?? []).compactMap { UInt32(exactly: $0) }
         if let stored = defaults.string(forKey: SettingsKey.lastSidebar), let item = SidebarItem(storageString: stored) {
-            sidebar = item
+            storedSidebar = item
         }
     }
 

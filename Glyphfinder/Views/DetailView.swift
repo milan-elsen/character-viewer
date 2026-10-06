@@ -230,7 +230,7 @@ struct InvisibleGlyphView: View {
         guard measured else { return " " }
         guard let advance else { return String(localized: "No installed font draws this character") }
         if advance < 0.001 { return String(localized: "Zero width") }
-        return String(localized: "Width: \(advance.formatted(.number.precision(.fractionLength(0...3)))) em")
+        return String(localized: "Width: \(Double(advance).formatted(.number.precision(.fractionLength(0...3)))) em")
     }
 }
 
@@ -275,12 +275,9 @@ private struct TypingSection: View {
         VStack(alignment: .leading, spacing: 8) {
             Label("Not on this keyboard", systemImage: "keyboard.badge.ellipsis")
                 .foregroundStyle(.secondary)
-            if CharacterInfo.isInvisible(record) || record.codePoint <= 0x10FFFF {
-                let groups = UnicodeHexInput.digitGroups(for: record.codePoint)
-                Text("With the Unicode Hex Input keyboard, hold ⌥ and type \(groups.joined(separator: " ")).")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-            }
+            Text("With the Unicode Hex Input keyboard, hold ⌥ and type \(UnicodeHexInput.digitGroups(for: record.codePoint).joined(separator: " ")).")
+                .font(.callout)
+                .foregroundStyle(.secondary)
             HStack {
                 Button("Keyboard Settings…") {
                     if let url = URL(string: "x-apple.systempreferences:com.apple.Keyboard-Settings.extension") {
