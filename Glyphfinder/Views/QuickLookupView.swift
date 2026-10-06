@@ -85,9 +85,10 @@ struct QuickLookupView: View {
         ScrollViewReader { scroller in
             ScrollView {
                 LazyVStack(spacing: 2) {
-                    ForEach(Array(results.enumerated()), id: \.element.codePoint) { index, record in
-                        QuickRow(record: record, index: index, isSelected: index == selectedIndex, fontName: fontName)
-                            .id(index)
+                    // Rows are identified by position only; mixing in another identity (the code point) made the lazy
+                    // stack keep showing rows from an earlier query.
+                    ForEach(results.indices, id: \.self) { index in
+                        QuickRow(record: results[index], index: index, isSelected: index == selectedIndex, fontName: fontName)
                             .onTapGesture { choose(index) }
                     }
                 }
