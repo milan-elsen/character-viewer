@@ -55,6 +55,16 @@ jobs:
           pbpaste | xxd | tee -a out/log.txt
           screencapture -x out/6-quick-after.png
 
+          say "typing instructions: e acute (dead key) and euro (single stroke)"
+          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to keystroke "e acute"' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/8-e-acute.png
+          osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to keystroke "euro"' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/9-euro.png
+
           say "settings"
           osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "," using command down' 2>&1 | tee -a out/log.txt; sleep 3

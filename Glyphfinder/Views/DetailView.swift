@@ -58,18 +58,17 @@ private struct DetailContent: View {
                     Button {
                         model.copy(record)
                     } label: {
-                        Label("Copy Character", systemImage: "doc.on.doc")
+                        Label("Copy", systemImage: "doc.on.doc")
                     }
                     .buttonStyle(.borderedProminent)
+                    .help("Copy Character")
 
                     Button {
                         model.toggleFavorite(record.codePoint)
                     } label: {
-                        Label(
-                            model.isFavorite(record.codePoint) ? LocalizedStringKey("Favorite") : LocalizedStringKey("Add to Favorites"),
-                            systemImage: model.isFavorite(record.codePoint) ? "star.fill" : "star"
-                        )
+                        Label("Favorite", systemImage: model.isFavorite(record.codePoint) ? "star.fill" : "star")
                     }
+                    .help(model.isFavorite(record.codePoint) ? "Remove from Favorites" : "Add to Favorites")
                 }
             }
             .frame(maxWidth: .infinity)

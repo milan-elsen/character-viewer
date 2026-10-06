@@ -36,8 +36,7 @@ struct QuickLookupView: View {
         .background(.regularMaterial, in: panelShape)
         .overlay { panelShape.strokeBorder(.separator) }
         .clipShape(panelShape)
-        .shadow(color: .black.opacity(0.28), radius: 18, y: 8)
-        .padding(28)   // room for the shadow: the window itself is transparent and chromeless
+        .background { ChromelessWindow() }
         .background { hiddenShortcuts }
         .toast(model.toast)
         .onAppear {
