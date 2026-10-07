@@ -62,6 +62,15 @@ enum HotKeyPreset: String, CaseIterable, Identifiable {
     }
 }
 
+extension SettingsKey {
+    /// "Always show in Dock" (default on). Read with `bool(forKey:)` because a value passed on the command line
+    /// (`-showInDock NO`) is a string, not a Bool.
+    static var alwaysShowInDock: Bool {
+        let defaults = UserDefaults.standard
+        return defaults.object(forKey: showInDock) == nil ? true : defaults.bool(forKey: showInDock)
+    }
+}
+
 enum GlyphSize {
     static let range: ClosedRange<Double> = 64...144
     static let `default`: Double = 88

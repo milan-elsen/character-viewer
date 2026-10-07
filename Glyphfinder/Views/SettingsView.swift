@@ -35,15 +35,21 @@ private struct GeneralSettings: View {
         Form {
             Section {
                 Toggle("Launch at login", isOn: launchAtLoginBinding)
-                Toggle("Show in Dock", isOn: $showInDock)
+                Toggle("Always show in Dock", isOn: $showInDock)
                 Toggle("Show in menu bar", isOn: $showMenuBarItem)
             } header: {
                 Text("Startup")
             } footer: {
-                if !showInDock && !showMenuBarItem {
-                    Text("With both turned off, open Quick Lookup with its keyboard shortcut.")
-                } else if let loginItemError {
-                    Text(loginItemError).foregroundStyle(.red)
+                VStack(alignment: .leading, spacing: 4) {
+                    if !showInDock {
+                        Text("The Dock icon appears only while the main window is open.")
+                    }
+                    if !showInDock && !showMenuBarItem {
+                        Text("With both turned off, open Quick Lookup with its keyboard shortcut.")
+                    }
+                    if let loginItemError {
+                        Text(loginItemError).foregroundStyle(.red)
+                    }
                 }
             }
 
@@ -73,10 +79,7 @@ private struct GeneralSettings: View {
         }
         .formStyle(.grouped)
         .onChange(of: hotKey) { _, _ in model.registerHotKey() }
-        .onChange(of: showInDock) { _, newValue in
-            NSApp.setActivationPolicy(newValue ? .regular : .accessory)
-            if newValue { NSApp.activate() }
-        }
+        .onChange(of: showInDock) { _, _ in AppDelegate.applyActivationPolicy() }
         .onAppear { launchAtLogin = SMAppService.mainApp.status == .enabled }
     }
 

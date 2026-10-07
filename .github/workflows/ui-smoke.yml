@@ -127,6 +127,19 @@ jobs:
           osascript -e 'tell application "System Events" to key code 36 using {command down}' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/16-open-in-app.png
 
+          say "Dock icon follows the main window when Always show in Dock is off"
+          osascript -e 'tell application "Glyphfinder" to quit' 2>&1 | tee -a out/log.txt; sleep 4
+          open -n "$APP" --args -showInDock NO; sleep 10
+          BG() { osascript -e 'tell application "System Events" to get background only of process "Glyphfinder"' 2>&1; }
+          echo "background only, main window open (expect false): $(BG)" | tee -a out/log.txt
+          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "w" using command down' 2>&1 | tee -a out/log.txt; sleep 3
+          echo "background only, main window closed (expect true): $(BG)" | tee -a out/log.txt
+          screencapture -x out/17-dock-hidden.png
+          osascript -e 'tell application "Glyphfinder" to reopen' 2>&1 | tee -a out/log.txt; sleep 4
+          echo "background only, window reopened (expect false): $(BG)" | tee -a out/log.txt
+          screencapture -x out/18-dock-shown-again.png
+
           say "open a font file: relaunch with GLYPHFINDER_OPEN_FONT (a path inside the sandbox container)"
           osascript -e 'tell application "Glyphfinder" to quit' 2>&1 | tee -a out/log.txt; sleep 4
           CONTAINER="$HOME/Library/Containers/com.milanelsen.glyphfinder/Data"

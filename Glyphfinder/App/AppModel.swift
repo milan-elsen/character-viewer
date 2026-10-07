@@ -126,6 +126,8 @@ final class AppModel {
     @ObservationIgnored var openWindow: OpenWindowAction?
     @ObservationIgnored var dismissWindow: DismissWindowAction?
     @ObservationIgnored private(set) var quickLookupVisible = false
+    /// Whether the main window is open (reported by `MainWindowTracker`); drives the Dock icon.
+    @ObservationIgnored private(set) var mainWindowOpen = false
     @ObservationIgnored private var previousApplication: NSRunningApplication?
     @ObservationIgnored private let hotKey = GlobalHotKey()
 
@@ -377,6 +379,12 @@ final class AppModel {
             MainActor.assumeIsolated { self?.toggleQuickLookup() }
         }
         hotKey.register(HotKeyPreset.stored)
+    }
+
+    func setMainWindowOpen(_ open: Bool) {
+        guard open != mainWindowOpen else { return }
+        mainWindowOpen = open
+        AppDelegate.applyActivationPolicy()
     }
 
     func quickLookupDidAppear() { quickLookupVisible = true }

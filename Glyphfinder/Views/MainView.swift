@@ -82,6 +82,7 @@ struct MainView: View {
             return true
         }
         .toast(model.toast)
+        .background { MainWindowTracker { model.setMainWindowOpen($0) } }
         .focusedSceneValue(\.selectedCharacter, model.selectedRecord)
         .frame(minWidth: 780, minHeight: 480)
         .onAppear { model.adopt(openWindow: openWindow, dismissWindow: dismissWindow) }

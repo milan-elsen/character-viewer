@@ -162,6 +162,23 @@
         }
       }
     },
+    "Always show in Dock": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Altijd tonen in het Dock"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Immer im Dock anzeigen"
+          }
+        }
+      }
+    },
     "Block": {
       "extractionState": "manual",
       "localizations": {
@@ -1862,23 +1879,6 @@
         }
       }
     },
-    "Show in Dock": {
-      "extractionState": "manual",
-      "localizations": {
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toon in het Dock"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Im Dock anzeigen"
-          }
-        }
-      }
-    },
     "Show in menu bar": {
       "extractionState": "manual",
       "localizations": {
@@ -1960,6 +1960,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Systemschrift"
+          }
+        }
+      }
+    },
+    "The Dock icon appears only while the main window is open.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het Dock-symbool verschijnt alleen zolang het hoofdvenster open is."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Dock-Symbol erscheint nur, solange das Hauptfenster geöffnet ist."
           }
         }
       }

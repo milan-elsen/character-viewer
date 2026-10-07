@@ -20,9 +20,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     /// The app lives on in the menu bar and answers the global shortcut after its windows are closed.
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
 
-    /// "Show in Dock" off means a menu-bar-only app (no Dock icon, no app menu bar until a window is active).
+    /// The Dock icon and ⌘Tab entry are shown when "Always show in Dock" is on, and otherwise only while the main
+    /// window is open. With neither, the app is a menu bar utility (no Dock icon, no app menu bar).
     static func applyActivationPolicy() {
-        let showInDock = UserDefaults.standard.object(forKey: SettingsKey.showInDock) as? Bool ?? true
-        NSApp.setActivationPolicy(showInDock ? .regular : .accessory)
+        let policy: NSApplication.ActivationPolicy =
+            SettingsKey.alwaysShowInDock || AppModel.shared.mainWindowOpen ? .regular : .accessory
+        guard NSApp.activationPolicy() != policy else { return }
+        NSApp.setActivationPolicy(policy)
+        if policy == .regular { NSApp.activate() }
     }
 }

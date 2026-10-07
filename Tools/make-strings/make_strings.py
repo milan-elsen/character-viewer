@@ -132,7 +132,10 @@ T = {
     "Keyboard": ("Toetsenbord", "Tastatur"),
     "Startup": ("Opstarten", "Start"),
     "Launch at login": ("Open bij inloggen", "Bei Anmeldung öffnen"),
-    "Show in Dock": ("Toon in het Dock", "Im Dock anzeigen"),
+    "Always show in Dock": ("Altijd tonen in het Dock", "Immer im Dock anzeigen"),
+    "The Dock icon appears only while the main window is open.": (
+        "Het Dock-symbool verschijnt alleen zolang het hoofdvenster open is.",
+        "Das Dock-Symbol erscheint nur, solange das Hauptfenster geöffnet ist."),
     "Show in menu bar": ("Toon in de menubalk", "In der Menüleiste anzeigen"),
     "With both turned off, open Quick Lookup with its keyboard shortcut.": (
         "Als beide uit staan, open je Snel opzoeken met de toetsencombinatie.",
