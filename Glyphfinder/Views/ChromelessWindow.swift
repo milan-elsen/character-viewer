@@ -10,6 +10,17 @@ struct ChromelessWindow: NSViewRepresentable {
     /// size straight away instead of resizing once.
     @MainActor static var lastMeasuredTitlebarHeight: CGFloat = 28
 
+    /// The Quick Lookup window, so it can be made key after the app finishes activating.
+    @MainActor private(set) static weak var window: NSWindow?
+
+    /// Makes the panel the key window. A global shortcut can fire while another app is frontmost; the app then
+    /// activates asynchronously and the new window would otherwise stay non-key until clicked.
+    @MainActor static func focus() {
+        NSApp.activate()
+        guard let window else { return }
+        window.makeKeyAndOrderFront(nil)
+    }
+
     /// Height the window reserves for its (hidden) title bar. With `.windowResizability(.contentSize)` the window is
     /// that much taller than the content, so the content gives the space back (see `QuickLookupView`).
     @Binding var titlebarHeight: CGFloat
@@ -30,6 +41,7 @@ struct ChromelessWindow: NSViewRepresentable {
         override func viewDidMoveToWindow() {
             super.viewDidMoveToWindow()
             guard let window else { return }
+            MainActor.assumeIsolated { ChromelessWindow.window = window }
             window.standardWindowButton(.closeButton)?.isHidden = true
             window.standardWindowButton(.miniaturizeButton)?.isHidden = true
             window.standardWindowButton(.zoomButton)?.isHidden = true
@@ -44,6 +56,7 @@ struct ChromelessWindow: NSViewRepresentable {
             // The part of the window that is not content layout area is the title bar.
             DispatchQueue.main.async { [weak self, weak window] in
                 guard let window else { return }
+                MainActor.assumeIsolated { ChromelessWindow.focus() }
                 let height = window.frame.height - window.contentLayoutRect.height
                 guard height >= 0 else { return }
                 MainActor.assumeIsolated { ChromelessWindow.lastMeasuredTitlebarHeight = height }

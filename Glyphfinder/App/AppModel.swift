@@ -403,6 +403,14 @@ final class AppModel {
         if front?.processIdentifier != ProcessInfo.processInfo.processIdentifier { previousApplication = front }
         NSApp.activate()
         openWindow?(id: SceneID.quick)
+        // The app may still be activating (shortcut pressed in another app), and an already open panel gets no
+        // new appearance event, so make it key explicitly, now and once activation has settled.
+        for delay in [0.0, 0.15] {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+                guard self?.quickLookupVisible == true else { return }
+                ChromelessWindow.focus()
+            }
+        }
     }
 
     func closeQuickLookup(returnToPreviousApp: Bool) {
