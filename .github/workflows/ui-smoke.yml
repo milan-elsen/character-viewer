@@ -76,7 +76,6 @@ jobs:
           }
           post(.leftMouseUp, end)
           EOS
-          sed -i 's/^          //' /tmp/drag.swift
           swift /tmp/drag.swift $((WX + 32)) $((WY + 28)) 160 90 2>&1 | tee -a out/log.txt; sleep 2
           POS2=$(osascript -e 'tell application "System Events" to tell process "Glyphfinder" to get position of window 1' 2>&1)
           echo "window position after drag:  $POS2" | tee -a out/log.txt
