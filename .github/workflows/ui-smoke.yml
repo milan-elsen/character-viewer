@@ -219,6 +219,7 @@ jobs:
           BRANCH=ci-artifacts
           RUNNER="${{ inputs.runner }}"
           if [ -n "$RUNNER" ] && [ "$RUNNER" != "macos-15" ]; then BRANCH="ci-artifacts-$RUNNER"; fi
+          if [ -n "${{ inputs.app_ref }}" ]; then BRANCH="$BRANCH-base"; fi
           git checkout -q -b "$BRANCH"
           git add .
           git commit -q -m "UI smoke test output for ${GITHUB_SHA} on ${RUNNER:-macos-15}"
