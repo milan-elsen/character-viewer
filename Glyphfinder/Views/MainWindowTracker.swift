@@ -31,6 +31,9 @@ struct MainWindowTracker: NSViewRepresentable {
                 center.addObserver(forName: NSWindow.didBecomeMainNotification, object: window, queue: .main) { [weak self] _ in
                     self?.onChange?(true)
                 },
+                center.addObserver(forName: NSWindow.didBecomeKeyNotification, object: window, queue: .main) { [weak self] _ in
+                    self?.onChange?(true)
+                },
                 center.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { [weak self] _ in
                     self?.onChange?(false)
                 },

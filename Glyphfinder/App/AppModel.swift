@@ -422,6 +422,9 @@ final class AppModel {
     }
 
     func showMainWindow() {
+        // Opening the window on purpose: bring the Dock icon back first. (From a menu-bar-only state the new window
+        // may not become the "main" window, so the window notifications alone cannot be relied on.)
+        setMainWindowOpen(true)
         NSApp.activate()
         if let openWindow {
             openWindow(id: SceneID.main)
