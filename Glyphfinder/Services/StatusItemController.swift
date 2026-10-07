@@ -1,4 +1,5 @@
 import AppKit
+import CoreText
 
 /// The menu bar item. A click opens Quick Lookup; the menu appears on a right click, or on a click while Quick Lookup
 /// is already showing. SwiftUI's `MenuBarExtra` cannot tell the two kinds of click apart, so this is the one place
@@ -32,15 +33,41 @@ final class StatusItemController: NSObject {
         guard statusItem == nil else { return }
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         if let button = item.button {
-            let image = NSImage(systemSymbolName: "textformat.abc", accessibilityDescription: "Glyphfinder")
-            image?.isTemplate = true
-            button.image = image
+            button.image = Self.makeIcon()
             button.target = self
             button.action = #selector(clicked(_:))
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
             button.toolTip = "Glyphfinder"
         }
         statusItem = item
+    }
+
+    /// The menu bar icon: the letters "a b c" arranged as a triangle (a on top, b and c below). Drawn in code so it
+    /// needs no image asset, and marked as a template so macOS tints it for light and dark menu bars and for the
+    /// highlighted state.
+    private static func makeIcon() -> NSImage {
+        let image = NSImage(size: NSSize(width: 18, height: 18), flipped: false) { _ in
+            guard let context = NSGraphicsContext.current?.cgContext else { return false }
+            let font = NSFont.systemFont(ofSize: 9, weight: .bold)
+            context.setFillColor(NSColor.black.cgColor)
+
+            /// Draws `letter` so that the centre of its ink (not of its line box) sits at `center`.
+            func draw(_ letter: String, at center: CGPoint) {
+                let text = NSAttributedString(string: letter, attributes: [.font: font])
+                let line = CTLineCreateWithAttributedString(text)
+                let ink = CTLineGetBoundsWithOptions(line, .useGlyphPathBounds)
+                context.textPosition = CGPoint(x: center.x - ink.midX, y: center.y - ink.midY)
+                CTLineDraw(line, context)
+            }
+
+            draw("a", at: CGPoint(x: 9.0, y: 12.4))
+            draw("b", at: CGPoint(x: 4.3, y: 4.8))
+            draw("c", at: CGPoint(x: 13.7, y: 4.8))
+            return true
+        }
+        image.isTemplate = true
+        image.accessibilityDescription = "Glyphfinder"
+        return image
     }
 
     private func remove() {
