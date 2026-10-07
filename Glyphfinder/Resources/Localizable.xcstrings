@@ -366,6 +366,23 @@
         }
       }
     },
+    "Close Font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sluit lettertype"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift schließen"
+          }
+        }
+      }
+    },
     "Close after copying": {
       "extractionState": "manual",
       "localizations": {
@@ -1284,6 +1301,40 @@
         }
       }
     },
+    "Not in the opened font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet in het geopende lettertype"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht in der geöffneten Schrift"
+          }
+        }
+      }
+    },
+    "Not in “%@”. Showing the fallback font.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet in “%@”. Het reservelettertype wordt getoond."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht in „%@“. Die Ersatzschrift wird angezeigt."
+          }
+        }
+      }
+    },
     "Not on this keyboard": {
       "extractionState": "manual",
       "localizations": {
@@ -1369,6 +1420,23 @@
         }
       }
     },
+    "Open Font…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open lettertype…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift öffnen …"
+          }
+        }
+      }
+    },
     "Open Glyphfinder": {
       "extractionState": "manual",
       "localizations": {
@@ -1399,6 +1467,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tastatureinstellungen öffnen …"
+          }
+        }
+      }
+    },
+    "Opened Font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geopend lettertype"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geöffnete Schrift"
+          }
+        }
+      }
+    },
+    "Opened font “%@”": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lettertype “%@” geopend"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift „%@“ geöffnet"
           }
         }
       }
@@ -1909,6 +2011,40 @@
           "stringUnit": {
             "state": "translated",
             "value": "Die Schrift wird für Vorschauen und zur Suche nach Varianten eines Zeichens verwendet."
+          }
+        }
+      }
+    },
+    "This character is not in the opened font.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit teken zit niet in het geopende lettertype."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Zeichen ist nicht in der geöffneten Schrift enthalten."
+          }
+        }
+      }
+    },
+    "This file is not a font that macOS can read.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit bestand is geen lettertype dat macOS kan lezen."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Datei ist keine Schrift, die macOS lesen kann."
           }
         }
       }

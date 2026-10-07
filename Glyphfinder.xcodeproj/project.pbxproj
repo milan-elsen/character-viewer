@@ -7,247 +7,247 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A79A76B993F401860B4B88C /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 5258CC763BF1A25D4241DBB0 /* characters.json */; };
-		1880623BF4547D970A46225C /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4641D8D6F00B52C5FB988B /* SidebarView.swift */; };
-		1A29AE2E3B73641B787B8960 /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1AB818E1B8963D42881104 /* AppCommands.swift */; };
-		244C6A1CFB8BA653F8D0E752 /* CharacterDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6410A8662FDB34FD70EBA /* CharacterDatabase.swift */; };
-		249638654FA425152D2E5A86 /* SystemKeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24957E9F06290C23DB681212 /* SystemKeyboardLayout.swift */; };
-		2542CDD091053BD1E09864FF /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF34F14A2304C73F9372D9 /* CharacterInfo.swift */; };
-		295017391BE719A8B0E65582 /* GlyphfinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E44DACADE7EE0015F13514 /* GlyphfinderApp.swift */; };
-		29E8EDA7DC2FFDAFF3B91D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6858F1930D68D551A7F4998F /* AppDelegate.swift */; };
-		2AA8DEB1609728CE1142E0EC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B493956631FA16B0646376 /* Cocoa.framework */; };
-		38B47EC71BB9BF400667E3E6 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337312A2AA1B6B2B4F10FDD /* KeyboardService.swift */; };
-		46FF124D4D975E7F88D6F2CD /* GlobalHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DFF228ABC731EF0E5D993 /* GlobalHotKey.swift */; };
-		5BA818B940A1DDB5ABCEB381 /* GlyphInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBB1B35D0D33A0FD21BA1B /* GlyphInspector.swift */; };
-		6113F55C4C65BA019A706716 /* ChromelessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FD1582BAC76DBD515F8746 /* ChromelessWindow.swift */; };
-		6D827246A6C3F047C4914A01 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4F8231F4C61DE3072D527365 /* Localizable.xcstrings */; };
-		70DC27A8C03F70CF144AD43A /* CharacterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E64B9197D874D0BB8C120 /* CharacterGridView.swift */; };
-		734B027A2EB9D26F8ECCCBC4 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA51BE2ADEA90D62CE273F4 /* AppSettings.swift */; };
-		7D3B3067AD6411380454874C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 93C3C7503E3A20D4F75E32A2 /* PrivacyInfo.xcprivacy */; };
-		924BE73DE161858F7BD7EFF1 /* QuickLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD067C50FAE5F726F769FBA /* QuickLookupView.swift */; };
-		A3A82E6B14D0CFD0A82EEE31 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D1656B71ED88CFEEA2251F /* AppModel.swift */; };
-		A6B020624F2F3AF324891398 /* KeyboardMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04FA5485E05E873801109B0 /* KeyboardMapper.swift */; };
-		AA40A9B9A323441CCBEEB2AC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C903A367C2668CDAC904C6 /* MainView.swift */; };
-		AE72A0E74AE2FAF741F1DCBD /* CharacterRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD18DF04C33F2FF5EB11C05 /* CharacterRecord.swift */; };
-		B1D71232DFCDD2F247F07957 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F69D9A8EE60091F9593431 /* StatusItemController.swift */; };
-		B7472F04254532D49A6EF7D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99390CCF45AF2A42C1ED4A38 /* SettingsView.swift */; };
-		BF823F6DD3B9CDCED0CB7C41 /* GlyphfinderIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D1AD71BC9EA79CD5B15B2 /* GlyphfinderIntents.swift */; };
-		D08973A8B0852560369BBBD6 /* CodeFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC16CD67B042AFE1F98AE17 /* CodeFormats.swift */; };
-		D97231747F3B909F41B779AF /* Inserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB0BD92CE1CA1DEB863A69E /* Inserter.swift */; };
-		E0D8FE69A2E6C0DBFA9C9A3B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493339125B917E2CD408CD92 /* ToastView.swift */; };
-		E1A7D162606572E6BB7F77BD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A71AC6496629A855DB6350 /* DetailView.swift */; };
-		F4D52DFF568274C66A3448F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 679FA252002A5E75599F38B5 /* Assets.xcassets */; };
-		F50FB9C7B7DBE96D7F564A95 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E32923292FE6AD2D15E38 /* SearchEngine.swift */; };
+		065C59A10E72678572E9322B /* GlyphInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7BCE03F1FB8DB7AD5E6CD /* GlyphInspector.swift */; };
+		09D85C416DFD40D8D8AFE47F /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A9C6A5BF3F9EBBE25E1D4 /* AppCommands.swift */; };
+		1FF5607E2CD35A97E5073D7F /* ChromelessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE8B30694F36CC09A9A575 /* ChromelessWindow.swift */; };
+		2FAE930E700EEA0F57C278DD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0E9768610030496176ACA /* DetailView.swift */; };
+		43A90BCE6684A7AC2F582365 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191AD4C80A5E08EA5255C7D8 /* SettingsView.swift */; };
+		507C064D966A63CE632CDCD7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28DC5627D33ED33B0701ACB2 /* Cocoa.framework */; };
+		535154B29C479D25801C17A2 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF653B70700287ABACDA2E /* StatusItemController.swift */; };
+		5D045B8A482C5D209720486A /* QuickLookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7A044483DE8C417DF114B9 /* QuickLookupView.swift */; };
+		69B70F38237699E7BB483DE2 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890C7DD55CE069769BF0A893 /* KeyboardService.swift */; };
+		69BDC1F0C1995664010ED168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD97B8B7F702105A50359AD /* AppDelegate.swift */; };
+		6E771EDED534F6390C5C2A57 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF995CBA60380742F27A28 /* ToastView.swift */; };
+		7799954B10D94EFBCEE52688 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7C0E95D88FD679E6A8A7E8E6 /* PrivacyInfo.xcprivacy */; };
+		844D9C67A00FDDB90994A0C3 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1DC440C3CDDCD36A9DE70C /* CharacterInfo.swift */; };
+		84C01DA4979039854A8D2BE5 /* CodeFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55A8A982DDDF568A8F18B5 /* CodeFormats.swift */; };
+		8505A0A27836D6F6D1089373 /* KeyboardMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565B79F27D9B6B4E9366C12 /* KeyboardMapper.swift */; };
+		974A37763D657AA9E99D1474 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460ABFAA80D4DA887E260451 /* SidebarView.swift */; };
+		A22BD8ACBBB6E55F98701649 /* GlobalHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320690473A1EFC077FEF07 /* GlobalHotKey.swift */; };
+		BFCDA2ECCA9D4641DAE688C4 /* CharacterDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D2F7302A4A0B306250FB93 /* CharacterDatabase.swift */; };
+		C041F7376E88A03AC4D047BF /* GlyphfinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50161936BCE20A7A719CBC38 /* GlyphfinderApp.swift */; };
+		C483BF061A557F5A96DEE46C /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617CA4D1CDF7AF8C295980E /* AppSettings.swift */; };
+		C4C6C909251EB02014B67940 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D25E7C9C39FC2DEF0C51C9E /* MainView.swift */; };
+		C968A52D30DE96D9FD7A985C /* CharacterRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153237FF664A7D978A5CCBFE /* CharacterRecord.swift */; };
+		CB44885203802C2615EAFD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A0A59A6A5D799ABAF44822 /* Assets.xcassets */; };
+		CD10EB643F8A53D13F96CC86 /* Inserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622B6344264876E374335CA4 /* Inserter.swift */; };
+		CFF6AC90A8D6F440B4F4A7ED /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = CDE44617E11AC60502DE4FFA /* characters.json */; };
+		D6FF778FC00789ACA26BF61A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3CA1A2D0823FBDEB5D4C30FC /* Localizable.xcstrings */; };
+		E3AC7E14A138B1C46C7E141D /* GlyphfinderIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B594F21F9F6B19E17F0D9C0 /* GlyphfinderIntents.swift */; };
+		EC7DDFCE92EDD30965304752 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9CDE536DF28CEBDFAE72BD /* AppModel.swift */; };
+		F6BB78FE0721276100341B3E /* CharacterGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D62636383AB3DD7C3EE30 /* CharacterGridView.swift */; };
+		FE91B4F9FB4C25EEED123F1C /* SystemKeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E087702409CF5DAE2B4253 /* SystemKeyboardLayout.swift */; };
+		FF3DBECEA7A42251D1062724 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE396F21F9C80CC2740911 /* SearchEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06CCDA7859659687F520EAFE /* Glyphfinder-Direct.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "Glyphfinder-Direct.entitlements"; sourceTree = "<group>"; };
-		24957E9F06290C23DB681212 /* SystemKeyboardLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemKeyboardLayout.swift; sourceTree = "<group>"; };
-		3337312A2AA1B6B2B4F10FDD /* KeyboardService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
-		34FD1582BAC76DBD515F8746 /* ChromelessWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChromelessWindow.swift; sourceTree = "<group>"; };
-		37A71AC6496629A855DB6350 /* DetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		3DD18DF04C33F2FF5EB11C05 /* CharacterRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterRecord.swift; sourceTree = "<group>"; };
-		493339125B917E2CD408CD92 /* ToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		4F8231F4C61DE3072D527365 /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		4FEF34F14A2304C73F9372D9 /* CharacterInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
-		5258CC763BF1A25D4241DBB0 /* characters.json */ = {isa = PBXFileReference; includeInIndex = 1; path = characters.json; sourceTree = "<group>"; };
-		56AB73715EA7CE04D34CD1F4 /* Glyphfinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glyphfinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AC16CD67B042AFE1F98AE17 /* CodeFormats.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CodeFormats.swift; sourceTree = "<group>"; };
-		679FA252002A5E75599F38B5 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6858F1930D68D551A7F4998F /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70C903A367C2668CDAC904C6 /* MainView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		76EBB1B35D0D33A0FD21BA1B /* GlyphInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphInspector.swift; sourceTree = "<group>"; };
-		7B3C8E5B506EB8AA8765B380 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8213DD14ACEA73E8623A1B77 /* Glyphfinder.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Glyphfinder.entitlements; sourceTree = "<group>"; };
-		93C3C7503E3A20D4F75E32A2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		96375463940CE47D9880CFF0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		99390CCF45AF2A42C1ED4A38 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A51E32923292FE6AD2D15E38 /* SearchEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
-		BD4641D8D6F00B52C5FB988B /* SidebarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
-		C04FA5485E05E873801109B0 /* KeyboardMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardMapper.swift; sourceTree = "<group>"; };
-		D0F69D9A8EE60091F9593431 /* StatusItemController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
-		D4B493956631FA16B0646376 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		DCB0BD92CE1CA1DEB863A69E /* Inserter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Inserter.swift; sourceTree = "<group>"; };
-		DD7E64B9197D874D0BB8C120 /* CharacterGridView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterGridView.swift; sourceTree = "<group>"; };
-		DE1AB818E1B8963D42881104 /* AppCommands.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
-		E0E8E549551F33D2C432112E /* PLAN.md */ = {isa = PBXFileReference; includeInIndex = 1; path = PLAN.md; sourceTree = "<group>"; };
-		E2D1656B71ED88CFEEA2251F /* AppModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
-		E3B6410A8662FDB34FD70EBA /* CharacterDatabase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterDatabase.swift; sourceTree = "<group>"; };
-		E8E44DACADE7EE0015F13514 /* GlyphfinderApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphfinderApp.swift; sourceTree = "<group>"; };
-		ECD067C50FAE5F726F769FBA /* QuickLookupView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLookupView.swift; sourceTree = "<group>"; };
-		EDA51BE2ADEA90D62CE273F4 /* AppSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		F38D1AD71BC9EA79CD5B15B2 /* GlyphfinderIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphfinderIntents.swift; sourceTree = "<group>"; };
-		F52DFF228ABC731EF0E5D993 /* GlobalHotKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlobalHotKey.swift; sourceTree = "<group>"; };
+		0617CA4D1CDF7AF8C295980E /* AppSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		153237FF664A7D978A5CCBFE /* CharacterRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterRecord.swift; sourceTree = "<group>"; };
+		191AD4C80A5E08EA5255C7D8 /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1B594F21F9F6B19E17F0D9C0 /* GlyphfinderIntents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphfinderIntents.swift; sourceTree = "<group>"; };
+		1D25E7C9C39FC2DEF0C51C9E /* MainView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1FAE8B30694F36CC09A9A575 /* ChromelessWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChromelessWindow.swift; sourceTree = "<group>"; };
+		1FC0E9768610030496176ACA /* DetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		23EF653B70700287ABACDA2E /* StatusItemController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		26A0A59A6A5D799ABAF44822 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28DC5627D33ED33B0701ACB2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		3B7A044483DE8C417DF114B9 /* QuickLookupView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QuickLookupView.swift; sourceTree = "<group>"; };
+		3CA1A2D0823FBDEB5D4C30FC /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		460ABFAA80D4DA887E260451 /* SidebarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		495A9C6A5BF3F9EBBE25E1D4 /* AppCommands.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
+		4FD97B8B7F702105A50359AD /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50161936BCE20A7A719CBC38 /* GlyphfinderApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphfinderApp.swift; sourceTree = "<group>"; };
+		622B6344264876E374335CA4 /* Inserter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Inserter.swift; sourceTree = "<group>"; };
+		6F9097038088A14B031FE9F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		706D62636383AB3DD7C3EE30 /* CharacterGridView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterGridView.swift; sourceTree = "<group>"; };
+		76C7BCE03F1FB8DB7AD5E6CD /* GlyphInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlyphInspector.swift; sourceTree = "<group>"; };
+		7879FF3F04EF2C6473EBB98F /* Glyphfinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glyphfinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0E95D88FD679E6A8A7E8E6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		890C7DD55CE069769BF0A893 /* KeyboardService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
+		8A1DC440C3CDDCD36A9DE70C /* CharacterInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
+		8F55A8A982DDDF568A8F18B5 /* CodeFormats.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CodeFormats.swift; sourceTree = "<group>"; };
+		94CE396F21F9C80CC2740911 /* SearchEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
+		95D2F7302A4A0B306250FB93 /* CharacterDatabase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterDatabase.swift; sourceTree = "<group>"; };
+		A0FF995CBA60380742F27A28 /* ToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		BEFF4696BF3A62071F5644FE /* Glyphfinder.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = Glyphfinder.entitlements; sourceTree = "<group>"; };
+		C2E087702409CF5DAE2B4253 /* SystemKeyboardLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemKeyboardLayout.swift; sourceTree = "<group>"; };
+		C3320690473A1EFC077FEF07 /* GlobalHotKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlobalHotKey.swift; sourceTree = "<group>"; };
+		C565B79F27D9B6B4E9366C12 /* KeyboardMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardMapper.swift; sourceTree = "<group>"; };
+		CDE44617E11AC60502DE4FFA /* characters.json */ = {isa = PBXFileReference; includeInIndex = 1; path = characters.json; sourceTree = "<group>"; };
+		CE9CDE536DF28CEBDFAE72BD /* AppModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		DFBABFABD931AFE22C20052D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EC639AF9B0DA380FA44A31AB /* PLAN.md */ = {isa = PBXFileReference; includeInIndex = 1; path = PLAN.md; sourceTree = "<group>"; };
+		F290242B7E3504979828AF6B /* Glyphfinder-Direct.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = "Glyphfinder-Direct.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		665E67D1CEA366A7C9BFB3D6 /* Frameworks */ = {
+		64B5548D90CFEB98A58847A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA8DEB1609728CE1142E0EC /* Cocoa.framework in Frameworks */,
+				507C064D966A63CE632CDCD7 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		055C5BAEFC6984C0366B3920 /* Products */ = {
+		043FB242DA4FDC788E8C1D95 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56AB73715EA7CE04D34CD1F4 /* Glyphfinder.app */,
+				7879FF3F04EF2C6473EBB98F /* Glyphfinder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0C69CD20B0AB024049848C75 /* Documentation */ = {
+		1511F14CBD8578C1654B1E0C = {
 			isa = PBXGroup;
 			children = (
-				96375463940CE47D9880CFF0 /* README.md */,
-				E0E8E549551F33D2C432112E /* PLAN.md */,
-			);
-			name = Documentation;
-			sourceTree = "<group>";
-		};
-		1454BD9C48352650A5CA9FA0 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				5258CC763BF1A25D4241DBB0 /* characters.json */,
-			);
-			name = Data;
-			path = Data;
-			sourceTree = "<group>";
-		};
-		1F200FCAFA8BCE0D675DC5BE = {
-			isa = PBXGroup;
-			children = (
-				055C5BAEFC6984C0366B3920 /* Products */,
-				648BFCD7C57AD2B592E9B636 /* Frameworks */,
-				4BB2EF232474FE732BAC0E5D /* Glyphfinder */,
-				E5F8ACA52D4F2FFEAFCC79F4 /* GlyphCore */,
-				1454BD9C48352650A5CA9FA0 /* Data */,
-				0C69CD20B0AB024049848C75 /* Documentation */,
+				043FB242DA4FDC788E8C1D95 /* Products */,
+				9F9D4224DF276ACB3A9C8A02 /* Frameworks */,
+				F4B49F64B505321529601410 /* Glyphfinder */,
+				15C4384D9AA08E6AEECB40D6 /* GlyphCore */,
+				9042E3C100B839F931D016DA /* Data */,
+				D0E93096BCC0E80BC396F622 /* Documentation */,
 			);
 			sourceTree = "<group>";
 		};
-		4BB2EF232474FE732BAC0E5D /* Glyphfinder */ = {
+		15C4384D9AA08E6AEECB40D6 /* GlyphCore */ = {
 			isa = PBXGroup;
 			children = (
-				ED094139649C464A2D522D4B /* App */,
-				C65E64B18C6DC270E90436DE /* Services */,
-				4F516B20688AF25C3EE0A30D /* Views */,
-				AEA66DB7D98102621E0CDAB4 /* Resources */,
-				ACD5107A0BEF17A5ACB497A5 /* Configuration */,
-			);
-			name = Glyphfinder;
-			path = Glyphfinder;
-			sourceTree = "<group>";
-		};
-		4F516B20688AF25C3EE0A30D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DD7E64B9197D874D0BB8C120 /* CharacterGridView.swift */,
-				34FD1582BAC76DBD515F8746 /* ChromelessWindow.swift */,
-				37A71AC6496629A855DB6350 /* DetailView.swift */,
-				70C903A367C2668CDAC904C6 /* MainView.swift */,
-				ECD067C50FAE5F726F769FBA /* QuickLookupView.swift */,
-				99390CCF45AF2A42C1ED4A38 /* SettingsView.swift */,
-				BD4641D8D6F00B52C5FB988B /* SidebarView.swift */,
-				493339125B917E2CD408CD92 /* ToastView.swift */,
-			);
-			name = Views;
-			path = Views;
-			sourceTree = "<group>";
-		};
-		648BFCD7C57AD2B592E9B636 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DF92AC98B89195A2E3607ADE /* OS X */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		ACD5107A0BEF17A5ACB497A5 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				7B3C8E5B506EB8AA8765B380 /* Info.plist */,
-				8213DD14ACEA73E8623A1B77 /* Glyphfinder.entitlements */,
-				06CCDA7859659687F520EAFE /* Glyphfinder-Direct.entitlements */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
-		AEA66DB7D98102621E0CDAB4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				679FA252002A5E75599F38B5 /* Assets.xcassets */,
-				4F8231F4C61DE3072D527365 /* Localizable.xcstrings */,
-				93C3C7503E3A20D4F75E32A2 /* PrivacyInfo.xcprivacy */,
-			);
-			name = Resources;
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C65E64B18C6DC270E90436DE /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				F52DFF228ABC731EF0E5D993 /* GlobalHotKey.swift */,
-				DCB0BD92CE1CA1DEB863A69E /* Inserter.swift */,
-				3337312A2AA1B6B2B4F10FDD /* KeyboardService.swift */,
-				D0F69D9A8EE60091F9593431 /* StatusItemController.swift */,
-			);
-			name = Services;
-			path = Services;
-			sourceTree = "<group>";
-		};
-		DF92AC98B89195A2E3607ADE /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				D4B493956631FA16B0646376 /* Cocoa.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
-		E5F8ACA52D4F2FFEAFCC79F4 /* GlyphCore */ = {
-			isa = PBXGroup;
-			children = (
-				E3B6410A8662FDB34FD70EBA /* CharacterDatabase.swift */,
-				4FEF34F14A2304C73F9372D9 /* CharacterInfo.swift */,
-				3DD18DF04C33F2FF5EB11C05 /* CharacterRecord.swift */,
-				5AC16CD67B042AFE1F98AE17 /* CodeFormats.swift */,
-				76EBB1B35D0D33A0FD21BA1B /* GlyphInspector.swift */,
-				C04FA5485E05E873801109B0 /* KeyboardMapper.swift */,
-				A51E32923292FE6AD2D15E38 /* SearchEngine.swift */,
-				24957E9F06290C23DB681212 /* SystemKeyboardLayout.swift */,
+				95D2F7302A4A0B306250FB93 /* CharacterDatabase.swift */,
+				8A1DC440C3CDDCD36A9DE70C /* CharacterInfo.swift */,
+				153237FF664A7D978A5CCBFE /* CharacterRecord.swift */,
+				8F55A8A982DDDF568A8F18B5 /* CodeFormats.swift */,
+				76C7BCE03F1FB8DB7AD5E6CD /* GlyphInspector.swift */,
+				C565B79F27D9B6B4E9366C12 /* KeyboardMapper.swift */,
+				94CE396F21F9C80CC2740911 /* SearchEngine.swift */,
+				C2E087702409CF5DAE2B4253 /* SystemKeyboardLayout.swift */,
 			);
 			name = GlyphCore;
 			path = Core/Sources/GlyphCore;
 			sourceTree = "<group>";
 		};
-		ED094139649C464A2D522D4B /* App */ = {
+		54AB2B03EB3AC9824C354C5D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE1AB818E1B8963D42881104 /* AppCommands.swift */,
-				6858F1930D68D551A7F4998F /* AppDelegate.swift */,
-				E2D1656B71ED88CFEEA2251F /* AppModel.swift */,
-				EDA51BE2ADEA90D62CE273F4 /* AppSettings.swift */,
-				E8E44DACADE7EE0015F13514 /* GlyphfinderApp.swift */,
-				F38D1AD71BC9EA79CD5B15B2 /* GlyphfinderIntents.swift */,
+				706D62636383AB3DD7C3EE30 /* CharacterGridView.swift */,
+				1FAE8B30694F36CC09A9A575 /* ChromelessWindow.swift */,
+				1FC0E9768610030496176ACA /* DetailView.swift */,
+				1D25E7C9C39FC2DEF0C51C9E /* MainView.swift */,
+				3B7A044483DE8C417DF114B9 /* QuickLookupView.swift */,
+				191AD4C80A5E08EA5255C7D8 /* SettingsView.swift */,
+				460ABFAA80D4DA887E260451 /* SidebarView.swift */,
+				A0FF995CBA60380742F27A28 /* ToastView.swift */,
+			);
+			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6549D71D957CB194F1C1A3DC /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				28DC5627D33ED33B0701ACB2 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		6F7606F709CAFBA304D3A8FD /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				6F9097038088A14B031FE9F7 /* Info.plist */,
+				BEFF4696BF3A62071F5644FE /* Glyphfinder.entitlements */,
+				F290242B7E3504979828AF6B /* Glyphfinder-Direct.entitlements */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		8483C50CA44D8184F0DA1B40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26A0A59A6A5D799ABAF44822 /* Assets.xcassets */,
+				3CA1A2D0823FBDEB5D4C30FC /* Localizable.xcstrings */,
+				7C0E95D88FD679E6A8A7E8E6 /* PrivacyInfo.xcprivacy */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9042E3C100B839F931D016DA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CDE44617E11AC60502DE4FFA /* characters.json */,
+			);
+			name = Data;
+			path = Data;
+			sourceTree = "<group>";
+		};
+		93DEAFFB11A97BB77D5D3FDF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C3320690473A1EFC077FEF07 /* GlobalHotKey.swift */,
+				622B6344264876E374335CA4 /* Inserter.swift */,
+				890C7DD55CE069769BF0A893 /* KeyboardService.swift */,
+				23EF653B70700287ABACDA2E /* StatusItemController.swift */,
+			);
+			name = Services;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9F9D4224DF276ACB3A9C8A02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6549D71D957CB194F1C1A3DC /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D01605B82040EF071DF28BE0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				495A9C6A5BF3F9EBBE25E1D4 /* AppCommands.swift */,
+				4FD97B8B7F702105A50359AD /* AppDelegate.swift */,
+				CE9CDE536DF28CEBDFAE72BD /* AppModel.swift */,
+				0617CA4D1CDF7AF8C295980E /* AppSettings.swift */,
+				50161936BCE20A7A719CBC38 /* GlyphfinderApp.swift */,
+				1B594F21F9F6B19E17F0D9C0 /* GlyphfinderIntents.swift */,
 			);
 			name = App;
 			path = App;
 			sourceTree = "<group>";
 		};
+		D0E93096BCC0E80BC396F622 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				DFBABFABD931AFE22C20052D /* README.md */,
+				EC639AF9B0DA380FA44A31AB /* PLAN.md */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		F4B49F64B505321529601410 /* Glyphfinder */ = {
+			isa = PBXGroup;
+			children = (
+				D01605B82040EF071DF28BE0 /* App */,
+				93DEAFFB11A97BB77D5D3FDF /* Services */,
+				54AB2B03EB3AC9824C354C5D /* Views */,
+				8483C50CA44D8184F0DA1B40 /* Resources */,
+				6F7606F709CAFBA304D3A8FD /* Configuration */,
+			);
+			name = Glyphfinder;
+			path = Glyphfinder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02F2A5E859B7F146FD1E9FB1 /* Glyphfinder */ = {
+		03AA1A2BA61228C8E4B62F70 /* Glyphfinder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27B6B0A378254F3C7DEB7B88 /* Build configuration list for PBXNativeTarget "Glyphfinder" */;
+			buildConfigurationList = E355ACFF138362ACDBB56AC0 /* Build configuration list for PBXNativeTarget "Glyphfinder" */;
 			buildPhases = (
-				A54579066E8B1BA92CB7C664 /* Sources */,
-				665E67D1CEA366A7C9BFB3D6 /* Frameworks */,
-				61E7078F39C1FE87FBE855CF /* Resources */,
+				BD3A0B125394D6BC8036E411 /* Sources */,
+				64B5548D90CFEB98A58847A0 /* Frameworks */,
+				866C9C1D013738E1E4B124DF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -255,19 +255,19 @@
 			);
 			name = Glyphfinder;
 			productName = Glyphfinder;
-			productReference = 56AB73715EA7CE04D34CD1F4 /* Glyphfinder.app */;
+			productReference = 7879FF3F04EF2C6473EBB98F /* Glyphfinder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9E952BF730243D24938D9117 /* Project object */ = {
+		7A627511DF31915BE6EB412D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 			};
-			buildConfigurationList = AF412A371D5FB22089C96F08 /* Build configuration list for PBXProject "Glyphfinder" */;
+			buildConfigurationList = 130020917B41BD99D12B0102 /* Build configuration list for PBXProject "Glyphfinder" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -277,220 +277,70 @@
 				nl,
 				de,
 			);
-			mainGroup = 1F200FCAFA8BCE0D675DC5BE;
+			mainGroup = 1511F14CBD8578C1654B1E0C;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 100;
-			productRefGroup = 055C5BAEFC6984C0366B3920 /* Products */;
+			productRefGroup = 043FB242DA4FDC788E8C1D95 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02F2A5E859B7F146FD1E9FB1 /* Glyphfinder */,
+				03AA1A2BA61228C8E4B62F70 /* Glyphfinder */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		61E7078F39C1FE87FBE855CF /* Resources */ = {
+		866C9C1D013738E1E4B124DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D52DFF568274C66A3448F3 /* Assets.xcassets in Resources */,
-				6D827246A6C3F047C4914A01 /* Localizable.xcstrings in Resources */,
-				7D3B3067AD6411380454874C /* PrivacyInfo.xcprivacy in Resources */,
-				0A79A76B993F401860B4B88C /* characters.json in Resources */,
+				CB44885203802C2615EAFD84 /* Assets.xcassets in Resources */,
+				D6FF778FC00789ACA26BF61A /* Localizable.xcstrings in Resources */,
+				7799954B10D94EFBCEE52688 /* PrivacyInfo.xcprivacy in Resources */,
+				CFF6AC90A8D6F440B4F4A7ED /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A54579066E8B1BA92CB7C664 /* Sources */ = {
+		BD3A0B125394D6BC8036E411 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A29AE2E3B73641B787B8960 /* AppCommands.swift in Sources */,
-				29E8EDA7DC2FFDAFF3B91D15 /* AppDelegate.swift in Sources */,
-				A3A82E6B14D0CFD0A82EEE31 /* AppModel.swift in Sources */,
-				734B027A2EB9D26F8ECCCBC4 /* AppSettings.swift in Sources */,
-				295017391BE719A8B0E65582 /* GlyphfinderApp.swift in Sources */,
-				BF823F6DD3B9CDCED0CB7C41 /* GlyphfinderIntents.swift in Sources */,
-				46FF124D4D975E7F88D6F2CD /* GlobalHotKey.swift in Sources */,
-				D97231747F3B909F41B779AF /* Inserter.swift in Sources */,
-				38B47EC71BB9BF400667E3E6 /* KeyboardService.swift in Sources */,
-				B1D71232DFCDD2F247F07957 /* StatusItemController.swift in Sources */,
-				70DC27A8C03F70CF144AD43A /* CharacterGridView.swift in Sources */,
-				6113F55C4C65BA019A706716 /* ChromelessWindow.swift in Sources */,
-				E1A7D162606572E6BB7F77BD /* DetailView.swift in Sources */,
-				AA40A9B9A323441CCBEEB2AC /* MainView.swift in Sources */,
-				924BE73DE161858F7BD7EFF1 /* QuickLookupView.swift in Sources */,
-				B7472F04254532D49A6EF7D9 /* SettingsView.swift in Sources */,
-				1880623BF4547D970A46225C /* SidebarView.swift in Sources */,
-				E0D8FE69A2E6C0DBFA9C9A3B /* ToastView.swift in Sources */,
-				244C6A1CFB8BA653F8D0E752 /* CharacterDatabase.swift in Sources */,
-				2542CDD091053BD1E09864FF /* CharacterInfo.swift in Sources */,
-				AE72A0E74AE2FAF741F1DCBD /* CharacterRecord.swift in Sources */,
-				D08973A8B0852560369BBBD6 /* CodeFormats.swift in Sources */,
-				5BA818B940A1DDB5ABCEB381 /* GlyphInspector.swift in Sources */,
-				A6B020624F2F3AF324891398 /* KeyboardMapper.swift in Sources */,
-				F50FB9C7B7DBE96D7F564A95 /* SearchEngine.swift in Sources */,
-				249638654FA425152D2E5A86 /* SystemKeyboardLayout.swift in Sources */,
+				09D85C416DFD40D8D8AFE47F /* AppCommands.swift in Sources */,
+				69BDC1F0C1995664010ED168 /* AppDelegate.swift in Sources */,
+				EC7DDFCE92EDD30965304752 /* AppModel.swift in Sources */,
+				C483BF061A557F5A96DEE46C /* AppSettings.swift in Sources */,
+				C041F7376E88A03AC4D047BF /* GlyphfinderApp.swift in Sources */,
+				E3AC7E14A138B1C46C7E141D /* GlyphfinderIntents.swift in Sources */,
+				A22BD8ACBBB6E55F98701649 /* GlobalHotKey.swift in Sources */,
+				CD10EB643F8A53D13F96CC86 /* Inserter.swift in Sources */,
+				69B70F38237699E7BB483DE2 /* KeyboardService.swift in Sources */,
+				535154B29C479D25801C17A2 /* StatusItemController.swift in Sources */,
+				F6BB78FE0721276100341B3E /* CharacterGridView.swift in Sources */,
+				1FF5607E2CD35A97E5073D7F /* ChromelessWindow.swift in Sources */,
+				2FAE930E700EEA0F57C278DD /* DetailView.swift in Sources */,
+				C4C6C909251EB02014B67940 /* MainView.swift in Sources */,
+				5D045B8A482C5D209720486A /* QuickLookupView.swift in Sources */,
+				43A90BCE6684A7AC2F582365 /* SettingsView.swift in Sources */,
+				974A37763D657AA9E99D1474 /* SidebarView.swift in Sources */,
+				6E771EDED534F6390C5C2A57 /* ToastView.swift in Sources */,
+				BFCDA2ECCA9D4641DAE688C4 /* CharacterDatabase.swift in Sources */,
+				844D9C67A00FDDB90994A0C3 /* CharacterInfo.swift in Sources */,
+				C968A52D30DE96D9FD7A985C /* CharacterRecord.swift in Sources */,
+				84C01DA4979039854A8D2BE5 /* CodeFormats.swift in Sources */,
+				065C59A10E72678572E9322B /* GlyphInspector.swift in Sources */,
+				8505A0A27836D6F6D1089373 /* KeyboardMapper.swift in Sources */,
+				FF3DBECEA7A42251D1062724 /* SearchEngine.swift in Sources */,
+				FE91B4F9FB4C25EEED123F1C /* SystemKeyboardLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		39FCAD758593FB273881583C /* Release-Direct */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Glyphfinder/Glyphfinder-Direct.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Glyphfinder/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Glyphfinder;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.milanelsen.glyphfinder;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DIRECT_DISTRIBUTION $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = "Release-Direct";
-		};
-		4469E7F870E966B059CB69AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Glyphfinder/Glyphfinder.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Glyphfinder/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Glyphfinder;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.milanelsen.glyphfinder;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		9A66528F1222C51D68B23204 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Glyphfinder/Glyphfinder.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Glyphfinder/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Glyphfinder;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.milanelsen.glyphfinder;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		C80F43E8B1F1C57385C66107 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		CA0926BCAAB886E6B230EFE0 /* Debug */ = {
+		139C0C7D63A08B7E99BBFB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -555,7 +405,7 @@
 			};
 			name = Debug;
 		};
-		F95B44F0B05DE269028DD6AE /* Release-Direct */ = {
+		461930E8270E6D71668AB2EA /* Release-Direct */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -613,30 +463,180 @@
 			};
 			name = "Release-Direct";
 		};
+		AC2002FD65A6AF4A4FA521C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C3BC0F13BA197AA63E0C4BC9 /* Release-Direct */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Glyphfinder/Glyphfinder-Direct.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Glyphfinder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Glyphfinder;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milanelsen.glyphfinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DIRECT_DISTRIBUTION $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = "Release-Direct";
+		};
+		F6B8BDE8D4AD8BD979D82F7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Glyphfinder/Glyphfinder.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Glyphfinder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Glyphfinder;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milanelsen.glyphfinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FB83D847621F9075E639CA8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Glyphfinder/Glyphfinder.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Glyphfinder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Glyphfinder;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.milanelsen.glyphfinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27B6B0A378254F3C7DEB7B88 /* Build configuration list for PBXNativeTarget "Glyphfinder" */ = {
+		130020917B41BD99D12B0102 /* Build configuration list for PBXProject "Glyphfinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4469E7F870E966B059CB69AB /* Release */,
-				9A66528F1222C51D68B23204 /* Debug */,
-				39FCAD758593FB273881583C /* Release-Direct */,
+				139C0C7D63A08B7E99BBFB8B /* Debug */,
+				AC2002FD65A6AF4A4FA521C6 /* Release */,
+				461930E8270E6D71668AB2EA /* Release-Direct */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF412A371D5FB22089C96F08 /* Build configuration list for PBXProject "Glyphfinder" */ = {
+		E355ACFF138362ACDBB56AC0 /* Build configuration list for PBXNativeTarget "Glyphfinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CA0926BCAAB886E6B230EFE0 /* Debug */,
-				C80F43E8B1F1C57385C66107 /* Release */,
-				F95B44F0B05DE269028DD6AE /* Release-Direct */,
+				FB83D847621F9075E639CA8D /* Release */,
+				F6B8BDE8D4AD8BD979D82F7D /* Debug */,
+				C3BC0F13BA197AA63E0C4BC9 /* Release-Direct */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9E952BF730243D24938D9117 /* Project object */;
+	rootObject = 7A627511DF31915BE6EB412D /* Project object */;
 }

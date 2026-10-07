@@ -5,5 +5,8 @@
 	<!-- Mac App Store build: fully sandboxed. No network, no file access, no Accessibility. -->
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
+	<!-- "Open Font…": read the font file the user picks in the Open dialog (or drops on the window). -->
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true/>
 </dict>
 </plist>

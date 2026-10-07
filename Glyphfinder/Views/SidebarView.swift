@@ -26,6 +26,16 @@ struct SidebarView: View {
                     .tag(SidebarItem.recents)
             }
 
+            if let font = model.customFont {
+                Section("Opened Font") {
+                    Label(font.displayName, systemImage: "textformat")
+                        .tag(SidebarItem.customFont)
+                        .contextMenu {
+                            Button("Close Font") { model.closeFont() }
+                        }
+                }
+            }
+
             if let database = model.database {
                 Section("Collections") {
                     ForEach(database.collections) { collection in

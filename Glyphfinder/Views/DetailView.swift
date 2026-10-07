@@ -46,6 +46,14 @@ private struct DetailContent: View {
             VStack(spacing: 10) {
                 GlyphPreview(record: record)
                     .frame(maxWidth: .infinity)
+                if let font = model.customFont, !font.contains(record.scalar), !CharacterInfo.isInvisible(record) || CharacterInfo.isSpace(record) {
+                    Label("Not in “\(font.displayName)”. Showing the fallback font.", systemImage: "exclamationmark.triangle")
+                        .font(.callout)
+                        .multilineTextAlignment(.leading)
+                        .padding(8)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background { MissingGlyphBox() }
+                }
                 Text(record.titleCasedName)
                     .font(.title3.weight(.semibold))
                     .multilineTextAlignment(.center)
@@ -158,8 +166,10 @@ private struct DetailContent: View {
 
 // MARK: - Preview
 
-/// Large preview. Visible characters are drawn in the chosen font; invisible ones as an em box with a ruler.
+/// Large preview. Visible characters are drawn in the opened font file (or the font chosen in Settings); blank ones as
+/// an em box with a ruler.
 struct GlyphPreview: View {
+    @Environment(AppModel.self) private var model
     @AppStorage(SettingsKey.previewFont) private var fontName = ""
     let record: CharacterRecord
 
@@ -167,11 +177,16 @@ struct GlyphPreview: View {
         if CharacterInfo.isInvisible(record) {
             InvisibleGlyphView(record: record, fontName: fontName)
         } else {
+            let custom = model.customFont
+            let missing = custom.map { !$0.contains(record.scalar) } ?? false
             Text(CharacterInfo.displayString(for: record))
-                .font(GlyphView.font(named: fontName, size: 96))
+                .font(GlyphView.font(custom: custom, missing: missing, fontName: fontName, size: 96))
                 .minimumScaleFactor(0.3)
                 .lineLimit(1)
+                .opacity(missing ? GlyphView.missingOpacity : 1)
+                .frame(maxWidth: .infinity)
                 .frame(height: 130)
+                .background { if missing { MissingGlyphBox() } }
                 .textSelection(.enabled)
                 .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
         }
@@ -181,6 +196,7 @@ struct GlyphPreview: View {
 /// Shows how wide a "blank" character is: the dashed square is 1 em; the filled bar is the character's advance.
 /// A thin space, a hair space and a no-break space look identical in text but not here.
 struct InvisibleGlyphView: View {
+    @Environment(AppModel.self) private var model
     let record: CharacterRecord
     let fontName: String
     @State private var advance: CGFloat?
@@ -216,13 +232,25 @@ struct InvisibleGlyphView: View {
                 .foregroundStyle(.secondary)
                 .monospacedDigit()
         }
-        .task(id: fontName) {
-            advance = GlyphInspector.advanceEm(of: record.scalar, fontName: fontName)
+        .padding(missing ? 8 : 0)
+        .background { if missing { MissingGlyphBox() } }
+        .task(id: "\(fontName)-\(model.customFont?.id.uuidString ?? "")") {
+            if let font = model.customFont, font.contains(record.scalar) {
+                advance = AdvanceCache.shared.advanceEm(of: record.scalar, font: font)
+            } else {
+                advance = AdvanceCache.shared.advanceEm(of: record.scalar, fontName: fontName)
+            }
             measured = true
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
         .accessibilityValue(widthDescription)
+    }
+
+    /// The opened font has no glyph for this character, so the width shown is the fallback font's.
+    private var missing: Bool {
+        guard let font = model.customFont else { return false }
+        return !font.contains(record.scalar) && CharacterInfo.isSpace(record)
     }
 
     private var widthDescription: String {
@@ -342,17 +370,26 @@ struct SequenceView: View {
 
 /// Stylistic alternates for the character in the chosen font, and which installed fonts can draw it at all.
 private struct FontSection: View {
+    @Environment(AppModel.self) private var model
     @AppStorage(SettingsKey.previewFont) private var fontName = ""
     let record: CharacterRecord
 
     @State private var alternates: [GlyphAlternate] = []
     @State private var families: [String]?
 
+    /// True when a font file is open and has no glyph for this character.
+    private var missingInOpenedFont: Bool {
+        guard let font = model.customFont else { return false }
+        return !font.contains(record.scalar)
+    }
+
     var body: some View {
         if !CharacterInfo.isInvisible(record) {
             Section("Font Alternates") {
                 if alternates.isEmpty {
-                    Text("This font has no alternate forms of this character.")
+                    Text(missingInOpenedFont
+                         ? LocalizedStringKey("This character is not in the opened font.")
+                         : LocalizedStringKey("This font has no alternate forms of this character."))
                         .font(.callout)
                         .foregroundStyle(.secondary)
                 } else {
@@ -378,11 +415,15 @@ private struct FontSection: View {
                     }
                 }
             }
-            .task(id: "\(record.codePoint)-\(fontName)") {
+            .task(id: "\(record.codePoint)-\(fontName)-\(model.customFont?.id.uuidString ?? "")") {
                 let scalar = record.scalar
-                let font = fontName
-                alternates = await Task.detached(priority: .utility) {
-                    GlyphInspector.alternates(for: scalar, fontName: font)
+                let installedName = fontName
+                let opened = model.customFont
+                alternates = await Task.detached(priority: .utility) { () -> [GlyphAlternate] in
+                    if let opened {
+                        return opened.contains(scalar) ? GlyphInspector.alternates(for: scalar, base: opened.ctFont(size: 48)) : []
+                    }
+                    return GlyphInspector.alternates(for: scalar, fontName: installedName)
                 }.value
             }
         }

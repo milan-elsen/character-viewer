@@ -89,6 +89,24 @@ jobs:
           osascript -e 'tell application "System Events" to keystroke "," using command down' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/7-settings.png
 
+          say "open a font file: relaunch with GLYPHFINDER_OPEN_FONT (a path inside the sandbox container)"
+          osascript -e 'tell application "Glyphfinder" to quit' 2>&1 | tee -a out/log.txt; sleep 4
+          CONTAINER="$HOME/Library/Containers/com.milanelsen.glyphfinder/Data"
+          FONT="/System/Library/Fonts/Supplemental/Courier New.ttf"
+          [ -f "$FONT" ] || FONT=$(find /System/Library/Fonts -name "*.ttf" | head -1)
+          echo "font: $FONT" | tee -a out/log.txt
+          mkdir -p "$CONTAINER/tmp" && cp "$FONT" "$CONTAINER/tmp/test.ttf" 2>&1 | tee -a out/log.txt
+          open -n --env GLYPHFINDER_OPEN_FONT="$CONTAINER/tmp/test.ttf" "$APP"; sleep 12
+          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 2
+          screencapture -x out/13-font-view.png
+          osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "arrow"' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/14-font-missing-arrows.png
+          osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to keystroke "space"' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/15-font-spaces.png
+          pgrep -lx Glyphfinder | tee -a out/log.txt || say "NOT RUNNING after opening a font"
+
           say "still running?"
           pgrep -lx Glyphfinder | tee -a out/log.txt || say "NOT RUNNING at end"
 

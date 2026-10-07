@@ -86,7 +86,11 @@ struct CharacterCell: View {
     private var fillColor: Color { isSelected ? Color.accentColor.opacity(0.22) : Color.clear }
     private var borderColor: Color { isSelected ? Color.accentColor : Color.clear }
     private var traits: AccessibilityTraits { isSelected ? [.isButton, .isSelected] : [.isButton] }
-    private var helpText: String { record.titleCasedName + "  " + CodeFormats.codePoint(record.codePoint) }
+    private var helpText: String {
+        let base = record.titleCasedName + "  " + CodeFormats.codePoint(record.codePoint)
+        guard let font = model.customFont, !font.contains(record.scalar), !CharacterInfo.isInvisible(record) || CharacterInfo.isSpace(record) else { return base }
+        return base + " — " + String(localized: "Not in the opened font")
+    }
 
     var body: some View {
         content
@@ -119,21 +123,35 @@ struct CharacterCell: View {
     }
 }
 
-/// The glyph itself. Invisible characters (spaces, joiners ...) get a dashed box with an abbreviation, so that a
-/// grid of "nothing" is still readable.
+/// The glyph itself. Spaces get two dotted lines showing their width, other invisibles a dashed box, and everything
+/// else is drawn as text. While a font file is open the glyph is drawn with it; characters the font lacks are drawn with
+/// the current font at reduced opacity on a yellow-tinted box, so a missing glyph can never pass for a real one.
 struct GlyphView: View {
+    @Environment(AppModel.self) private var model
+
     let record: CharacterRecord
     let pointSize: CGFloat
     var fontName: String = ""
 
     var body: some View {
+        let custom = model.customFont
+        let missing = custom.map { !$0.contains(record.scalar) } ?? false
+        glyph(custom: custom, missing: missing)
+    }
+
+    @ViewBuilder
+    private func glyph(custom: LoadedFont?, missing: Bool) -> some View {
         if CharacterInfo.isSpace(record) {
-            // Spaces: two dotted lines show how wide the space is.
+            // Spaces: two dotted lines show how wide the space is (in the opened font, when it has the space).
+            let advance = advance(custom: custom, missing: missing)
             InvisibleWidthMark(
                 label: CharacterInfo.shortLabel(for: record),
-                advance: AdvanceCache.shared.advanceEm(of: record.scalar, fontName: fontName),
+                advance: advance,
                 pointSize: pointSize
             )
+            .opacity(missing ? Self.missingOpacity : 1)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background { if missing { MissingGlyphBox() } }
         } else if CharacterInfo.isInvisible(record) {
             // Other invisibles (joiners, marks, fillers, controls): a dashed box with an abbreviation.
             RoundedRectangle(cornerRadius: 4)
@@ -149,14 +167,44 @@ struct GlyphView: View {
                 }
         } else {
             Text(CharacterInfo.displayString(for: record))
-                .font(Self.font(named: fontName, size: pointSize))
+                .font(Self.font(custom: custom, missing: missing, fontName: fontName, size: pointSize))
                 .minimumScaleFactor(0.4)
                 .lineLimit(1)
+                .opacity(missing ? Self.missingOpacity : 1)
+                .padding(.horizontal, 4)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background { if missing { MissingGlyphBox() } }
         }
     }
 
+    private func advance(custom: LoadedFont?, missing: Bool) -> CGFloat? {
+        if let custom, !missing { return AdvanceCache.shared.advanceEm(of: record.scalar, font: custom) }
+        return AdvanceCache.shared.advanceEm(of: record.scalar, fontName: fontName)
+    }
+
+    /// How faint a fallback glyph is drawn.
+    static let missingOpacity = 0.4
+
     static func font(named name: String, size: CGFloat) -> Font {
         name.isEmpty ? .system(size: size) : .custom(name, size: size)
+    }
+
+    /// The opened font when it has the glyph; otherwise the font chosen in Settings (or the system font).
+    static func font(custom: LoadedFont?, missing: Bool, fontName: String, size: CGFloat) -> Font {
+        if let custom, !missing { return Font(custom.ctFont(size: size)) }
+        return font(named: fontName, size: size)
+    }
+}
+
+/// Yellow-tinted box behind a glyph that the opened font does not contain.
+struct MissingGlyphBox: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 8, style: .continuous)
+            .fill(Color.yellow.opacity(0.25))
+            .overlay {
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .strokeBorder(Color.yellow.opacity(0.7), lineWidth: 1)
+            }
     }
 }
 

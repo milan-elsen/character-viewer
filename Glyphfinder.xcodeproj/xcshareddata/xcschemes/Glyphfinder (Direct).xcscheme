@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02F2A5E859B7F146FD1E9FB1"
+               BlueprintIdentifier = "03AA1A2BA61228C8E4B62F70"
                BuildableName = "Glyphfinder.app"
                BlueprintName = "Glyphfinder"
                ReferencedContainer = "container:Glyphfinder.xcodeproj">
@@ -30,7 +30,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02F2A5E859B7F146FD1E9FB1"
+            BlueprintIdentifier = "03AA1A2BA61228C8E4B62F70"
             BuildableName = "Glyphfinder.app"
             BlueprintName = "Glyphfinder"
             ReferencedContainer = "container:Glyphfinder.xcodeproj">
@@ -53,7 +53,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02F2A5E859B7F146FD1E9FB1"
+            BlueprintIdentifier = "03AA1A2BA61228C8E4B62F70"
             BuildableName = "Glyphfinder.app"
             BlueprintName = "Glyphfinder"
             ReferencedContainer = "container:Glyphfinder.xcodeproj">
@@ -70,7 +70,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02F2A5E859B7F146FD1E9FB1"
+            BlueprintIdentifier = "03AA1A2BA61228C8E4B62F70"
             BuildableName = "Glyphfinder.app"
             BlueprintName = "Glyphfinder"
             ReferencedContainer = "container:Glyphfinder.xcodeproj">

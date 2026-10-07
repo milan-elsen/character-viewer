@@ -27,9 +27,12 @@ enum SidebarItem: Hashable {
     case recents
     case collection(String)
     case block(Int)
+    /// Every visible character the opened font file contains.
+    case customFont
 
     var storageString: String {
         switch self {
+        case .customFont: return "font"
         case .all: return "all"
         case .favorites: return "favorites"
         case .recents: return "recents"
@@ -43,6 +46,7 @@ enum SidebarItem: Hashable {
         case "all": self = .all
         case "favorites": self = .favorites
         case "recents": self = .recents
+        case "font": return nil   // an opened font is never restored: it lives for one session
         default:
             if storageString.hasPrefix("collection:") {
                 self = .collection(String(storageString.dropFirst("collection:".count)))
@@ -110,6 +114,12 @@ final class AppModel {
     private(set) var recents: [UInt32]
     private(set) var toast: Toast?
 
+    /// A font opened from a file. While set, every glyph is drawn with it (falling back, with a warning, for
+    /// characters it lacks).
+    private(set) var customFont: LoadedFont?
+    /// Shows the "Open Font" file dialog (File menu, toolbar and ⌘O all set this).
+    var showFontImporter = false
+
     let keyboard = KeyboardService()
 
     // Window plumbing -----------------------------------------------------------------------------------------------
@@ -135,6 +145,15 @@ final class AppModel {
     /// Loads the database off the main thread.
     func start() {
         guard database == nil else { return }
+        #if DEBUG
+        // Lets automated UI tests open a font without driving the file dialog.
+        if let path = ProcessInfo.processInfo.environment["GLYPHFINDER_OPEN_FONT"] {
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(2))
+                AppModel.shared.openFont(at: URL(fileURLWithPath: path))
+            }
+        }
+        #endif
         Task.detached(priority: .userInitiated) {
             let result = Catalog.shared
             await MainActor.run { AppModel.shared.finishLoading(result) }
@@ -215,6 +234,15 @@ final class AppModel {
             results = database.collection(id: id).map { database.records(in: $0).map(\.codePoint) } ?? []
         case .block(let index):
             results = database.records(inBlock: index).filter { $0.category != "Cc" }.map(\.codePoint)
+        case .customFont:
+            // "All visible characters in the font": skip spaces, joiners and other characters that draw nothing.
+            if let font = customFont {
+                results = database.records
+                    .filter { $0.category != "Cc" && !CharacterInfo.isInvisible($0) && font.contains($0.scalar) }
+                    .map(\.codePoint)
+            } else {
+                results = []
+            }
         }
     }
 
@@ -237,12 +265,35 @@ final class AppModel {
         case .recents: return String(localized: "Recents")
         case .collection(let id): return Self.collectionTitle(id)
         case .block(let index): return database?.blockNames[index] ?? ""
+        case .customFont: return customFont?.displayName ?? ""
         }
     }
 
     var subtitle: String {
         guard case .ready = loadState else { return "" }
         return String(localized: "\(results.count) characters")
+    }
+
+    // MARK: Opened font
+
+    /// Reads a font file into memory and starts using it for every glyph. The file is not installed.
+    func openFont(at url: URL) {
+        let scoped = url.startAccessingSecurityScopedResource()
+        defer { if scoped { url.stopAccessingSecurityScopedResource() } }
+        do {
+            let font = try LoadedFont(data: Data(contentsOf: url))
+            customFont = font
+            sidebar = .customFont
+            refreshResults()   // also when the font view was already showing another font
+            announce(String(localized: "Opened font “\(font.displayName)”"))
+        } catch {
+            announce(error.localizedDescription)
+        }
+    }
+
+    func closeFont() {
+        customFont = nil
+        if sidebar == .customFont { sidebar = .all } else { refreshResults() }
     }
 
     // MARK: Favorites and recents

@@ -28,6 +28,13 @@ struct AppCommands: Commands {
         CommandGroup(replacing: .newItem) {
             Button("Quick Lookup") { model.showQuickLookup() }
                 .keyboardShortcut("l", modifiers: [.command, .option])
+
+            Divider()
+
+            Button("Open Font…") { model.showFontImporter = true }
+                .keyboardShortcut("o", modifiers: .command)
+            Button("Close Font") { model.closeFont() }
+                .disabled(model.customFont == nil)
         }
 
         CommandGroup(after: .textEditing) {

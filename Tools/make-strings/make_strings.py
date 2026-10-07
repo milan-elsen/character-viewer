@@ -100,6 +100,17 @@ T = {
     "Quit Glyphfinder": ("Stop Glyphfinder", "Glyphfinder beenden"),
     # Commands
     "Character": ("Teken", "Zeichen"),
+    "Open Font…": ("Open lettertype…", "Schrift öffnen …"),
+    "Close Font": ("Sluit lettertype", "Schrift schließen"),
+    "Opened Font": ("Geopend lettertype", "Geöffnete Schrift"),
+    "Opened font “%@”": ("Lettertype “%@” geopend", "Schrift „%@“ geöffnet"),
+    "Not in “%@”. Showing the fallback font.": (
+        "Niet in “%@”. Het reservelettertype wordt getoond.", "Nicht in „%@“. Die Ersatzschrift wird angezeigt."),
+    "Not in the opened font": ("Niet in het geopende lettertype", "Nicht in der geöffneten Schrift"),
+    "This character is not in the opened font.": (
+        "Dit teken zit niet in het geopende lettertype.", "Dieses Zeichen ist nicht in der geöffneten Schrift enthalten."),
+    "This file is not a font that macOS can read.": (
+        "Dit bestand is geen lettertype dat macOS kan lezen.", "Diese Datei ist keine Schrift, die macOS lesen kann."),
     "Find…": ("Zoek…", "Suchen …"),
     "Copy Code Point": ("Kopieer codepunt", "Codepunkt kopieren"),
     "Copy HTML Entity": ("Kopieer HTML-entiteit", "HTML-Entität kopieren"),

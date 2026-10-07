@@ -1,4 +1,5 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 /// The main window: sidebar (library, collections, blocks), results grid, and an inspector for the selection.
 struct MainView: View {
@@ -37,6 +38,20 @@ struct MainView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
+                Button {
+                    model.showFontImporter = true
+                } label: {
+                    Label("Open Font…", systemImage: "textformat")
+                }
+                .help("Open Font…")
+                if model.customFont != nil {
+                    Button {
+                        model.closeFont()
+                    } label: {
+                        Label("Close Font", systemImage: "xmark.circle")
+                    }
+                    .help("Close Font")
+                }
                 if let record = model.selectedRecord {
                     Button {
                         model.copy(record)
@@ -52,6 +67,19 @@ struct MainView: View {
                 }
                 .help("Show or Hide Inspector")
             }
+        }
+        .fileImporter(isPresented: $model.showFontImporter, allowedContentTypes: [.font], allowsMultipleSelection: false) { result in
+            switch result {
+            case .success(let urls):
+                if let url = urls.first { model.openFont(at: url) }
+            case .failure(let error):
+                model.announce(error.localizedDescription)
+            }
+        }
+        .dropDestination(for: URL.self) { urls, _ in
+            guard let url = urls.first else { return false }
+            model.openFont(at: url)
+            return true
         }
         .toast(model.toast)
         .focusedSceneValue(\.selectedCharacter, model.selectedRecord)
