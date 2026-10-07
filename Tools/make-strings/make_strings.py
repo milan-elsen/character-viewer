@@ -89,6 +89,7 @@ T = {
     "No characters found": ("Geen tekens gevonden", "Keine Zeichen gefunden"),
     "Clear": ("Wis", "Löschen"),
     "Pick 1–9": ("Kies 1–9", "Wähle 1–9"),
+    "Pick ⌘1–9": ("Kies ⌘1–9", "Wähle ⌘1–9"),
     "Close": ("Sluit", "Schließen"),
     "Recent": ("Recent", "Zuletzt"),
     # Menu bar

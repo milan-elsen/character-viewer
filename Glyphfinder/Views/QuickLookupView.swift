@@ -114,10 +114,10 @@ struct QuickLookupView: View {
 
     private var footer: some View {
         HStack(spacing: 14) {
-            Label("Copy", systemImage: "return")
-            Label("Open in App", systemImage: "arrow.up.forward.app")
-            Label("Pick 1–9", systemImage: "command")
-            Label("Close", systemImage: "escape")
+            FooterAction(title: "Copy", keys: "↩") { choose(selectedIndex) }
+            FooterAction(title: "Open in App", keys: "⌘↩") { openInApp(selectedIndex) }
+            Text("Pick ⌘1–9")
+            FooterAction(title: "Close", keys: "esc") { model.closeQuickLookup(returnToPreviousApp: true) }
             Spacer()
             if query.isEmpty, !results.isEmpty {
                 Text("Recent")
@@ -126,7 +126,6 @@ struct QuickLookupView: View {
                 Text(model.keyboard.layoutName)
             }
         }
-        .labelStyle(.titleAndIcon)
         .font(.caption)
         .foregroundStyle(.secondary)
         .padding(.horizontal, 16)
@@ -181,6 +180,29 @@ struct QuickLookupView: View {
     private func choose(_ index: Int) {
         guard results.indices.contains(index) else { return }
         model.finishQuickLookup(with: results[index])
+    }
+}
+
+/// A footer hint that can also be clicked.
+private struct FooterAction: View {
+    let title: LocalizedStringKey
+    let keys: String
+    let action: () -> Void
+    @State private var hovering = false
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 4) {
+                Text(title)
+                Text(keys).monospaced()
+            }
+            .padding(.horizontal, 6)
+            .padding(.vertical, 2)
+            .background(hovering ? Color.primary.opacity(0.1) : .clear, in: .rect(cornerRadius: 5))
+            .contentShape(.rect)
+        }
+        .buttonStyle(.plain)
+        .onHover { hovering = $0 }
     }
 }
 
