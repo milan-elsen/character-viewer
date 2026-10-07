@@ -48,7 +48,7 @@ final class StatusItemController: NSObject {
     private static func makeIcon() -> NSImage {
         let image = NSImage(size: NSSize(width: 18, height: 18), flipped: false) { _ in
             guard let context = NSGraphicsContext.current?.cgContext else { return false }
-            let font = NSFont.systemFont(ofSize: 9, weight: .bold)
+            let font = NSFont.systemFont(ofSize: 10.5, weight: .bold)
             context.setFillColor(NSColor.black.cgColor)
 
             /// Draws `letter` so that the centre of its ink (not of its line box) sits at `center`.
@@ -60,9 +60,9 @@ final class StatusItemController: NSObject {
                 CTLineDraw(line, context)
             }
 
-            draw("a", at: CGPoint(x: 9.0, y: 12.4))
-            draw("b", at: CGPoint(x: 4.3, y: 4.8))
-            draw("c", at: CGPoint(x: 13.7, y: 4.8))
+            draw("a", at: CGPoint(x: 9.0, y: 12.9))
+            draw("b", at: CGPoint(x: 4.0, y: 4.9))
+            draw("c", at: CGPoint(x: 14.0, y: 4.9))
             return true
         }
         image.isTemplate = true
