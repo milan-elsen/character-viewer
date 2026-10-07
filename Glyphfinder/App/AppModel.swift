@@ -422,6 +422,8 @@ final class AppModel {
     }
 
     func showMainWindow() {
+        // The floating Quick Lookup would sit on top of the window that is about to open.
+        if quickLookupVisible { closeQuickLookup(returnToPreviousApp: false) }
         // Opening the window on purpose: bring the Dock icon back first. (From a menu-bar-only state the new window
         // may not become the "main" window, so the window notifications alone cannot be relied on.)
         setMainWindowOpen(true)

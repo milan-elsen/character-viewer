@@ -133,6 +133,15 @@ jobs:
           osascript -e 'tell application "System Events" to key code 36 using {command down}' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/16-open-in-app.png
 
+          say "Open Glyphfinder from the menu bar menu closes Quick Lookup"
+          osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
+          echo "windows with Quick Lookup open: $(osascript -e 'tell application "System Events" to count windows of process "Glyphfinder"' 2>&1)" | tee -a out/log.txt
+          screencapture -x out/16b-quick-open-before-menu.png
+          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 2
+          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu item "Open Glyphfinder" of menu 1 of menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 3
+          echo "windows after choosing Open Glyphfinder (expect one fewer): $(osascript -e 'tell application "System Events" to count windows of process "Glyphfinder"' 2>&1)" | tee -a out/log.txt
+          screencapture -x out/16c-after-open-from-menu.png
+
           say "Dock icon follows the main window when Always show in Dock is off"
           osascript -e 'tell application "Glyphfinder" to quit' 2>&1 | tee -a out/log.txt; sleep 4
           open -n "$APP" --args -showInDock NO; sleep 10
