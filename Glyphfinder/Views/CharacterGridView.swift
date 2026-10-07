@@ -1,3 +1,5 @@
+import SwiftUI
+
 /// Scrollable grid of characters, virtualized by hand.
 ///
 /// "All Characters" has over 32,000 cells. `LazyVGrid` has to estimate the size of the whole grid, and dragging the
