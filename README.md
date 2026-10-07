@@ -21,6 +21,8 @@ For each character it shows:
 |---|---|
 | ![Quick Lookup](docs/screenshots/quick-lookup-dark.png) | ![Thin space](docs/screenshots/invisible-characters.png) |
 
+![Opened font: missing glyphs are faded on yellow](docs/screenshots/opened-font.png)
+
 *(Screenshots are taken from the real app on a macOS runner by the UI smoke test, at 1024×768.)*
 
 ## Using it
