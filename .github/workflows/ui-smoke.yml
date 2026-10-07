@@ -53,6 +53,34 @@ jobs:
           say "global hotkey: control-option-space"
           osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/4-quick-open.png
+          say "drag Quick Lookup by the loupe"
+          POS=$(osascript -e 'tell application "System Events" to tell process "Glyphfinder" to get position of window 1' 2>&1)
+          SIZE=$(osascript -e 'tell application "System Events" to tell process "Glyphfinder" to get size of window 1' 2>&1)
+          echo "window position before drag: $POS  size: $SIZE" | tee -a out/log.txt
+          WX=$(echo "$POS" | cut -d, -f1 | tr -d ' '); WY=$(echo "$POS" | cut -d, -f2 | tr -d ' ')
+          cat > /tmp/drag.swift <<'EOS'
+          import CoreGraphics
+          import Foundation
+          let a = CommandLine.arguments.dropFirst().map { Double($0)! }
+          let start = CGPoint(x: a[0], y: a[1])
+          let end = CGPoint(x: a[0] + a[2], y: a[1] + a[3])
+          func post(_ type: CGEventType, _ p: CGPoint) {
+              CGEvent(mouseEventSource: nil, mouseType: type, mouseCursorPosition: p, mouseButton: .left)?.post(tap: .cghidEventTap)
+          }
+          post(.mouseMoved, start); usleep(300_000)
+          post(.leftMouseDown, start); usleep(300_000)
+          for i in 1...20 {
+              let t = Double(i) / 20
+              post(.leftMouseDragged, CGPoint(x: start.x + (end.x - start.x) * t, y: start.y + (end.y - start.y) * t))
+              usleep(40_000)
+          }
+          post(.leftMouseUp, end)
+          EOS
+          sed -i 's/^          //' /tmp/drag.swift
+          swift /tmp/drag.swift $((WX + 32)) $((WY + 28)) 160 90 2>&1 | tee -a out/log.txt; sleep 2
+          POS2=$(osascript -e 'tell application "System Events" to tell process "Glyphfinder" to get position of window 1' 2>&1)
+          echo "window position after drag:  $POS2" | tee -a out/log.txt
+          screencapture -x out/4b-quick-dragged.png
           osascript -e 'tell application "System Events" to keystroke "em dash"' 2>&1 | tee -a out/log.txt; sleep 2
           screencapture -x out/5-quick-search.png
           osascript -e 'tell application "System Events" to key code 36' 2>&1 | tee -a out/log.txt; sleep 2
@@ -133,8 +161,11 @@ jobs:
           git init -q
           git config user.name "ci"
           git config user.email "ci@users.noreply.github.com"
-          git checkout -q -b ci-artifacts
+          BRANCH=ci-artifacts
+          RUNNER="${{ inputs.runner }}"
+          if [ -n "$RUNNER" ] && [ "$RUNNER" != "macos-15" ]; then BRANCH="ci-artifacts-$RUNNER"; fi
+          git checkout -q -b "$BRANCH"
           git add .
-          git commit -q -m "UI smoke test output for ${GITHUB_SHA}"
+          git commit -q -m "UI smoke test output for ${GITHUB_SHA} on ${RUNNER:-macos-15}"
           git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-          git push -f origin ci-artifacts
+          git push -f origin "$BRANCH"
