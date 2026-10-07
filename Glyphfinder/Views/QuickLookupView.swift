@@ -33,9 +33,11 @@ struct QuickLookupView: View {
             footer
         }
         .frame(width: 640)
-        .background(.regularMaterial, in: panelShape)
-        .overlay { panelShape.strokeBorder(.separator) }
-        .clipShape(panelShape)
+        // The window has a (hidden) title bar. Newer macOS versions draw it as an empty glass strip unless the content
+        // reaches all the way to the top edge, so the panel ignores the top safe area and the material fills the whole
+        // window. The window's own shape provides the rounded corners.
+        .ignoresSafeArea(.container, edges: .top)
+        .background { Rectangle().fill(.regularMaterial).ignoresSafeArea() }
         .background { ChromelessWindow() }
         .background { hiddenShortcuts }
         .toast(model.toast)
@@ -56,9 +58,14 @@ struct QuickLookupView: View {
 
     private var searchField: some View {
         HStack(spacing: 10) {
+            // Dragging the loupe moves the window, like a title bar would.
             Image(systemName: "magnifyingglass")
                 .font(.title2)
                 .foregroundStyle(.secondary)
+                .frame(width: 32, height: 32)
+                .contentShape(Rectangle())
+                .gesture(WindowDragGesture())
+                .accessibilityHidden(true)
             TextField("Search characters", text: $query)
                 .textFieldStyle(.plain)
                 .font(.system(size: 22))
@@ -137,8 +144,6 @@ struct QuickLookupView: View {
     }
 
     // MARK: Behavior
-
-    private var panelShape: RoundedRectangle { RoundedRectangle(cornerRadius: 16, style: .continuous) }
 
     /// Runs whenever the query changes; the previous run is cancelled automatically.
     private func refreshResults() async {
