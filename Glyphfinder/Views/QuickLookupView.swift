@@ -11,6 +11,7 @@ struct QuickLookupView: View {
     @State private var query = ""
     @State private var results: [CharacterRecord] = []
     @State private var selectedIndex = 0
+    @State private var titlebarHeight = ChromelessWindow.lastMeasuredTitlebarHeight
     @FocusState private var searchFocused: Bool
 
     private let rowHeight: CGFloat = 54
@@ -33,12 +34,15 @@ struct QuickLookupView: View {
             footer
         }
         .frame(width: 640)
+        // The window reserves room for its hidden title bar below the content too; take that height back so the panel
+        // ends at the footer.
+        .padding(.bottom, -titlebarHeight)
         // The window has a (hidden) title bar. Newer macOS versions draw it as an empty glass strip unless the content
         // reaches all the way to the top edge, so the panel ignores the top safe area and the material fills the whole
         // window. The window's own shape provides the rounded corners.
         .ignoresSafeArea(.container, edges: .top)
         .background { Rectangle().fill(.regularMaterial).ignoresSafeArea() }
-        .background { ChromelessWindow() }
+        .background { ChromelessWindow(titlebarHeight: $titlebarHeight) }
         .background { hiddenShortcuts }
         .toast(model.toast)
         .onAppear {

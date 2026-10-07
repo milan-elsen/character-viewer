@@ -61,9 +61,9 @@ final class StatusItemController: NSObject {
                 CTLineDraw(line, context)
             }
 
-            draw("a", centerX: 9.0, baseline: 11.0)
-            draw("b", centerX: 4.9, baseline: 0.9)
-            draw("c", centerX: 13.4, baseline: 0.9)
+            draw("a", centerX: 9.0, baseline: 9.6)
+            draw("b", centerX: 4.9, baseline: 1.9)
+            draw("c", centerX: 13.4, baseline: 1.9)
             return true
         }
         image.isTemplate = true
