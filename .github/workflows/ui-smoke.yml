@@ -9,6 +9,10 @@ on:
         description: "macOS runner image (macos-15, macos-26 ...)"
         default: "macos-15"
         type: string
+      app_ref:
+        description: "Optional commit to build the app from (for before/after comparisons)"
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -18,6 +22,8 @@ jobs:
     runs-on: ${{ inputs.runner || 'macos-15' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.app_ref || github.sha }}
 
       - name: Build (Debug)
         run: |
@@ -133,6 +139,37 @@ jobs:
           BG() { osascript -e 'tell application "System Events" to get background only of process "Glyphfinder"' 2>&1; }
           echo "background only, main window open (expect false): $(BG)" | tee -a out/log.txt
           osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+
+          say "grid: click a cell, End, Home, Page Down, then a burst of fast scrolling"
+          swift /tmp/drag.swift 420 260 0 0 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to key code 119' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/19-grid-end.png
+          osascript -e 'tell application "System Events" to key code 115' 2>&1 | tee -a out/log.txt; sleep 2
+          screencapture -x out/20-grid-home.png
+          for i in 1 2 3 4 5 6 7 8 9 10; do osascript -e 'tell application "System Events" to key code 121' 2>&1 | tee -a out/log.txt; done; sleep 2
+          screencapture -x out/21-grid-pagedown.png
+          cat > /tmp/scroll.swift <<'EOS'
+          import CoreGraphics
+          import Foundation
+          let a = CommandLine.arguments.dropFirst().map { Int($0)! }
+          func post(_ type: CGEventType, _ p: CGPoint) {
+              CGEvent(mouseEventSource: nil, mouseType: type, mouseCursorPosition: p, mouseButton: .left)?.post(tap: .cghidEventTap)
+          }
+          post(.mouseMoved, CGPoint(x: 420, y: 300)); usleep(300_000)
+          for _ in 0..<a[0] {
+              CGEvent(scrollWheelEvent2Source: nil, units: .line, wheelCount: 1, wheel1: Int32(a[1]), wheel2: 0, wheel3: 0)?
+                  .post(tap: .cghidEventTap)
+              usleep(4_000)
+          }
+          EOS
+          swift /tmp/scroll.swift 400 -40 2>&1 | tee -a out/log.txt
+          T0=$(python3 -c 'import time;print(int(time.time()*1000))')
+          osascript -e 'tell application "System Events" to get name of front window of process "Glyphfinder"' 2>&1 | tee -a out/log.txt
+          T1=$(python3 -c 'import time;print(int(time.time()*1000))')
+          echo "app answered an accessibility query $((T1 - T0)) ms after a burst of 400 fast scroll events" | tee -a out/log.txt
+          sleep 3
+          screencapture -x out/22-after-fast-scroll.png
+
           osascript -e 'tell application "System Events" to keystroke "w" using command down' 2>&1 | tee -a out/log.txt; sleep 3
           echo "background only, main window closed (expect true): $(BG)" | tee -a out/log.txt
           screencapture -x out/17-dock-hidden.png

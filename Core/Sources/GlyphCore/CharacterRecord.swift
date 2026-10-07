@@ -27,7 +27,20 @@ struct CharacterRecord: Identifiable, Hashable, Sendable {
     /// The character as a string, ready to be copied.
     var string: String { String(Character(scalar)) }
 
-    var titleCasedName: String { name.localizedCapitalized }
+    /// "No-Break Space" for "NO-BREAK SPACE". Computed once when the record is decoded: the grid shows it in every
+    /// cell, and `localizedCapitalized` is far too slow to run on each redraw.
+    let titleCasedName: String
+
+    static func titleCase(_ name: String) -> String {
+        var out = ""
+        out.reserveCapacity(name.utf8.count)
+        var startsWord = true
+        for character in name {
+            out.append(contentsOf: startsWord ? character.uppercased() : character.lowercased())
+            startsWord = character == " " || character == "-"
+        }
+        return out
+    }
 }
 
 extension CharacterRecord: Decodable {
@@ -46,6 +59,7 @@ extension CharacterRecord: Decodable {
         keywords = try c.decode([String].self)
         related = try c.decode([UInt32].self)
         notes = try c.decode(String.self)
+        titleCasedName = Self.titleCase(name)
     }
 }
 

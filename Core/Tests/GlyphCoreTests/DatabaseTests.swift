@@ -45,6 +45,14 @@ final class DatabaseTests: XCTestCase {
         XCTAssertNil(db.record(for: 0xF900))
     }
 
+    func testTitleCasedNames() {
+        XCTAssertEqual(db.record(for: 0x00A0)?.titleCasedName, "No-Break Space")
+        XCTAssertEqual(db.record(for: 0x2009)?.titleCasedName, "Thin Space")
+        XCTAssertEqual(db.record(for: 0x00E9)?.titleCasedName, "Latin Small Letter E With Acute")
+        XCTAssertEqual(db.record(for: 0x0030)?.titleCasedName, "Digit Zero")
+        for r in db.records.prefix(2000) { XCTAssertEqual(r.titleCasedName, r.name.localizedCapitalized, r.name) }
+    }
+
     func testBlocksAndScripts() {
         let r = db.record(for: 0x2009)!
         XCTAssertEqual(db.blockName(of: r), "General Punctuation")
