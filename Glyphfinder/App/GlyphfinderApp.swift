@@ -4,7 +4,6 @@ import SwiftUI
 struct GlyphfinderApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var model = AppModel.shared
-    @AppStorage(SettingsKey.showMenuBarItem) private var showMenuBarItem = true
 
     init() {
         AppModel.shared.start()
@@ -30,11 +29,6 @@ struct GlyphfinderApp: App {
         .windowBackgroundDragBehavior(.enabled)
         .defaultLaunchBehavior(.suppressed)
         .restorationBehavior(.disabled)
-
-        MenuBarExtra("Glyphfinder", systemImage: "textformat.abc", isInserted: $showMenuBarItem) {
-            MenuBarContent()
-                .environment(model)
-        }
 
         Settings {
             SettingsView()

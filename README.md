@@ -12,7 +12,7 @@ For each character it shows:
   keys, and a fallback hint (Unicode Hex Input, Character Viewer) when the layout cannot type it;
 - **related and alternate characters** (look-alikes, composed variants, cross references) and **font alternates**
   (stylistic sets and other OpenType/AAT variants) in a font you choose;
-- for blank characters (thin space, hair space, NBSP, ZWJ …) an **em-width ruler**, so you can see how they differ;
+- for spaces (thin, hair, NBSP, em …) the grid draws **two dotted lines whose distance is the space's width**, and the inspector an **em-width ruler**, so you can see how they differ; other invisibles (ZWJ, joiners …) get a dashed box;
 - which installed fonts contain the glyph.
 
 ![Main window: É and how to type it](docs/screenshots/main-window.png)
@@ -29,7 +29,7 @@ For each character it shows:
 |---|---|
 | **Main window** | Sidebar (Library, Collections, Unicode Blocks), a character grid, and an inspector. Search field in the toolbar. |
 | **Quick Lookup** | Floating window opened with **⌃⌥Space** (changeable in Settings) or ⌥⌘L. Type, ↑/↓, **⏎** copies and returns to your app; ⌘1–⌘9 pick a result; Esc closes. |
-| **Menu bar item** | Quick Lookup, recent characters and favorites (click to copy). Can be hidden; the Dock icon can be hidden too. |
+| **Menu bar item** | A click opens Quick Lookup. A right click (or a click while Quick Lookup is showing) opens the menu with recent characters, favorites, Settings and Quit. It can be hidden; the Dock icon can be hidden too. |
 | **Copy** | ⌘⏎ copies the selected character, ⇧⌘C its code point, ⌥⌘C its HTML entity, ⌘D toggles favorite. Double-click or drag a character to use it. |
 | **Shortcuts app** | "Find Character" and "Copy Character" actions (App Intents). |
 

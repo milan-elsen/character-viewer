@@ -52,6 +52,13 @@ enum CharacterInfo {
         }
     }
 
+    /// True for space separators (general category Zs): SPACE, NBSP, thin, hair, em, ideographic space and so on.
+    /// These have a meaningful width, which the grid draws as two dotted lines. Other invisibles (joiners, marks,
+    /// fillers, control characters) have no width worth showing and keep the dashed box.
+    static func isSpace(_ record: CharacterRecord) -> Bool {
+        record.category == "Zs"
+    }
+
     /// True for combining marks, which need a base character to be drawn.
     static func isCombining(_ record: CharacterRecord) -> Bool {
         record.category == "Mn" || record.category == "Me" || record.category == "Mc"

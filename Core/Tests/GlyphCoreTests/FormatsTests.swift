@@ -54,6 +54,18 @@ final class FormatsTests: XCTestCase {
         XCTAssertEqual(CharacterInfo.displayString(for: db.record(for: 0x0301)!), "\u{25CC}\u{0301}")
     }
 
+    func testOnlySpacesGetTheWidthMark() {
+        for cp: UInt32 in [0x0020, 0x00A0, 0x2002, 0x2003, 0x2009, 0x200A, 0x202F, 0x205F, 0x3000] {
+            XCTAssertTrue(CharacterInfo.isSpace(db.record(for: cp)!), "U+\(String(cp, radix: 16)) is a space")
+        }
+        // Invisible, but not spaces: these keep the dashed box.
+        for cp: UInt32 in [0x200B, 0x200C, 0x200D, 0x2060, 0xFEFF, 0x00AD, 0x200E, 0xFE0F, 0x3164, 0x2800, 0x0009] {
+            let record = db.record(for: cp)!
+            XCTAssertFalse(CharacterInfo.isSpace(record), "U+\(String(cp, radix: 16)) is not a space")
+            XCTAssertTrue(CharacterInfo.isInvisible(record))
+        }
+    }
+
     func testHexInputGroups() {
         XCTAssertEqual(UnicodeHexInput.digitGroups(for: 0x2009), ["2009"])
         XCTAssertEqual(UnicodeHexInput.digitGroups(for: 0x1D11E), ["D834", "DD1E"])

@@ -65,9 +65,13 @@ jobs:
           osascript -e 'tell application "System Events" to keystroke "euro"' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/9-euro.png
 
-          say "menu bar item"
+          say "menu bar item: a click opens Quick Lookup"
+          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/10-menubar-click.png
+          say "menu bar item: a click while Quick Lookup is showing opens the menu"
           osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 2
-          screencapture -x out/10-menubar.png
+          screencapture -x out/10b-menubar-menu.png
+          osascript -e 'tell application "System Events" to key code 53' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to key code 53' 2>&1 | tee -a out/log.txt; sleep 1
 
           say "dark mode"

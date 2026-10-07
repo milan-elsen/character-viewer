@@ -3,9 +3,12 @@ import AppKit
 /// The few things SwiftUI's `App` cannot express: Dock-click behavior and the Dock/menu-bar-only activation policy.
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    private var statusItemController: StatusItemController?
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.applyActivationPolicy()
         AppModel.shared.registerHotKey()
+        statusItemController = StatusItemController(model: AppModel.shared)
     }
 
     /// Clicking the Dock icon when every window is closed brings the main window back.

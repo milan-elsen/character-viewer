@@ -111,4 +111,36 @@ enum GlyphInspector {
         }
     }
 }
+
+/// Remembers glyph advances (in em) so the grid can draw the width of many blank characters while scrolling
+/// without asking CoreText again for every cell on every redraw.
+final class AdvanceCache: @unchecked Sendable {
+    static let shared = AdvanceCache()
+
+    private struct Key: Hashable {
+        let codePoint: UInt32
+        let fontName: String
+    }
+
+    private let lock = NSLock()
+    private var storage: [Key: CGFloat] = [:]
+    private static let missing: CGFloat = -1
+
+    /// Advance width in em, or nil when no installed font draws the character.
+    func advanceEm(of scalar: Unicode.Scalar, fontName: String) -> CGFloat? {
+        let key = Key(codePoint: scalar.value, fontName: fontName)
+        lock.lock()
+        if let cached = storage[key] {
+            lock.unlock()
+            return cached == Self.missing ? nil : cached
+        }
+        lock.unlock()
+
+        let measured = GlyphInspector.advanceEm(of: scalar, fontName: fontName)
+        lock.lock()
+        storage[key] = measured ?? Self.missing
+        lock.unlock()
+        return measured
+    }
+}
 #endif

@@ -127,7 +127,15 @@ struct GlyphView: View {
     var fontName: String = ""
 
     var body: some View {
-        if CharacterInfo.isInvisible(record) {
+        if CharacterInfo.isSpace(record) {
+            // Spaces: two dotted lines show how wide the space is.
+            InvisibleWidthMark(
+                label: CharacterInfo.shortLabel(for: record),
+                advance: AdvanceCache.shared.advanceEm(of: record.scalar, fontName: fontName),
+                pointSize: pointSize
+            )
+        } else if CharacterInfo.isInvisible(record) {
+            // Other invisibles (joiners, marks, fillers, controls): a dashed box with an abbreviation.
             RoundedRectangle(cornerRadius: 4)
                 .strokeBorder(.secondary, style: StrokeStyle(lineWidth: 1, dash: [3, 2]))
                 .frame(width: pointSize * 1.1, height: pointSize * 0.8)
@@ -149,6 +157,43 @@ struct GlyphView: View {
 
     static func font(named name: String, size: CGFloat) -> Font {
         name.isEmpty ? .system(size: size) : .custom(name, size: size)
+    }
+}
+
+/// A space drawn as two dotted vertical lines whose distance is the character's advance width, with its
+/// abbreviation above. A thin space, a hair space and an em space therefore look different in the grid, which is the
+/// whole point: in text they are all "nothing".
+struct InvisibleWidthMark: View {
+    let label: String
+    /// Advance in em, or nil when no installed font draws the character.
+    let advance: CGFloat?
+    let pointSize: CGFloat
+
+    var body: some View {
+        VStack(spacing: 1) {
+            Text(label)
+                .font(.system(size: max(7, pointSize * 0.24), weight: .medium, design: .rounded))
+                .foregroundStyle(.secondary)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
+            Canvas { context, size in
+                // One em is drawn 1.5 point sizes wide: a full em space still fits inside a grid cell, and a thin
+                // space (about a tenth of an em) is still a visibly separate pair of lines.
+                let em = pointSize * 1.5
+                let width = min(max((advance ?? 0.5) * em, 0), size.width - 6)
+                let left = (size.width - width) / 2
+                var lines = Path()
+                for x in [left, left + width] {
+                    lines.move(to: CGPoint(x: x, y: 1))
+                    lines.addLine(to: CGPoint(x: x, y: size.height - 1))
+                }
+                let style = StrokeStyle(lineWidth: 1.4, lineCap: .round, dash: [1.5, 3])
+                // Unknown width (no font draws it): grey lines; known width: the usual secondary color.
+                context.stroke(lines, with: .color(advance == nil ? .secondary.opacity(0.4) : .secondary), style: style)
+            }
+            .frame(height: max(14, pointSize * 0.62))
+        }
+        .accessibilityElement(children: .ignore)
     }
 }
 
