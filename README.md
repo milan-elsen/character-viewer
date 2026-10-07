@@ -30,7 +30,7 @@ For each character it shows:
 | | |
 |---|---|
 | **Main window** | Sidebar (Library, Collections, Unicode Blocks), a character grid, and an inspector. Search field in the toolbar. |
-| **Quick Lookup** | Floating window opened with **⌃⌥Space** (changeable in Settings) or ⌥⌘L. Type, ↑/↓, **⏎** copies and returns to your app; ⌘1–⌘9 pick a result; Esc closes. |
+| **Quick Lookup** | Floating window opened with **⌃⌥Space** (changeable in Settings) or ⌥⌘L. Type, ↑/↓, **⏎** copies and returns to your app, **⌘⏎** shows the character in the main window; ⌘1–⌘9 pick a result; Esc closes. |
 | **Menu bar item** | A click opens Quick Lookup. A right click (or a click while Quick Lookup is showing) opens the menu with recent characters, favorites, Settings and Quit. It can be hidden; the Dock icon can be hidden too. |
 | **Open Font…** | ⌘O, the toolbar, or drop a `.ttf` / `.otf` / `.ttc` file on the window. The font is read into memory (never installed). The sidebar gets an *Opened Font* entry listing every visible character the font has, and all glyphs, the inspector and Quick Lookup are drawn with it. Characters the font lacks use the normal font at reduced opacity on a yellow-tinted box. Close it with *File ▸ Close Font* or the toolbar button. |
 | **Copy** | ⌘⏎ copies the selected character, ⇧⌘C its code point, ⌥⌘C its HTML entity, ⌘D toggles favorite. Double-click or drag a character to use it. |

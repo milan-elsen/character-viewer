@@ -121,6 +121,12 @@ jobs:
           osascript -e 'tell application "System Events" to keystroke "," using command down' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/7-settings.png
 
+          say "command-return in Quick Lookup shows the glyph in the main window"
+          osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
+          osascript -e 'tell application "System Events" to keystroke "tilde"' 2>&1 | tee -a out/log.txt; sleep 3
+          osascript -e 'tell application "System Events" to key code 36 using {command down}' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/16-open-in-app.png
+
           say "open a font file: relaunch with GLYPHFINDER_OPEN_FONT (a path inside the sandbox container)"
           osascript -e 'tell application "Glyphfinder" to quit' 2>&1 | tee -a out/log.txt; sleep 4
           CONTAINER="$HOME/Library/Containers/com.milanelsen.glyphfinder/Data"

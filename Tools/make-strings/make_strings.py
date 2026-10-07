@@ -111,6 +111,7 @@ T = {
         "Dit teken zit niet in het geopende lettertype.", "Dieses Zeichen ist nicht in der geöffneten Schrift enthalten."),
     "This file is not a font that macOS can read.": (
         "Dit bestand is geen lettertype dat macOS kan lezen.", "Diese Datei ist keine Schrift, die macOS lesen kann."),
+    "Open in App": ("Open in app", "In der App öffnen"),
     "Find…": ("Zoek…", "Suchen …"),
     "Copy Code Point": ("Kopieer codepunt", "Codepunkt kopieren"),
     "Copy HTML Entity": ("Kopieer HTML-entiteit", "HTML-Entität kopieren"),

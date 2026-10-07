@@ -254,7 +254,30 @@ final class AppModel {
 
     private func applySearch(_ hits: [UInt32]) {
         results = hits
-        if let first = hits.first { selection = first }
+        if let wanted = pendingSelection, hits.contains(wanted) {
+            selection = wanted
+        } else if let first = hits.first {
+            selection = first
+        }
+        pendingSelection = nil
+    }
+
+    /// A character that should be selected once the next search finishes (instead of that search's first hit).
+    @ObservationIgnored private var pendingSelection: UInt32?
+
+    /// Shows `record` in the main window: closes Quick Lookup, searches for the character's name so it appears with
+    /// similar characters around it, selects it, and brings the window forward (Quick Lookup's ⌘↩).
+    func reveal(_ record: CharacterRecord) {
+        closeQuickLookup(returnToPreviousApp: false)
+        if sidebar != .all { sidebar = .all }
+        pendingSelection = record.codePoint
+        selection = record.codePoint
+        if query == record.name {
+            refreshResults()   // same query: re-run it so the selection is applied
+        } else {
+            query = record.name
+        }
+        showMainWindow()
     }
 
     var title: String {

@@ -115,6 +115,7 @@ struct QuickLookupView: View {
     private var footer: some View {
         HStack(spacing: 14) {
             Label("Copy", systemImage: "return")
+            Label("Open in App", systemImage: "arrow.up.forward.app")
             Label("Pick 1–9", systemImage: "command")
             Label("Close", systemImage: "escape")
             Spacer()
@@ -139,6 +140,8 @@ struct QuickLookupView: View {
                 Button("") { choose(index) }
                     .keyboardShortcut(KeyEquivalent(Character(String(index + 1))), modifiers: .command)
             }
+            Button("") { openInApp(selectedIndex) }
+                .keyboardShortcut(.return, modifiers: .command)
             Button("") { model.closeQuickLookup(returnToPreviousApp: true) }
                 .keyboardShortcut(.cancelAction)
         }
@@ -167,6 +170,12 @@ struct QuickLookupView: View {
     private func move(_ delta: Int) {
         guard !results.isEmpty else { return }
         selectedIndex = min(max(selectedIndex + delta, 0), results.count - 1)
+    }
+
+    /// ⌘↩: show the selected character in the main window instead of copying it.
+    private func openInApp(_ index: Int) {
+        guard results.indices.contains(index) else { return }
+        model.reveal(results[index])
     }
 
     private func choose(_ index: Int) {

@@ -1471,6 +1471,23 @@
         }
       }
     },
+    "Open in App": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open in app"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In der App öffnen"
+          }
+        }
+      }
+    },
     "Opened Font": {
       "extractionState": "manual",
       "localizations": {
