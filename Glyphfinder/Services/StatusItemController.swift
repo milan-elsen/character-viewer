@@ -48,21 +48,22 @@ final class StatusItemController: NSObject {
     private static func makeIcon() -> NSImage {
         let image = NSImage(size: NSSize(width: 18, height: 18), flipped: false) { _ in
             guard let context = NSGraphicsContext.current?.cgContext else { return false }
-            let font = NSFont.systemFont(ofSize: 10.5, weight: .bold)
+            let font = NSFont.systemFont(ofSize: 12.5, weight: .bold)
             context.setFillColor(NSColor.black.cgColor)
 
-            /// Draws `letter` so that the centre of its ink (not of its line box) sits at `center`.
-            func draw(_ letter: String, at center: CGPoint) {
+            /// Draws `letter` with the horizontal centre of its ink at `centerX` and its baseline at `baseline`.
+            /// (Aligning on the baseline keeps b and c level; centring each letter's ink would put the taller b lower.)
+            func draw(_ letter: String, centerX: CGFloat, baseline: CGFloat) {
                 let text = NSAttributedString(string: letter, attributes: [.font: font])
                 let line = CTLineCreateWithAttributedString(text)
                 let ink = CTLineGetBoundsWithOptions(line, .useGlyphPathBounds)
-                context.textPosition = CGPoint(x: center.x - ink.midX, y: center.y - ink.midY)
+                context.textPosition = CGPoint(x: centerX - ink.midX, y: baseline)
                 CTLineDraw(line, context)
             }
 
-            draw("a", at: CGPoint(x: 9.0, y: 12.9))
-            draw("b", at: CGPoint(x: 4.0, y: 4.9))
-            draw("c", at: CGPoint(x: 14.0, y: 4.9))
+            draw("a", centerX: 9.0, baseline: 11.0)
+            draw("b", centerX: 4.9, baseline: 0.9)
+            draw("c", centerX: 13.4, baseline: 0.9)
             return true
         }
         image.isTemplate = true
