@@ -348,11 +348,12 @@ enum GlyphCoverage {
     }
 }
 
-/// An empty box: the traditional "no glyph" mark.
+/// An empty box in the same light yellow as `MissingGlyphBox`, so it reads as "no glyph" and not as a shape.
 struct NoGlyphBox: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 2)
-            .strokeBorder(.secondary, lineWidth: 1.5)
+            .fill(Color.yellow.opacity(0.25))
+            .overlay { RoundedRectangle(cornerRadius: 2).strokeBorder(Color.yellow.opacity(0.8), lineWidth: 1.5) }
             .accessibilityHidden(true)
     }
 }
