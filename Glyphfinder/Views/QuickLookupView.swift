@@ -113,11 +113,11 @@ struct QuickLookupView: View {
     }
 
     private var footer: some View {
-        HStack(spacing: 14) {
-            FooterAction(title: "Copy", keys: ["↩"]) { choose(selectedIndex) }
-            FooterAction(title: "Open in App", keys: ["⌘", "↩"]) { openInApp(selectedIndex) }
-            Text("Pick ⌘1–9")
-            FooterAction(title: "Close", keys: ["esc"]) { model.closeQuickLookup(returnToPreviousApp: true) }
+        HStack(spacing: 8) {
+            FooterAction(title: "Copy", keys: [.symbol("return")]) { choose(selectedIndex) }
+            FooterAction(title: "Open in App", keys: [.symbol("command"), .symbol("return")]) { openInApp(selectedIndex) }
+            FooterAction(title: "Pick", keys: [.symbol("command"), .text("1–9")])
+            FooterAction(title: "Close", keys: [.symbol("escape")]) { model.closeQuickLookup(returnToPreviousApp: true) }
             Spacer()
             if query.isEmpty, !results.isEmpty {
                 Text("Recent")
@@ -184,30 +184,53 @@ struct QuickLookupView: View {
 }
 
 /// A footer hint that can also be clicked.
+/// One footer hint: a label followed by its key symbols. Every symbol is an SF Symbol of the same size, drawn in the
+/// same style as the label, so the hints line up. With an action the hint is also a button.
 private struct FooterAction: View {
+    enum Key {
+        case symbol(String)
+        case text(String)
+    }
+
     let title: LocalizedStringKey
-    let keys: [String]
-    let action: () -> Void
+    let keys: [Key]
+    var action: (() -> Void)?
     @State private var hovering = false
 
     var body: some View {
-        Button(action: action) {
-            HStack(alignment: .firstTextBaseline, spacing: 6) {
-                Text(title)
-                HStack(alignment: .firstTextBaseline, spacing: 3) {
-                    ForEach(keys, id: \.self) { key in
-                        Text(key).font(.system(size: key == "esc" ? 12 : 15, weight: .medium))
+        if let action {
+            Button(action: action) { content }
+                .buttonStyle(.plain)
+                .onHover { hovering = $0 }
+        } else {
+            content
+        }
+    }
+
+    private var content: some View {
+        HStack(spacing: 5) {
+            Text(title)
+            HStack(spacing: 2) {
+                ForEach(keys.indices, id: \.self) { index in
+                    switch keys[index] {
+                    case .symbol(let name):
+                        Image(systemName: name)
+                            .font(.system(size: 11, weight: .semibold))
+                            .frame(width: 14, height: 14)
+                    case .text(let string):
+                        Text(string)
+                            .font(.caption.weight(.semibold))
+                            .frame(height: 14)
                     }
                 }
             }
-            .foregroundStyle(.secondary)
-            .padding(.horizontal, 6)
-            .padding(.vertical, 2)
-            .background(hovering ? Color.primary.opacity(0.1) : .clear, in: .rect(cornerRadius: 5))
-            .contentShape(.rect)
         }
-        .buttonStyle(.plain)
-        .onHover { hovering = $0 }
+        .font(.caption)
+        .foregroundStyle(.secondary)
+        .padding(.horizontal, 6)
+        .padding(.vertical, 2)
+        .background(hovering ? Color.primary.opacity(0.1) : .clear, in: .rect(cornerRadius: 5))
+        .contentShape(.rect)
     }
 }
 

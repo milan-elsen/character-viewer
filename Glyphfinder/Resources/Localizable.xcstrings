@@ -1607,6 +1607,23 @@
         }
       }
     },
+    "Pick": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle"
+          }
+        }
+      }
+    },
     "Pick 1–9": {
       "extractionState": "manual",
       "localizations": {
@@ -1620,23 +1637,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wähle 1–9"
-          }
-        }
-      }
-    },
-    "Pick ⌘1–9": {
-      "extractionState": "manual",
-      "localizations": {
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kies ⌘1–9"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wähle ⌘1–9"
           }
         }
       }
