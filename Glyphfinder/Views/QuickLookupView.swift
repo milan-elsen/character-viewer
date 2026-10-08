@@ -114,10 +114,10 @@ struct QuickLookupView: View {
 
     private var footer: some View {
         HStack(spacing: 14) {
-            FooterAction(title: "Copy", keys: "↩") { choose(selectedIndex) }
-            FooterAction(title: "Open in App", keys: "⌘↩") { openInApp(selectedIndex) }
+            FooterAction(title: "Copy", keys: ["↩"]) { choose(selectedIndex) }
+            FooterAction(title: "Open in App", keys: ["⌘", "↩"]) { openInApp(selectedIndex) }
             Text("Pick ⌘1–9")
-            FooterAction(title: "Close", keys: "esc") { model.closeQuickLookup(returnToPreviousApp: true) }
+            FooterAction(title: "Close", keys: ["esc"]) { model.closeQuickLookup(returnToPreviousApp: true) }
             Spacer()
             if query.isEmpty, !results.isEmpty {
                 Text("Recent")
@@ -186,15 +186,19 @@ struct QuickLookupView: View {
 /// A footer hint that can also be clicked.
 private struct FooterAction: View {
     let title: LocalizedStringKey
-    let keys: String
+    let keys: [String]
     let action: () -> Void
     @State private var hovering = false
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 4) {
+            HStack(spacing: 6) {
                 Text(title)
-                Text(keys).monospaced()
+                HStack(spacing: 3) {
+                    ForEach(keys, id: \.self) { key in
+                        Text(key).font(.system(size: key == "esc" ? 12 : 15, weight: .medium))
+                    }
+                }
             }
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
