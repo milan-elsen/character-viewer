@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
-# Generates Glyphfinder.xcodeproj. Re-run after adding or removing source files:
+# Generates Typecase.xcodeproj. Re-run after adding or removing source files:
 #
 #   gem install xcodeproj
 #   ruby Tools/generate_xcodeproj.rb
 #
-# One app target compiles three groups of files: the SwiftUI app (Glyphfinder/), the UI-free logic shared with
+# One app target compiles three groups of files: the SwiftUI app (Typecase/), the UI-free logic shared with
 # the Swift package used for tests (Core/Sources/GlyphCore/) and the bundled character database (Data/).
 
 require 'fileutils'
@@ -13,8 +13,8 @@ require 'xcodeproj'
 ROOT = File.expand_path('..', __dir__)
 Dir.chdir(ROOT)
 
-APP_NAME        = 'Glyphfinder'
-BUNDLE_ID       = 'com.milanelsen.glyphfinder'
+APP_NAME        = 'Typecase'
+BUNDLE_ID       = 'com.milanelsen.typecase'
 DEPLOYMENT      = '15.0'
 PROJECT_PATH    = "#{APP_NAME}.xcodeproj"
 
@@ -59,7 +59,7 @@ target.resources_build_phase.add_file_reference(database)
 
 # Configuration files that are not part of any build phase.
 config_group = app_group.new_group('Configuration', nil)
-%w[Info.plist Glyphfinder.entitlements Glyphfinder-Direct.entitlements].each do |name|
+%w[Info.plist Typecase.entitlements Typecase-Direct.entitlements].each do |name|
   ref = config_group.new_file(name)
   ref.last_known_file_type = 'text.plist.entitlements' if name.end_with?('.entitlements')
 end

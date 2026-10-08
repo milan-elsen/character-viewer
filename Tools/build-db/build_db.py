@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds Data/characters.json for Glyphfinder from the Unicode Character Database.
+"""Builds Data/characters.json for Typecase from the Unicode Character Database.
 
 Sources (downloaded once into --cache):
   * unicodetools data   UnicodeData, NamesList, NameAliases, emoji-data, Blocks, Scripts, DerivedAge

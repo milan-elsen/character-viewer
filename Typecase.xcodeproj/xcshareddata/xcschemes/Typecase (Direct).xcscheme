@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7078C5FB97BD682A55659191"
-               BuildableName = "Glyphfinder.app"
-               BlueprintName = "Glyphfinder"
-               ReferencedContainer = "container:Glyphfinder.xcodeproj">
+               BuildableName = "Typecase.app"
+               BlueprintName = "Typecase"
+               ReferencedContainer = "container:Typecase.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7078C5FB97BD682A55659191"
-            BuildableName = "Glyphfinder.app"
-            BlueprintName = "Glyphfinder"
-            ReferencedContainer = "container:Glyphfinder.xcodeproj">
+            BuildableName = "Typecase.app"
+            BlueprintName = "Typecase"
+            ReferencedContainer = "container:Typecase.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7078C5FB97BD682A55659191"
-            BuildableName = "Glyphfinder.app"
-            BlueprintName = "Glyphfinder"
-            ReferencedContainer = "container:Glyphfinder.xcodeproj">
+            BuildableName = "Typecase.app"
+            BlueprintName = "Typecase"
+            ReferencedContainer = "container:Typecase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7078C5FB97BD682A55659191"
-            BuildableName = "Glyphfinder.app"
-            BlueprintName = "Glyphfinder"
-            ReferencedContainer = "container:Glyphfinder.xcodeproj">
+            BuildableName = "Typecase.app"
+            BlueprintName = "Typecase"
+            ReferencedContainer = "container:Typecase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -81,7 +81,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Release-Direct"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

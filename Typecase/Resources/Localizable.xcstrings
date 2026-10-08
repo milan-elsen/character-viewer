@@ -1454,23 +1454,6 @@
         }
       }
     },
-    "Open Glyphfinder": {
-      "extractionState": "manual",
-      "localizations": {
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Glyphfinder"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Glyphfinder öffnen"
-          }
-        }
-      }
-    },
     "Open Keyboard Settings…": {
       "extractionState": "manual",
       "localizations": {
@@ -1484,6 +1467,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tastatureinstellungen öffnen …"
+          }
+        }
+      }
+    },
+    "Open Typecase": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Typecase"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typecase öffnen"
           }
         }
       }
@@ -1675,19 +1675,19 @@
         }
       }
     },
-    "Quit Glyphfinder": {
+    "Quit Typecase": {
       "extractionState": "manual",
       "localizations": {
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Stop Glyphfinder"
+            "value": "Stop Typecase"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Glyphfinder beenden"
+            "value": "Typecase beenden"
           }
         }
       }

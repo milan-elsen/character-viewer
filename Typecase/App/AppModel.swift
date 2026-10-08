@@ -149,7 +149,7 @@ final class AppModel {
         guard database == nil else { return }
         #if DEBUG
         // Lets automated UI tests open a font without driving the file dialog.
-        if let path = ProcessInfo.processInfo.environment["GLYPHFINDER_OPEN_FONT"] {
+        if let path = ProcessInfo.processInfo.environment["TYPECASE_OPEN_FONT"] {
             Task { @MainActor in
                 try? await Task.sleep(for: .seconds(2))
                 AppModel.shared.openFont(at: URL(fileURLWithPath: path))

@@ -16,7 +16,7 @@
 > The development environment ran Linux, so the Mac-specific layer was compiled, launched and driven by CI on macOS
 > runners (see "What has been verified" in `README.md`); `Core/` is also built and tested on Linux with `swift test`.
 
-Working name: **Glyphfinder** (placeholder).
+Working name: **Typecase** (placeholder).
 
 A native macOS utility for finding Unicode characters by natural-language search. It covers everything the system emoji viewer doesn't (thin spaces, dashes, quotes, combining marks, invisibles) and excludes emoji. For each character it shows code points, related and alternate glyphs, and how to type it on the **currently active keyboard layout**.
 
@@ -164,7 +164,7 @@ A command-line tool (`Tools/build-db`) turns Unicode source files into `characte
 ```
 character-viewer/
 ├─ PLAN.md
-├─ GlyphfinderApp/              # SwiftUI app target
+├─ TypecaseApp/              # SwiftUI app target
 │  ├─ App/                      # App, scenes, commands, MenuBarExtra, Settings
 │  ├─ Views/                    # Search, Grid, Detail, Browse, KeyCaps
 │  └─ Resources/                # Assets, Localizable.xcstrings, characters.sqlite

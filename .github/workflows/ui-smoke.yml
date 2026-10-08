@@ -28,25 +28,25 @@ jobs:
       - name: Build (Debug)
         run: |
           set -o pipefail
-          xcodebuild -project Glyphfinder.xcodeproj -scheme Glyphfinder -configuration Debug \
+          xcodebuild -project Typecase.xcodeproj -scheme Typecase -configuration Debug \
             -destination 'platform=macOS' -derivedDataPath build build 2>&1 | tail -n 5
 
       - name: Launch and drive the app
         continue-on-error: true
         run: |
           mkdir -p out
-          APP=build/Build/Products/Debug/Glyphfinder.app
+          APP=build/Build/Products/Debug/Typecase.app
           say() { echo "### $*" | tee -a out/log.txt; }
           sw_vers | tee -a out/log.txt
           system_profiler SPDisplaysDataType 2>/dev/null | grep -i resolution | tee -a out/log.txt || true
 
           say "launch"
           open "$APP"; sleep 10
-          pgrep -lx Glyphfinder | tee -a out/log.txt || say "NOT RUNNING after launch"
+          pgrep -lx Typecase | tee -a out/log.txt || say "NOT RUNNING after launch"
           screencapture -x out/1-launch.png
 
           say "search in main window"
-          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "Typecase" to activate' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "thin space"' 2>&1 | tee -a out/log.txt; sleep 2
           screencapture -x out/2-main-search.png
@@ -60,8 +60,8 @@ jobs:
           osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/4-quick-open.png
           say "drag Quick Lookup by the loupe"
-          POS=$(osascript -e 'tell application "System Events" to tell process "Glyphfinder" to get position of window 1' 2>&1)
-          SIZE=$(osascript -e 'tell application "System Events" to tell process "Glyphfinder" to get size of window 1' 2>&1)
+          POS=$(osascript -e 'tell application "System Events" to tell process "Typecase" to get position of window 1' 2>&1)
+          SIZE=$(osascript -e 'tell application "System Events" to tell process "Typecase" to get size of window 1' 2>&1)
           echo "window position before drag: $POS  size: $SIZE" | tee -a out/log.txt
           WX=$(echo "$POS" | cut -d, -f1 | tr -d ' '); WY=$(echo "$POS" | cut -d, -f2 | tr -d ' ')
           cat > /tmp/drag.swift <<'EOS'
@@ -83,7 +83,7 @@ jobs:
           post(.leftMouseUp, end)
           EOS
           swift /tmp/drag.swift $((WX + 32)) $((WY + 28)) 160 90 2>&1 | tee -a out/log.txt; sleep 2
-          POS2=$(osascript -e 'tell application "System Events" to tell process "Glyphfinder" to get position of window 1' 2>&1)
+          POS2=$(osascript -e 'tell application "System Events" to tell process "Typecase" to get position of window 1' 2>&1)
           echo "window position after drag:  $POS2" | tee -a out/log.txt
           screencapture -x out/4b-quick-dragged.png
           osascript -e 'tell application "System Events" to keystroke "em dash"' 2>&1 | tee -a out/log.txt; sleep 2
@@ -94,7 +94,7 @@ jobs:
           screencapture -x out/6-quick-after.png
 
           say "typing instructions: e acute (dead key) and euro (single stroke)"
-          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "Typecase" to activate' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
           osascript -e 'tell application "System Events" to keystroke "e acute"' 2>&1 | tee -a out/log.txt; sleep 3
@@ -104,17 +104,17 @@ jobs:
           screencapture -x out/9-euro.png
 
           say "menu bar item: a click opens Quick Lookup"
-          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 3
+          osascript -e 'tell application "System Events" to tell process "Typecase" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/10-menubar-click.png
           say "menu bar item: a click while Quick Lookup is showing opens the menu"
-          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 2
+          osascript -e 'tell application "System Events" to tell process "Typecase" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 2
           screencapture -x out/10b-menubar-menu.png
           osascript -e 'tell application "System Events" to key code 53' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to key code 53' 2>&1 | tee -a out/log.txt; sleep 1
 
           say "dark mode"
           osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true' 2>&1 | tee -a out/log.txt; sleep 4
-          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 2
+          osascript -e 'tell application "Typecase" to activate' 2>&1 | tee -a out/log.txt; sleep 2
           screencapture -x out/11-dark-main.png
           osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
           osascript -e 'tell application "System Events" to keystroke "arrow"' 2>&1 | tee -a out/log.txt; sleep 3
@@ -123,7 +123,7 @@ jobs:
           osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to false' 2>&1 | tee -a out/log.txt; sleep 2
 
           say "settings"
-          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "Typecase" to activate' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "," using command down' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/7-settings.png
 
@@ -133,21 +133,21 @@ jobs:
           osascript -e 'tell application "System Events" to key code 36 using {command down}' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/16-open-in-app.png
 
-          say "Open Glyphfinder from the menu bar menu closes Quick Lookup"
+          say "Open Typecase from the menu bar menu closes Quick Lookup"
           osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
-          echo "windows with Quick Lookup open: $(osascript -e 'tell application "System Events" to count windows of process "Glyphfinder"' 2>&1)" | tee -a out/log.txt
+          echo "windows with Quick Lookup open: $(osascript -e 'tell application "System Events" to count windows of process "Typecase"' 2>&1)" | tee -a out/log.txt
           screencapture -x out/16b-quick-open-before-menu.png
-          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 2
-          osascript -e 'tell application "System Events" to tell process "Glyphfinder" to click menu item "Open Glyphfinder" of menu 1 of menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 3
-          echo "windows after choosing Open Glyphfinder (expect one fewer): $(osascript -e 'tell application "System Events" to count windows of process "Glyphfinder"' 2>&1)" | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to tell process "Typecase" to click menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 2
+          osascript -e 'tell application "System Events" to tell process "Typecase" to click menu item "Open Typecase" of menu 1 of menu bar item 1 of menu bar 2' 2>&1 | tee -a out/log.txt; sleep 3
+          echo "windows after choosing Open Typecase (expect one fewer): $(osascript -e 'tell application "System Events" to count windows of process "Typecase"' 2>&1)" | tee -a out/log.txt
           screencapture -x out/16c-after-open-from-menu.png
 
           say "Dock icon follows the main window when Always show in Dock is off"
-          osascript -e 'tell application "Glyphfinder" to quit' 2>&1 | tee -a out/log.txt; sleep 4
+          osascript -e 'tell application "Typecase" to quit' 2>&1 | tee -a out/log.txt; sleep 4
           open -n "$APP" --args -showInDock NO; sleep 10
-          BG() { osascript -e 'tell application "System Events" to get background only of process "Glyphfinder"' 2>&1; }
+          BG() { osascript -e 'tell application "System Events" to get background only of process "Typecase"' 2>&1; }
           echo "background only, main window open (expect false): $(BG)" | tee -a out/log.txt
-          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "Typecase" to activate' 2>&1 | tee -a out/log.txt; sleep 1
 
           say "grid: click a cell, End, Home, Page Down, then a burst of fast scrolling"
           swift /tmp/drag.swift 420 260 0 0 2>&1 | tee -a out/log.txt; sleep 1
@@ -173,7 +173,7 @@ jobs:
           EOS
           swift /tmp/scroll.swift 400 -40 2>&1 | tee -a out/log.txt
           T0=$(python3 -c 'import time;print(int(time.time()*1000))')
-          osascript -e 'tell application "System Events" to get name of front window of process "Glyphfinder"' 2>&1 | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to get name of front window of process "Typecase"' 2>&1 | tee -a out/log.txt
           T1=$(python3 -c 'import time;print(int(time.time()*1000))')
           echo "app answered an accessibility query $((T1 - T0)) ms after a burst of 400 fast scroll events" | tee -a out/log.txt
           sleep 3
@@ -182,19 +182,19 @@ jobs:
           osascript -e 'tell application "System Events" to keystroke "w" using command down' 2>&1 | tee -a out/log.txt; sleep 3
           echo "background only, main window closed (expect true): $(BG)" | tee -a out/log.txt
           screencapture -x out/17-dock-hidden.png
-          osascript -e 'tell application "Glyphfinder" to reopen' 2>&1 | tee -a out/log.txt; sleep 4
+          osascript -e 'tell application "Typecase" to reopen' 2>&1 | tee -a out/log.txt; sleep 4
           echo "background only, window reopened (expect false): $(BG)" | tee -a out/log.txt
           screencapture -x out/18-dock-shown-again.png
 
-          say "open a font file: relaunch with GLYPHFINDER_OPEN_FONT (a path inside the sandbox container)"
-          osascript -e 'tell application "Glyphfinder" to quit' 2>&1 | tee -a out/log.txt; sleep 4
-          CONTAINER="$HOME/Library/Containers/com.milanelsen.glyphfinder/Data"
+          say "open a font file: relaunch with TYPECASE_OPEN_FONT (a path inside the sandbox container)"
+          osascript -e 'tell application "Typecase" to quit' 2>&1 | tee -a out/log.txt; sleep 4
+          CONTAINER="$HOME/Library/Containers/com.milanelsen.typecase/Data"
           FONT="/System/Library/Fonts/Supplemental/Courier New.ttf"
           [ -f "$FONT" ] || FONT=$(find /System/Library/Fonts -name "*.ttf" | head -1)
           echo "font: $FONT" | tee -a out/log.txt
           mkdir -p "$CONTAINER/tmp" && cp "$FONT" "$CONTAINER/tmp/test.ttf" 2>&1 | tee -a out/log.txt
-          open -n --env GLYPHFINDER_OPEN_FONT="$CONTAINER/tmp/test.ttf" "$APP"; sleep 12
-          osascript -e 'tell application "Glyphfinder" to activate' 2>&1 | tee -a out/log.txt; sleep 2
+          open -n --env TYPECASE_OPEN_FONT="$CONTAINER/tmp/test.ttf" "$APP"; sleep 12
+          osascript -e 'tell application "Typecase" to activate' 2>&1 | tee -a out/log.txt; sleep 2
           screencapture -x out/13-font-view.png
           osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "arrow"' 2>&1 | tee -a out/log.txt; sleep 3
@@ -202,10 +202,10 @@ jobs:
           osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
           osascript -e 'tell application "System Events" to keystroke "space"' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/15-font-spaces.png
-          pgrep -lx Glyphfinder | tee -a out/log.txt || say "NOT RUNNING after opening a font"
+          pgrep -lx Typecase | tee -a out/log.txt || say "NOT RUNNING after opening a font"
 
           say "still running?"
-          pgrep -lx Glyphfinder | tee -a out/log.txt || say "NOT RUNNING at end"
+          pgrep -lx Typecase | tee -a out/log.txt || say "NOT RUNNING at end"
 
       - name: Collect logs
         if: always()
@@ -213,8 +213,8 @@ jobs:
         run: |
           mkdir -p out
           ls -la ~/Library/Logs/DiagnosticReports 2>/dev/null | tee -a out/log.txt || true
-          cp ~/Library/Logs/DiagnosticReports/Glyphfinder* out/ 2>/dev/null || true
-          /usr/bin/log show --last 5m --style compact --predicate 'process == "Glyphfinder"' 2>/dev/null | tail -n 150 > out/system-log.txt || true
+          cp ~/Library/Logs/DiagnosticReports/Typecase* out/ 2>/dev/null || true
+          /usr/bin/log show --last 5m --style compact --predicate 'process == "Typecase"' 2>/dev/null | tail -n 150 > out/system-log.txt || true
 
       - name: Publish to ci-artifacts branch
         if: always()

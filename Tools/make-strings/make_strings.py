@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generates Glyphfinder/Resources/Localizable.xcstrings (English source, Dutch and German translations).
+"""Generates Typecase/Resources/Localizable.xcstrings (English source, Dutch and German translations).
 
 Keys must match the string literals in the Swift sources exactly (including %@ / %lld for interpolations).
 Run:  python3 Tools/make-strings/make_strings.py
@@ -8,7 +8,7 @@ import json
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "..", "Glyphfinder", "Resources", "Localizable.xcstrings")
+OUT = os.path.join(HERE, "..", "..", "Typecase", "Resources", "Localizable.xcstrings")
 
 # key: (nl, de).  English is the key itself unless an explicit English value is given in EN_VALUES.
 T = {
@@ -93,12 +93,12 @@ T = {
     "Close": ("Sluit", "Schließen"),
     "Recent": ("Recent", "Zuletzt"),
     # Menu bar
-    "Open Glyphfinder": ("Open Glyphfinder", "Glyphfinder öffnen"),
+    "Open Typecase": ("Open Typecase", "Typecase öffnen"),
     "Recent Characters": ("Recente tekens", "Zuletzt verwendete Zeichen"),
     "Nothing copied yet": ("Nog niets gekopieerd", "Noch nichts kopiert"),
     "No favorites yet": ("Nog geen favorieten", "Noch keine Favoriten"),
     "Settings…": ("Instellingen…", "Einstellungen …"),
-    "Quit Glyphfinder": ("Stop Glyphfinder", "Glyphfinder beenden"),
+    "Quit Typecase": ("Stop Typecase", "Typecase beenden"),
     # Commands
     "Character": ("Teken", "Zeichen"),
     "Open Font…": ("Open lettertype…", "Schrift öffnen …"),

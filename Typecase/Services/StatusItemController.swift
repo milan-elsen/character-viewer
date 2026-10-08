@@ -37,7 +37,7 @@ final class StatusItemController: NSObject {
             button.target = self
             button.action = #selector(clicked(_:))
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
-            button.toolTip = "Glyphfinder"
+            button.toolTip = "Typecase"
         }
         statusItem = item
     }
@@ -67,7 +67,7 @@ final class StatusItemController: NSObject {
             return true
         }
         image.isTemplate = true
-        image.accessibilityDescription = "Glyphfinder"
+        image.accessibilityDescription = "Typecase"
         return image
     }
 
@@ -101,7 +101,7 @@ final class StatusItemController: NSObject {
     private func makeMenu() -> NSMenu {
         let menu = NSMenu()
         menu.addItem(item(String(localized: "Quick Lookup…"), #selector(openQuickLookup)))
-        menu.addItem(item(String(localized: "Open Glyphfinder"), #selector(openMainWindow)))
+        menu.addItem(item(String(localized: "Open Typecase"), #selector(openMainWindow)))
         menu.addItem(.separator())
         menu.addItem(characterSubmenu(
             title: String(localized: "Recent Characters"),
@@ -115,7 +115,7 @@ final class StatusItemController: NSObject {
         ))
         menu.addItem(.separator())
         menu.addItem(item(String(localized: "Settings…"), #selector(openSettings), key: ","))
-        menu.addItem(item(String(localized: "Quit Glyphfinder"), #selector(quit), key: "q"))
+        menu.addItem(item(String(localized: "Quit Typecase"), #selector(quit), key: "q"))
         return menu
     }
 

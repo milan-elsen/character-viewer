@@ -2,14 +2,14 @@
 """Renders the app icon (an omega on a blue gradient squircle) at every size an macOS AppIcon set needs.
 
 Usage: python3 Tools/make-icon/make_icon.py
-Writes Glyphfinder/Resources/Assets.xcassets/AppIcon.appiconset/*.png and Contents.json
+Writes Typecase/Resources/Assets.xcassets/AppIcon.appiconset/*.png and Contents.json
 """
 import json
 import os
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "..", "Glyphfinder", "Resources", "Assets.xcassets", "AppIcon.appiconset")
+OUT = os.path.join(HERE, "..", "..", "Typecase", "Resources", "Assets.xcassets", "AppIcon.appiconset")
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
 SIZE = 1024
 

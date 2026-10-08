@@ -35,20 +35,20 @@ jobs:
       - name: Build (Debug, App Store configuration)
         run: |
           set -o pipefail
-          xcodebuild -project Glyphfinder.xcodeproj -scheme Glyphfinder -configuration Debug \
+          xcodebuild -project Typecase.xcodeproj -scheme Typecase -configuration Debug \
             -destination 'platform=macOS' build 2>&1 | tee build-debug.log | tail -n 40
 
       - name: Build (Release, unsigned)
         run: |
           set -o pipefail
-          xcodebuild -project Glyphfinder.xcodeproj -scheme Glyphfinder -configuration Release \
+          xcodebuild -project Typecase.xcodeproj -scheme Typecase -configuration Release \
             -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" build 2>&1 \
             | tee build-release.log | tail -n 20
 
       - name: Build (Release-Direct, unsigned)
         run: |
           set -o pipefail
-          xcodebuild -project Glyphfinder.xcodeproj -scheme "Glyphfinder (Direct)" -configuration Release-Direct \
+          xcodebuild -project Typecase.xcodeproj -scheme "Typecase (Direct)" -configuration Release-Direct \
             -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY="" build 2>&1 \
             | tee build-direct.log | tail -n 20
 

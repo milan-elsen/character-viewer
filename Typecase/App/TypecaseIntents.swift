@@ -64,7 +64,7 @@ struct CopyCharacterIntent: AppIntent {
     }
 }
 
-struct GlyphfinderShortcuts: AppShortcutsProvider {
+struct TypecaseShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
             intent: FindCharacterIntent(),

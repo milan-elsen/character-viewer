@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct GlyphfinderApp: App {
+struct TypecaseApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var model = AppModel.shared
 
@@ -11,7 +11,7 @@ struct GlyphfinderApp: App {
 
     var body: some Scene {
         // Main window: sidebar, character grid and inspector.
-        Window("Glyphfinder", id: SceneID.main) {
+        Window("Typecase", id: SceneID.main) {
             MainView()
                 .environment(model)
         }
