@@ -215,17 +215,16 @@ private struct FooterAction: View {
                     switch keys[index] {
                     case .symbol(let name):
                         Image(systemName: name)
-                            .font(.system(size: 11, weight: .semibold))
-                            .frame(width: 14, height: 14)
+                            .font(.system(size: 10, weight: .regular))
+                            .frame(width: 13, height: 13)
                     case .text(let string):
                         Text(string)
-                            .font(.caption.weight(.semibold))
-                            .frame(height: 14)
+                            .frame(height: 13)
                     }
                 }
             }
         }
-        .font(.caption)
+        .font(.system(size: 12))
         .foregroundStyle(.secondary)
         .padding(.horizontal, 6)
         .padding(.vertical, 2)
