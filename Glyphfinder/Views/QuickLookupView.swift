@@ -192,14 +192,15 @@ private struct FooterAction: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 6) {
+            HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text(title)
-                HStack(spacing: 3) {
+                HStack(alignment: .firstTextBaseline, spacing: 3) {
                     ForEach(keys, id: \.self) { key in
                         Text(key).font(.system(size: key == "esc" ? 12 : 15, weight: .medium))
                     }
                 }
             }
+            .foregroundStyle(.secondary)
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
             .background(hovering ? Color.primary.opacity(0.1) : .clear, in: .rect(cornerRadius: 5))
