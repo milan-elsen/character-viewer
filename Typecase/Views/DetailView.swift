@@ -181,7 +181,7 @@ struct GlyphPreview: View {
             let missing = custom.map { !$0.contains(record.scalar) } ?? false
             if custom == nil || missing, !GlyphCoverage.hasGlyph(record.scalar, fontName: fontName) {
                 NoGlyphBox()
-                    .frame(width: 64, height: 88)
+                    .frame(width: 84, height: 84)
                     .frame(maxWidth: .infinity)
                     .frame(height: 130)
                     .accessibilityElement()

@@ -292,7 +292,7 @@ struct GlyphView: View {
         } else if custom == nil || missing, !GlyphCoverage.hasGlyph(record.scalar, fontName: fontName) {
             // No installed font has this character. Newer macOS draws a question mark for it; show an empty box.
             NoGlyphBox()
-                .frame(width: pointSize * 0.55, height: pointSize * 0.75)
+                .frame(width: pointSize * 0.7, height: pointSize * 0.7)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else {
             Text(CharacterInfo.displayString(for: record))
@@ -351,9 +351,10 @@ enum GlyphCoverage {
 /// An empty box in the same light yellow as `MissingGlyphBox`, so it reads as "no glyph" and not as a shape.
 struct NoGlyphBox: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 2)
-            .fill(Color.yellow.opacity(0.25))
-            .overlay { RoundedRectangle(cornerRadius: 2).strokeBorder(Color.yellow.opacity(0.8), lineWidth: 1.5) }
+        RoundedRectangle(cornerRadius: 10, style: .continuous)
+            .fill(Color.yellow.opacity(0.12))
+            .overlay { RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color.yellow.opacity(0.35), lineWidth: 1) }
+            .aspectRatio(1, contentMode: .fit)
             .accessibilityHidden(true)
     }
 }
