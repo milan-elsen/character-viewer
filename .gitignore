@@ -1,7 +1,55 @@
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Icon?
+
+# Xcode: per-user state, build output, logs
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace/xcuserdata/
+DerivedData/
+/build/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
+*.xcresult
+*.log
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
 .build/
 .swiftpm/
-xcuserdata/
-DerivedData/
-*.xcuserstate
-/build/
+Packages/
+Package.pins
+*.resolved.bak
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python (Tools/)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local environment files
+.env
+.env.*
