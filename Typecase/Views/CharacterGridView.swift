@@ -1,3 +1,4 @@
+import CoreText
 import SwiftUI
 
 /// Scrollable grid of characters, virtualized by hand.
@@ -288,6 +289,11 @@ struct GlyphView: View {
                         .lineLimit(1)
                         .padding(2)
                 }
+        } else if custom == nil || missing, !GlyphCoverage.hasGlyph(record.scalar, fontName: fontName) {
+            // No installed font has this character. Newer macOS draws a question mark for it; show an empty box.
+            NoGlyphBox()
+                .frame(width: pointSize * 0.55, height: pointSize * 0.75)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else {
             Text(CharacterInfo.displayString(for: record))
                 .font(Self.font(custom: custom, missing: missing, fontName: fontName, size: pointSize))
@@ -316,6 +322,38 @@ struct GlyphView: View {
     static func font(custom: LoadedFont?, missing: Bool, fontName: String, size: CGFloat) -> Font {
         if let custom, !missing { return Font(custom.ctFont(size: size)) }
         return font(named: fontName, size: size)
+    }
+}
+
+/// Whether any installed font can draw a character. Looks at the font CoreText would fall back to: the "Last Resort"
+/// font means nothing has it.
+enum GlyphCoverage {
+    private static let lock = NSLock()
+    nonisolated(unsafe) private static var cache: [String: Bool] = [:]
+
+    static func hasGlyph(_ scalar: Unicode.Scalar, fontName: String) -> Bool {
+        let key = "\(scalar.value)|\(fontName)"
+        lock.lock()
+        defer { lock.unlock() }
+        if let known = cache[key] { return known }
+        let base = fontName.isEmpty
+            ? CTFontCreateUIFontForLanguage(.system, 16, nil) ?? CTFontCreateWithName("Helvetica" as CFString, 16, nil)
+            : CTFontCreateWithName(fontName as CFString, 16, nil)
+        let string = String(Character(scalar)) as CFString
+        let fallback = CTFontCreateForString(base, string, CFRange(location: 0, length: CFStringGetLength(string)))
+        let name = CTFontCopyPostScriptName(fallback) as String
+        let covered = !name.localizedCaseInsensitiveContains("LastResort")
+        cache[key] = covered
+        return covered
+    }
+}
+
+/// An empty box: the traditional "no glyph" mark.
+struct NoGlyphBox: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 2)
+            .strokeBorder(.secondary, lineWidth: 1.5)
+            .accessibilityHidden(true)
     }
 }
 

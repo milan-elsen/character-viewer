@@ -179,16 +179,25 @@ struct GlyphPreview: View {
         } else {
             let custom = model.customFont
             let missing = custom.map { !$0.contains(record.scalar) } ?? false
-            Text(CharacterInfo.displayString(for: record))
-                .font(GlyphView.font(custom: custom, missing: missing, fontName: fontName, size: 96))
-                .minimumScaleFactor(0.3)
-                .lineLimit(1)
-                .opacity(missing ? GlyphView.missingOpacity : 1)
-                .frame(maxWidth: .infinity)
-                .frame(height: 130)
-                .background { if missing { MissingGlyphBox() } }
-                .textSelection(.enabled)
-                .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
+            if custom == nil || missing, !GlyphCoverage.hasGlyph(record.scalar, fontName: fontName) {
+                NoGlyphBox()
+                    .frame(width: 64, height: 88)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 130)
+                    .accessibilityElement()
+                    .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
+            } else {
+                Text(CharacterInfo.displayString(for: record))
+                    .font(GlyphView.font(custom: custom, missing: missing, fontName: fontName, size: 96))
+                    .minimumScaleFactor(0.3)
+                    .lineLimit(1)
+                    .opacity(missing ? GlyphView.missingOpacity : 1)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 130)
+                    .background { if missing { MissingGlyphBox() } }
+                    .textSelection(.enabled)
+                    .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
+            }
         }
     }
 }
