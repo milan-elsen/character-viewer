@@ -1,0 +1,133 @@
+{
+  "fill-specializations" : [
+    {
+      "value" : {
+        "linear-gradient" : [
+          "extended-gray:1.00000,1.00000",
+          "srgb:0.79549,0.61291,0.87843,1.00000"
+        ]
+      }
+    },
+    {
+      "appearance" : "dark",
+      "value" : {
+        "linear-gradient" : [
+          "srgb:0.25389,0.25389,0.25389,1.00000",
+          "srgb:0.33984,0.00000,0.34499,1.00000"
+        ]
+      }
+    }
+  ],
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "value" : {
+                "solid" : "srgb:0.57726,0.00000,0.79217,1.00000"
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "srgb:0.82454,0.34093,0.77991,1.00000"
+              }
+            }
+          ],
+          "image-name" : "Asset 3.svg",
+          "name" : "Asset 3",
+          "position" : {
+            "scale" : 2.3,
+            "translation-in-points" : [
+              -16,
+              272
+            ]
+          }
+        },
+        {
+          "fill-specializations" : [
+            {
+              "value" : {
+                "linear-gradient" : [
+                  "extended-gray:1.00000,1.00000",
+                  "srgb:0.87843,0.36499,0.82684,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.49999999999999967,
+                    "y" : 0.5733143328582876
+                  },
+                  "stop" : {
+                    "x" : 0.5,
+                    "y" : 1
+                  }
+                }
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "linear-gradient" : [
+                  "srgb:0.29838,0.29838,0.29838,0.61682",
+                  "srgb:0.57726,0.00000,0.79217,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.49999999999999983,
+                    "y" : 0.6587996956357866
+                  },
+                  "stop" : {
+                    "x" : 0.5,
+                    "y" : 1
+                  }
+                }
+              }
+            },
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "linear-gradient" : [
+                  "srgb:0.87843,0.36499,0.82684,1.00000",
+                  "srgb:0.43727,0.43727,0.43727,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.49999999999999967,
+                    "y" : 0.5733143328582876
+                  },
+                  "stop" : {
+                    "x" : 0.5,
+                    "y" : 1
+                  }
+                }
+              }
+            }
+          ],
+          "image-name" : "Asset 2.svg",
+          "name" : "Asset 2",
+          "position" : {
+            "scale" : 3.5,
+            "translation-in-points" : [
+              0.011412667088507078,
+              -564
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.3
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : [
+      "macOS"
+    ]
+  }
+}
