@@ -56,6 +56,17 @@ jobs:
           pbpaste | xxd | tee -a out/log.txt
           screencapture -x out/3-after-copy.png
 
+          say "characters the system fonts lack: bundled fallback glyph, and no glyph at all"
+          osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
+          osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to keystroke "U+10D6E"' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/23-bundled-fallback.png
+          osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to keystroke "U+12000"' 2>&1 | tee -a out/log.txt; sleep 3
+          screencapture -x out/24-no-glyph.png
+          osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
+          osascript -e 'tell application "System Events" to key code 51' 2>&1 | tee -a out/log.txt; sleep 1
+
           say "global hotkey: control-option-space"
           osascript -e 'tell application "System Events" to key code 49 using {control down, option down}' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/4-quick-open.png
