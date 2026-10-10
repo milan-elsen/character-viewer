@@ -50,6 +50,8 @@ private struct DetailContent: View {
                     Label("Not in “\(font.displayName)”. Showing the fallback font.", systemImage: "exclamationmark.triangle")
                         .font(.callout)
                         .multilineTextAlignment(.leading)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
                         .padding(8)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .background { MissingGlyphBox() }
