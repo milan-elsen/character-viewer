@@ -1,7 +1,8 @@
 # Bundled fonts
 
 `TypecaseFallback.otf` and `TypecaseFallbackUpper.otf` are subsets of **GNU Unifont** (https://unifoundry.com/unifont/),
-reduced to the characters that the macOS system fonts cannot draw. They are used only as a last-resort fallback, drawn
+reduced to the characters that the macOS system fonts cannot draw and that Unifont really has a design for (its
+placeholder boxes for newer characters are left out). They are used only as a last-resort fallback, drawn
 faintly on a yellow box so they are not mistaken for a real design.
 
 Unifont is copyright its authors (Roman Czyborra, Paul Hardy and others). It is distributed under the GNU GPL

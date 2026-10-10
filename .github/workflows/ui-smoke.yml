@@ -59,7 +59,7 @@ jobs:
           say "characters the system fonts lack: bundled fallback glyph, and no glyph at all"
           osascript -e 'tell application "System Events" to keystroke "f" using command down' 2>&1 | tee -a out/log.txt; sleep 1
           osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
-          osascript -e 'tell application "System Events" to keystroke "U+10D6E"' 2>&1 | tee -a out/log.txt; sleep 3
+          osascript -e 'tell application "System Events" to keystroke "U+11A00"' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/23-bundled-fallback.png
           osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
           osascript -e 'tell application "System Events" to keystroke "U+12000"' 2>&1 | tee -a out/log.txt; sleep 3
