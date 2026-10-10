@@ -62,7 +62,7 @@ jobs:
           osascript -e 'tell application "System Events" to keystroke "U+11A00"' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/23-bundled-fallback.png
           osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
-          osascript -e 'tell application "System Events" to keystroke "U+12000"' 2>&1 | tee -a out/log.txt; sleep 3
+          osascript -e 'tell application "System Events" to keystroke "U+14400"' 2>&1 | tee -a out/log.txt; sleep 3
           screencapture -x out/24-no-glyph.png
           osascript -e 'tell application "System Events" to keystroke "a" using command down' 2>&1 | tee -a out/log.txt
           osascript -e 'tell application "System Events" to key code 51' 2>&1 | tee -a out/log.txt; sleep 1
