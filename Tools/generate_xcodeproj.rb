@@ -51,7 +51,8 @@ strings = resources_group.new_file('Localizable.xcstrings')
 strings.last_known_file_type = 'text.json.xcstrings'
 privacy = resources_group.new_file('PrivacyInfo.xcprivacy')
 privacy.last_known_file_type = 'text.xml'
-[assets, strings, privacy].each { |ref| target.resources_build_phase.add_file_reference(ref) }
+fonts = %w[TypecaseFallback TypecaseFallbackUpper].map { |n| resources_group.new_file("Fonts/#{n}.otf") }
+[assets, strings, privacy, *fonts].each { |ref| target.resources_build_phase.add_file_reference(ref) }
 
 data_group = project.main_group.new_group('Data', 'Data')
 database = data_group.new_file('characters.json')

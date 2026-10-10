@@ -1,88 +1,58 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "" : {
-
-    },
-    ", then " : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ", dann "
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ", dan "
-          }
-        }
-      }
-    },
-    "%@, %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@, %2$@"
-          }
-        }
-      }
-    },
-    "%lld characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld Zeichen"
+  "sourceLanguage": "en",
+  "strings": {
+    "%lld characters": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld character"
                 }
               },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld Zeichen"
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld characters"
                 }
               }
             }
           }
         },
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld character"
+        "nl": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld teken"
                 }
               },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld characters"
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld tekens"
                 }
               }
             }
           }
         },
-        "nl" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld teken"
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Zeichen"
                 }
               },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld tekens"
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Zeichen"
                 }
               }
             }
@@ -90,2656 +60,2669 @@
         }
       }
     },
-    "⌘%lld" : {
-
-    },
-    "Active Keyboard" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktive Tastatur"
+    ", then ": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", dan "
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Actief toetsenbord"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ", dann "
           }
         }
       }
     },
-    "Add “Unicode Hex Input” under Input Sources to type any character by holding ⌥ and entering its code." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Füge „Unicode-Hex-Eingabe“ unter Eingabequellen hinzu, um jedes Zeichen mit gedrückter ⌥-Taste und seinem Code einzugeben."
+    "Active Keyboard": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actief toetsenbord"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voeg ‘Unicode hex-invoer’ toe bij Invoerbronnen om elk teken te typen door ⌥ ingedrukt te houden en de code in te voeren."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktive Tastatur"
           }
         }
       }
     },
-    "Add to Favorites" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zu Favoriten hinzufügen"
+    "Add to Favorites": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voeg toe aan favorieten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voeg toe aan favorieten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zu Favoriten hinzufügen"
           }
         }
       }
     },
-    "All Characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alle Zeichen"
+    "Add “Unicode Hex Input” under Input Sources to type any character by holding ⌥ and entering its code.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voeg ‘Unicode hex-invoer’ toe bij Invoerbronnen om elk teken te typen door ⌥ ingedrukt te houden en de code in te voeren."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alle tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge „Unicode-Hex-Eingabe“ unter Eingabequellen hinzu, um jedes Zeichen mit gedrückter ⌥-Taste und seinem Code einzugeben."
           }
         }
       }
     },
-    "Also Called" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auch genannt"
+    "All Characters": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ook genoemd"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle Zeichen"
           }
         }
       }
     },
-    "Always show in Dock" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Immer im Dock anzeigen"
+    "Also Called": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ook genoemd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Altijd tonen in het Dock"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auch genannt"
           }
         }
       }
     },
-    "Block" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Block"
+    "Always show in Dock": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Altijd tonen in het Dock"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Blok"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Immer im Dock anzeigen"
           }
         }
       }
     },
-    "Category" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kategorie"
+    "Block": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blok"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Categorie"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Block"
           }
         }
       }
     },
-    "Character" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen"
+    "Category": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Categorie"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teken"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorie"
           }
         }
       }
     },
-    "Character Viewer" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichenübersicht"
+    "Character": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teken"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekenweergave"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen"
           }
         }
       }
     },
-    "Characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen"
+    "Character Viewer": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekenweergave"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichenübersicht"
           }
         }
       }
     },
-    "Characters are copied to the clipboard. Press ⌘V in your document to paste." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen werden in die Zwischenablage kopiert. Drücke ⌘V in deinem Dokument, um sie einzusetzen."
+    "Characters": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekens worden naar het klembord gekopieerd. Druk op ⌘V in je document om te plakken."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen"
           }
         }
       }
     },
-    "Characters Could Not Be Loaded" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen konnten nicht geladen werden"
+    "Characters Could Not Be Loaded": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekens konden niet worden geladen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekens konden niet worden geladen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen konnten nicht geladen werden"
           }
         }
       }
     },
-    "Characters you can type" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen, die du tippen kannst"
+    "Characters are copied to the clipboard. Press ⌘V in your document to paste.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekens worden naar het klembord gekopieerd. Druk op ⌘V in je document om te plakken."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekens die je kunt typen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen werden in die Zwischenablage kopiert. Drücke ⌘V in deinem Dokument, um sie einzusetzen."
           }
         }
       }
     },
-    "Characters you copy appear here." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopierte Zeichen erscheinen hier."
+    "Characters you can type": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekens die je kunt typen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekens die je kopieert verschijnen hier."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen, die du tippen kannst"
           }
         }
       }
     },
-    "Clear" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Löschen"
+    "Characters you copy appear here.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekens die je kopieert verschijnen hier."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wis"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopierte Zeichen erscheinen hier."
           }
         }
       }
     },
-    "Clear Recents" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zuletzt verwendete löschen"
+    "Clear": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wis"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wis recente tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Löschen"
           }
         }
       }
     },
-    "Close" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schließen"
+    "Clear Recents": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wis recente tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sluit"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt verwendete löschen"
           }
         }
       }
     },
-    "Close after copying" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nach dem Kopieren schließen"
+    "Close": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sluit"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sluit na kopiëren"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schließen"
           }
         }
       }
     },
-    "Close Font" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schrift schließen"
+    "Close Font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sluit lettertype"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sluit lettertype"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift schließen"
           }
         }
       }
     },
-    "code point" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Codepunkt"
+    "Close after copying": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sluit na kopiëren"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "codepunt"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach dem Kopieren schließen"
           }
         }
       }
     },
-    "Code Point" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Codepunkt"
+    "Code Point": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codepunt"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Codepunt"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codepunkt"
           }
         }
       }
     },
-    "Codes" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Codes"
+    "Codes": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codes"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Codes"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codes"
           }
         }
       }
     },
-    "collection.arrows" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pfeile"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arrows"
+    "Collections": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collecties"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pijlen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sammlungen"
           }
         }
       }
     },
-    "collection.boxdrawing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rahmenzeichen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Box Drawing"
+    "Control-click a character and choose Add to Favorites.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klik met de Control-toets ingedrukt op een teken en kies 'Voeg toe aan favorieten'."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kaderlijnen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klicke bei gedrückter Control-Taste auf ein Zeichen und wähle „Zu Favoriten hinzufügen“."
           }
         }
       }
     },
-    "collection.currency" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Währungen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Currency"
+    "Copied %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ gekopieerd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Valuta"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kopiert"
           }
         }
       }
     },
-    "collection.dashes" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Striche und Bindestriche"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dashes & Hyphens"
+    "Copied “%@”": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“%@” gekopieerd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Streepjes en koppeltekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "„%@“ kopiert"
           }
         }
       }
     },
-    "collection.diacritics" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diakritische Zeichen"
+    "Copies the best matching Unicode character to the clipboard.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieert het best passende Unicode-teken naar het klembord."
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diacritics"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopiert das am besten passende Unicode-Zeichen in die Zwischenablage."
           }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diakritische tekens"
-          }
         }
       }
     },
-    "collection.fractions" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brüche und Hochgestelltes"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fractions & Superscripts"
+    "Copy": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Breuken en superscript"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieren"
           }
         }
       }
     },
-    "collection.greek" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Griechisch"
+    "Copy %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer %@"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Greek"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kopieren"
           }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grieks"
-          }
         }
       }
     },
-    "collection.keyboard" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tastatur und Mac-Tasten"
+    "Copy Character": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer teken"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keyboard & Mac Keys"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen kopieren"
           }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toetsenbord en Mac-toetsen"
-          }
         }
       }
     },
-    "collection.latin" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lateinische Buchstaben"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Latin Letters"
+    "Copy Code Point": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer codepunt"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Latijnse letters"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codepunkt kopieren"
           }
         }
       }
     },
-    "collection.math" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mathematik"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Math"
+    "Copy HTML Entity": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer HTML-entiteit"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wiskunde"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HTML-Entität kopieren"
           }
         }
       }
     },
-    "collection.punctuation" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Satzzeichen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Punctuation"
+    "Copy Name": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer naam"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leestekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name kopieren"
           }
         }
       }
     },
-    "collection.quotes" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anführungszeichen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quotation Marks"
+    "Copy the character for ${query}": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopieer het teken voor ${query}"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aanhalingstekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen für ${query} kopieren"
           }
         }
       }
     },
-    "collection.shapes" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Formen und Symbole"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shapes & Symbols"
+    "Current layout": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huidige indeling"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vormen en symbolen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktuelles Layout"
           }
         }
       }
     },
-    "collection.spaces" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leerzeichen und Unsichtbares"
+    "Decimal": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decimaal"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spaces & Invisibles"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dezimal"
           }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spaties en onzichtbare tekens"
-          }
         }
       }
     },
-    "collection.technical" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Technisch"
+    "Default Glyph Size": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standaardgrootte"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Technical"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standardgröße"
+          }
+        }
+      }
+    },
+    "Description": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omschrijving"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Technisch"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beschreibung"
           }
         }
       }
     },
-    "collection.typography" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Typografie und Zeichen"
+    "Display": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weergave"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Typography & Marks"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Darstellung"
+          }
+        }
+      }
+    },
+    "Favorite": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriet"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Typografie en tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorit"
           }
         }
       }
     },
-    "Collections" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sammlungen"
+    "Favorites": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorieten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Collecties"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriten"
           }
         }
       }
     },
-    "Control-click a character and choose Add to Favorites." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klicke bei gedrückter Control-Taste auf ein Zeichen und wähle „Zu Favoriten hinzufügen“."
+    "Find Character": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek teken"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klik met de Control-toets ingedrukt op een teken en kies 'Voeg toe aan favorieten'."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen suchen"
           }
         }
       }
     },
-    "Copied “%@”" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "„%@“ kopiert"
+    "Find the character for ${query}": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek het teken voor ${query}"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "“%@” gekopieerd"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen für ${query} suchen"
           }
         }
       }
     },
-    "Copied %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ kopiert"
+    "Finds a Unicode character from a description such as “thin space” or “em dash”.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoekt een Unicode-teken op basis van een omschrijving zoals “thin space” of “em dash”."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ gekopieerd"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Findet ein Unicode-Zeichen anhand einer Beschreibung wie „thin space“ oder „em dash“."
           }
         }
       }
     },
-    "Copies the best matching Unicode character to the clipboard." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopiert das am besten passende Unicode-Zeichen in die Zwischenablage."
+    "Find…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek…"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieert het best passende Unicode-teken naar het klembord."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchen …"
           }
         }
       }
     },
-    "Copy" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieren"
+    "Font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lettertype"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieer"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift"
           }
         }
       }
     },
-    "Copy %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ kopieren"
+    "Font Alternates": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lettertypevarianten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieer %@"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schriftvarianten"
           }
         }
       }
     },
-    "Copy Character" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen kopieren"
+    "General": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algemeen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieer teken"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allgemein"
           }
         }
       }
     },
-    "Copy Code Point" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Codepunkt kopieren"
+    "Glyph size": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekengrootte"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieer codepunt"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichengröße"
           }
         }
       }
     },
-    "Copy HTML Entity" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HTML-Entität kopieren"
+    "HTML (decimal)": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HTML (decimaal)"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieer HTML-entiteit"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HTML (dezimal)"
           }
         }
       }
     },
-    "Copy Name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name kopieren"
+    "HTML (named)": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HTML (benoemd)"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieer naam"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HTML (benannt)"
           }
         }
       }
     },
-    "Copy the character for ${query}" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen für ${query} kopieren"
+    "HTML entity": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HTML-entiteit"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopieer het teken voor ${query}"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HTML-Entität"
           }
         }
       }
     },
-    "curly apostrophe" : {
-
-    },
-    "Current layout" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktuelles Layout"
+    "History": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geschiedenis"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Huidige indeling"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlauf"
           }
         }
       }
     },
-    "Decimal" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dezimal"
+    "In %lld font families": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In %lld lettertypefamilies"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Decimaal"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In %lld Schriftfamilien"
           }
         }
       }
     },
-    "Default Glyph Size" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standardgröße"
+    "Information": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informatie"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standaardgrootte"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informationen"
           }
         }
       }
     },
-    "Description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beschreibung"
+    "Inspector": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informatie"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Omschrijving"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informationen"
           }
         }
       }
     },
-    "Display" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Darstellung"
+    "Installed Fonts": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geïnstalleerde lettertypen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weergave"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Installierte Schriften"
           }
         }
       }
-    },
-    "em dash" : {
-
     },
-    "Favorite" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favorit"
+    "Introduced": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geïntroduceerd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favoriet"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eingeführt"
           }
         }
       }
     },
-    "Favorites" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favoriten"
+    "Keyboard": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toetsenbord"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Favorieten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastatur"
           }
         }
       }
     },
-    "Find Character" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen suchen"
+    "Keyboard Settings…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toetsenbordinstellingen…"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zoek teken"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastatureinstellungen …"
           }
         }
       }
     },
-    "Find the character for ${query}" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen für ${query} suchen"
+    "Keyboard shortcut": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toetsencombinatie"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zoek het teken voor ${query}"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastaturkurzbefehl"
           }
         }
       }
     },
-    "Find…" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suchen …"
+    "Larger Glyphs": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grotere tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zoek…"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Größere Zeichen"
           }
         }
       }
     },
-    "Finds a Unicode character from a description such as “thin space” or “em dash”." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Findet ein Unicode-Zeichen anhand einer Beschreibung wie „thin space“ oder „em dash“."
+    "Launch at login": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open bij inloggen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zoekt een Unicode-teken op basis van een omschrijving zoals “thin space” of “em dash”."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bei Anmeldung öffnen"
           }
         }
       }
     },
-    "Font" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schrift"
+    "Library": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bibliotheek"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lettertype"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bibliothek"
           }
         }
       }
     },
-    "Font Alternates" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schriftvarianten"
+    "Loading characters…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekens laden…"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lettertypevarianten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen werden geladen …"
           }
         }
       }
     },
-    "General" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allgemein"
+    "No Character Selected": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen teken geselecteerd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Algemeen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Zeichen ausgewählt"
           }
         }
       }
     },
-    "Glyph size" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichengröße"
+    "No Characters": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekengrootte"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Zeichen"
           }
         }
       }
     },
-    "History" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verlauf"
+    "No Favorites Yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen favorieten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geschiedenis"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Favoriten"
           }
         }
       }
     },
-    "HTML (decimal)" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HTML (dezimal)"
+    "No characters found": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen tekens gevonden"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HTML (decimaal)"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Zeichen gefunden"
           }
         }
       }
     },
-    "HTML (named)" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HTML (benannt)"
+    "No favorites yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog geen favorieten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HTML (benoemd)"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Favoriten"
           }
         }
       }
     },
-    "HTML entity" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HTML-Entität"
+    "No installed font draws this character": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen geïnstalleerd lettertype tekent dit teken"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HTML-entiteit"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine installierte Schrift stellt dieses Zeichen dar"
           }
         }
       }
     },
-    "In %lld font families" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In %lld Schriftfamilien"
+    "No installed font has this character.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen geïnstalleerd lettertype bevat dit teken."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In %lld lettertypefamilies"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine installierte Schrift enthält dieses Zeichen."
           }
         }
       }
     },
-    "Information" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Informationen"
+    "No installed font has this character. Showing a basic stand-in glyph.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen geïnstalleerd lettertype bevat dit teken. Een eenvoudig vervangend teken wordt getoond."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Informatie"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine installierte Schrift enthält dieses Zeichen. Es wird ein einfaches Ersatzzeichen angezeigt."
           }
         }
       }
     },
-    "Inspector" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Informationen"
+    "No matching character was found.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Er is geen passend teken gevonden."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Informatie"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es wurde kein passendes Zeichen gefunden."
           }
         }
       }
     },
-    "Installed Fonts" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Installierte Schriften"
+    "Not in the opened font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet in het geopende lettertype"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geïnstalleerde lettertypen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht in der geöffneten Schrift"
           }
         }
       }
     },
-    "Introduced" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eingeführt"
+    "Not in “%@”. Showing the fallback font.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet in “%@”. Het reservelettertype wordt getoond."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geïntroduceerd"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht in „%@“. Die Ersatzschrift wird angezeigt."
           }
         }
       }
     },
-    "Keyboard" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tastatur"
+    "Not on this keyboard": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet op dit toetsenbord"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toetsenbord"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht auf dieser Tastatur"
           }
         }
       }
     },
-    "Keyboard Settings…" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tastatureinstellungen …"
+    "Nothing Copied Yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog niets gekopieerd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toetsenbordinstellingen…"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch nichts kopiert"
           }
         }
       }
     },
-    "Keyboard shortcut" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tastaturkurzbefehl"
+    "Nothing copied yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nog niets gekopieerd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toetsencombinatie"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch nichts kopiert"
           }
         }
       }
     },
-    "Larger Glyphs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Größere Zeichen"
+    "Off": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uit"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grotere tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus"
           }
         }
       }
     },
-    "Launch at login" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bei Anmeldung öffnen"
+    "Open Character Viewer": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Tekenweergave"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open bij inloggen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichenübersicht öffnen"
           }
         }
       }
     },
-    "Library" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bibliothek"
+    "Open Font…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open lettertype…"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bibliotheek"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift öffnen …"
           }
         }
       }
     },
-    "Loading characters…" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen werden geladen …"
+    "Open Keyboard Settings…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open toetsenbordinstellingen…"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tekens laden…"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastatureinstellungen öffnen …"
           }
         }
       }
     },
-    "name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name"
+    "Open Typecase": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Typecase"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "naam"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typecase öffnen"
           }
         }
       }
     },
-    "No Character Selected" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kein Zeichen ausgewählt"
+    "Open in App": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open in app"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geen teken geselecteerd"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In der App öffnen"
           }
         }
       }
     },
-    "No Characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Zeichen"
+    "Opened Font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geopend lettertype"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geen tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geöffnete Schrift"
           }
         }
       }
     },
-    "No characters found" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Zeichen gefunden"
+    "Opened font “%@”": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lettertype “%@” geopend"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geen tekens gevonden"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift „%@“ geöffnet"
           }
         }
       }
     },
-    "No favorites yet" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine Favoriten"
+    "Option": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Option"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nog geen favorieten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wahltaste"
           }
         }
       }
     },
-    "No Favorites Yet" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine Favoriten"
+    "Other Ways to Type": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere manieren om te typen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nog geen favorieten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weitere Eingabemöglichkeiten"
           }
         }
       }
     },
-    "No installed font draws this character" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine installierte Schrift stellt dieses Zeichen dar"
+    "Paste into the previous app": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plak in de vorige app"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geen geïnstalleerd lettertype tekent dit teken"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In die vorherige App einsetzen"
           }
         }
       }
     },
-    "No installed font has this character." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine installierte Schrift enthält dieses Zeichen."
+    "Pasting needs permission under System Settings › Privacy & Security › Accessibility.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plakken vereist toestemming in Systeminstellingen › Privacy en beveiliging › Toegankelijkheid."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geen geïnstalleerd lettertype bevat dit teken."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einsetzen erfordert eine Freigabe unter Systemeinstellungen › Datenschutz & Sicherheit › Bedienungshilfen."
           }
         }
       }
     },
-    "No matching character was found." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Es wurde kein passendes Zeichen gefunden."
+    "Pick": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Er is geen passend teken gevonden."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle"
           }
         }
       }
     },
-    "Not in “%@”. Showing the fallback font." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nicht in „%@“. Die Ersatzschrift wird angezeigt."
+    "Pick 1–9": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kies 1–9"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Niet in “%@”. Het reservelettertype wordt getoond."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle 1–9"
           }
         }
       }
     },
-    "Not in the opened font" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nicht in der geöffneten Schrift"
+    "Quick Lookup": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snel opzoeken"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Niet in het geopende lettertype"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schnellsuche"
           }
         }
       }
     },
-    "Not on this keyboard" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nicht auf dieser Tastatur"
+    "Quick Lookup…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snel opzoeken…"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Niet op dit toetsenbord"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schnellsuche …"
           }
         }
       }
     },
-    "Nothing copied yet" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch nichts kopiert"
+    "Quit Typecase": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop Typecase"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nog niets gekopieerd"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typecase beenden"
           }
         }
       }
     },
-    "Nothing Copied Yet" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch nichts kopiert"
+    "Recent": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recent"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nog niets gekopieerd"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt"
           }
         }
       }
     },
-    "Off" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aus"
+    "Recent Characters": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recente tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Uit"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt verwendete Zeichen"
           }
         }
       }
     },
-    "Open Character Viewer" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichenübersicht öffnen"
+    "Recents": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recent"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Tekenweergave"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt"
           }
         }
       }
     },
-    "Open Font…" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schrift öffnen …"
+    "Related Characters": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwante tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open lettertype…"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwandte Zeichen"
           }
         }
       }
     },
-    "Open in App" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In der App öffnen"
+    "Remove from Favorites": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijder uit favorieten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open in app"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus Favoriten entfernen"
           }
         }
       }
     },
-    "Open Keyboard Settings…" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tastatureinstellungen öffnen …"
+    "Script": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open toetsenbordinstellingen…"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrift"
           }
         }
       }
     },
-    "Open Typecase" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Typecase öffnen"
+    "Search Results": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoekresultaten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Typecase"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchergebnisse"
           }
         }
       }
     },
-    "Opened Font" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geöffnete Schrift"
+    "Search by name, code or description": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek op naam, code of omschrijving"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geopend lettertype"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Name, Code oder Beschreibung suchen"
           }
         }
       }
     },
-    "Opened font “%@”" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schrift „%@“ geöffnet"
+    "Search characters": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lettertype “%@” geopend"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeichen suchen"
           }
         }
       }
     },
-    "Option" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wahltaste"
+    "Select a character to see its codes, related characters and how to type it.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecteer een teken om de codes, verwante tekens en de toetsencombinatie te zien."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Option"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle ein Zeichen, um Codes, verwandte Zeichen und die Tastenkombination zu sehen."
           }
         }
       }
     },
-    "Other Ways to Type" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weitere Eingabemöglichkeiten"
+    "Settings…": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instellingen…"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Andere manieren om te typen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen …"
           }
         }
       }
     },
-    "Paste into the previous app" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In die vorherige App einsetzen"
+    "Shift": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shift"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plak in de vorige app"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Umschalttaste"
           }
         }
       }
     },
-    "Pasting needs permission under System Settings › Privacy & Security › Accessibility." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einsetzen erfordert eine Freigabe unter Systemeinstellungen › Datenschutz & Sicherheit › Bedienungshilfen."
+    "Show in menu bar": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toon in de menubalk"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plakken vereist toestemming in Systeminstellingen › Privacy en beveiliging › Toegankelijkheid."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In der Menüleiste anzeigen"
           }
         }
       }
     },
-    "Pick" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wähle"
+    "Show or Hide Inspector": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informatie tonen of verbergen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kies"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informationen ein- oder ausblenden"
           }
         }
       }
     },
-    "Pick 1–9" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wähle 1–9"
+    "Smaller Glyphs": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleinere tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kies 1–9"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleinere Zeichen"
           }
         }
       }
     },
-    "Quick Lookup" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schnellsuche"
+    "Startup": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opstarten"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snel opzoeken"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
           }
         }
       }
     },
-    "Quick Lookup…" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schnellsuche …"
+    "System Font": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systeemlettertype"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snel opzoeken…"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemschrift"
           }
         }
       }
     },
-    "Quit Typecase" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Typecase beenden"
+    "The Dock icon appears only while the main window is open.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het Dock-symbool verschijnt alleen zolang het hoofdvenster open is."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop Typecase"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Dock-Symbol erscheint nur, solange das Hauptfenster geöffnet ist."
           }
         }
       }
     },
-    "Recent" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zuletzt"
+    "The active keyboard layout can't be read.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De actieve toetsenbordindeling kan niet worden gelezen."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recent"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das aktive Tastaturlayout kann nicht gelesen werden."
           }
         }
       }
     },
-    "Recent Characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zuletzt verwendete Zeichen"
+    "The character database could not be loaded.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De tekendatabase kon niet worden geladen."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recente tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Zeichendatenbank konnte nicht geladen werden."
           }
         }
       }
     },
-    "Recents" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zuletzt"
+    "The current input source has no keyboard layout of its own; showing the last Roman layout instead.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De huidige invoerbron heeft geen eigen toetsenbordindeling; de laatste Latijnse indeling wordt getoond."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recent"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die aktuelle Eingabequelle hat kein eigenes Tastaturlayout; das zuletzt verwendete lateinische Layout wird angezeigt."
           }
         }
       }
     },
-    "Related Characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verwandte Zeichen"
+    "The font is used for previews and to look for alternate forms of a character.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Het lettertype wordt gebruikt voor voorvertoningen en om varianten van een teken te zoeken."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verwante tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Schrift wird für Vorschauen und zur Suche nach Varianten eines Zeichens verwendet."
           }
         }
       }
     },
-    "Remove from Favorites" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aus Favoriten entfernen"
+    "This character is not in the opened font.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit teken zit niet in het geopende lettertype."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verwijder uit favorieten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Zeichen ist nicht in der geöffneten Schrift enthalten."
           }
         }
       }
     },
-    "right arrow" : {
-
-    },
-    "Script" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schrift"
+    "This file is not a font that macOS can read.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit bestand is geen lettertype dat macOS kan lezen."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schrift"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Datei ist keine Schrift, die macOS lesen kann."
           }
         }
       }
     },
-    "Search by name, code or description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nach Name, Code oder Beschreibung suchen"
+    "This font has no alternate forms of this character.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dit lettertype heeft geen varianten van dit teken."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zoek op naam, code of omschrijving"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Schrift hat keine Varianten dieses Zeichens."
           }
         }
       }
     },
-    "Search characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeichen suchen"
+    "Typing": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zoek tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eingabe"
           }
         }
       }
     },
-    "Search Results" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suchergebnisse"
+    "Typing instructions follow the keyboard layout you are using right now and update when you switch input sources.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De typinstructies volgen de toetsenbordindeling die je nu gebruikt en worden bijgewerkt als je van invoerbron wisselt."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zoekresultaten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Tastenanweisungen folgen dem aktuell verwendeten Tastaturlayout und aktualisieren sich beim Wechsel der Eingabequelle."
           }
         }
       }
     },
-    "Select a character to see its codes, related characters and how to type it." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wähle ein Zeichen, um Codes, verwandte Zeichen und die Tastenkombination zu sehen."
+    "Typing on “%@”": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typen op “%@”"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecteer een teken om de codes, verwante tekens en de toetsencombinatie te zien."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eingabe auf „%@“"
           }
         }
       }
     },
-    "Settings…" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einstellungen …"
+    "URL Encoded": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL-gecodeerd"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instellingen…"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URL-codiert"
           }
         }
       }
     },
-    "Shift" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Umschalttaste"
+    "Unicode Blocks": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unicode-blokken"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shift"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unicode-Blöcke"
           }
         }
       }
     },
-    "Show in menu bar" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In der Menüleiste anzeigen"
+    "Width: %@ em": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breedte: %@ em"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toon in de menubalk"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breite: %@ em"
           }
         }
       }
     },
-    "Show or Hide Inspector" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Informationen ein- oder ausblenden"
+    "Windows-1252 (Alt code)": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows-1252 (Alt-code)"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Informatie tonen of verbergen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows-1252 (Alt-Code)"
           }
         }
       }
     },
-    "Smaller Glyphs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kleinere Zeichen"
+    "With both turned off, open Quick Lookup with its keyboard shortcut.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als beide uit staan, open je Snel opzoeken met de toetsencombinatie."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kleinere tekens"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wenn beides ausgeschaltet ist, öffne die Schnellsuche mit dem Tastaturkurzbefehl."
           }
         }
       }
     },
-    "Startup" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start"
+    "With the Unicode Hex Input keyboard, hold ⌥ and type %@.": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Met het toetsenbord ‘Unicode hex-invoer’ houd je ⌥ ingedrukt en typ je %@."
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Opstarten"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit der Tastatur „Unicode-Hex-Eingabe“ halte ⌥ gedrückt und tippe %@."
           }
         }
       }
     },
-    "System Font" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Systemschrift"
+    "Zero width": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nulbreedte"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Systeemlettertype"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Null Breite"
           }
         }
       }
     },
-    "The active keyboard layout can't be read." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das aktive Tastaturlayout kann nicht gelesen werden."
+    "code point": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "codepunt"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "De actieve toetsenbordindeling kan niet worden gelezen."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codepunkt"
           }
         }
       }
     },
-    "The character database could not be loaded." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Zeichendatenbank konnte nicht geladen werden."
+    "collection.arrows": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrows"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pijlen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "De tekendatabase kon niet worden geladen."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pfeile"
           }
         }
       }
     },
-    "The current input source has no keyboard layout of its own; showing the last Roman layout instead." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die aktuelle Eingabequelle hat kein eigenes Tastaturlayout; das zuletzt verwendete lateinische Layout wird angezeigt."
+    "collection.boxdrawing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Box Drawing"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaderlijnen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "De huidige invoerbron heeft geen eigen toetsenbordindeling; de laatste Latijnse indeling wordt getoond."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rahmenzeichen"
           }
         }
       }
     },
-    "The Dock icon appears only while the main window is open." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das Dock-Symbol erscheint nur, solange das Hauptfenster geöffnet ist."
+    "collection.currency": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Currency"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valuta"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Het Dock-symbool verschijnt alleen zolang het hoofdvenster open is."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Währungen"
           }
         }
       }
     },
-    "The font is used for previews and to look for alternate forms of a character." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Schrift wird für Vorschauen und zur Suche nach Varianten eines Zeichens verwendet."
+    "collection.dashes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dashes & Hyphens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Het lettertype wordt gebruikt voor voorvertoningen en om varianten van een teken te zoeken."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Streepjes en koppeltekens"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Striche und Bindestriche"
+          }
         }
       }
     },
-    "then" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "dann"
+    "collection.diacritics": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diacritics"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "dan"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diakritische tekens"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diakritische Zeichen"
+          }
         }
       }
-    },
-    "thin space" : {
-
     },
-    "This character is not in the opened font." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dieses Zeichen ist nicht in der geöffneten Schrift enthalten."
+    "collection.fractions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fractions & Superscripts"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dit teken zit niet in het geopende lettertype."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breuken en superscript"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brüche und Hochgestelltes"
+          }
         }
       }
     },
-    "This file is not a font that macOS can read." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diese Datei ist keine Schrift, die macOS lesen kann."
+    "collection.greek": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Greek"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dit bestand is geen lettertype dat macOS kan lezen."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grieks"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Griechisch"
+          }
         }
       }
     },
-    "This font has no alternate forms of this character." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diese Schrift hat keine Varianten dieses Zeichens."
+    "collection.keyboard": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keyboard & Mac Keys"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toetsenbord en Mac-toetsen"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dit lettertype heeft geen varianten van dit teken."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastatur und Mac-Tasten"
           }
         }
       }
-    },
-    "Typecase" : {
-
     },
-    "Typing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eingabe"
+    "collection.latin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latin Letters"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latijnse letters"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Typen"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lateinische Buchstaben"
           }
         }
       }
     },
-    "Typing instructions follow the keyboard layout you are using right now and update when you switch input sources." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Tastenanweisungen folgen dem aktuell verwendeten Tastaturlayout und aktualisieren sich beim Wechsel der Eingabequelle."
+    "collection.math": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Math"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "De typinstructies volgen de toetsenbordindeling die je nu gebruikt en worden bijgewerkt als je van invoerbron wisselt."
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wiskunde"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mathematik"
+          }
         }
       }
     },
-    "Typing on “%@”" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eingabe auf „%@“"
+    "collection.punctuation": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Punctuation"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Typen op “%@”"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leestekens"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satzzeichen"
+          }
         }
       }
-    },
-    "U+2009" : {
-
     },
-    "Unicode Blocks" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unicode-Blöcke"
+    "collection.quotes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quotation Marks"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unicode-blokken"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aanhalingstekens"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anführungszeichen"
+          }
         }
       }
     },
-    "URL Encoded" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "URL-codiert"
+    "collection.shapes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shapes & Symbols"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "URL-gecodeerd"
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vormen en symbolen"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formen und Symbole"
+          }
         }
       }
     },
-    "Width: %@ em" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Breite: %@ em"
+    "collection.spaces": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spaces & Invisibles"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spaties en onzichtbare tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Breedte: %@ em"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leerzeichen und Unsichtbares"
           }
         }
       }
     },
-    "Windows-1252 (Alt code)" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Windows-1252 (Alt-Code)"
+    "collection.technical": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Technical"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Technisch"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Windows-1252 (Alt-code)"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Technisch"
           }
         }
       }
     },
-    "With both turned off, open Quick Lookup with its keyboard shortcut." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wenn beides ausgeschaltet ist, öffne die Schnellsuche mit dem Tastaturkurzbefehl."
+    "collection.typography": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typography & Marks"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typografie en tekens"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Als beide uit staan, open je Snel opzoeken met de toetsencombinatie."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Typografie und Zeichen"
           }
         }
       }
     },
-    "With the Unicode Hex Input keyboard, hold ⌥ and type %@." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mit der Tastatur „Unicode-Hex-Eingabe“ halte ⌥ gedrückt und tippe %@."
+    "name": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "naam"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Met het toetsenbord ‘Unicode hex-invoer’ houd je ⌥ ingedrukt en typ je %@."
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
           }
         }
       }
     },
-    "Zero width" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Null Breite"
+    "then": {
+      "extractionState": "manual",
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dan"
           }
         },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nulbreedte"
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dann"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

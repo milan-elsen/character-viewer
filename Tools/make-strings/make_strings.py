@@ -107,6 +107,11 @@ T = {
     "Opened font “%@”": ("Lettertype “%@” geopend", "Schrift „%@“ geöffnet"),
     "Not in “%@”. Showing the fallback font.": (
         "Niet in “%@”. Het reservelettertype wordt getoond.", "Nicht in „%@“. Die Ersatzschrift wird angezeigt."),
+    "No installed font has this character. Showing a basic stand-in glyph.": (
+        "Geen geïnstalleerd lettertype bevat dit teken. Een eenvoudig vervangend teken wordt getoond.",
+        "Keine installierte Schrift enthält dieses Zeichen. Es wird ein einfaches Ersatzzeichen angezeigt."),
+    "No installed font has this character.": (
+        "Geen geïnstalleerd lettertype bevat dit teken.", "Keine installierte Schrift enthält dieses Zeichen."),
     "Not in the opened font": ("Niet in het geopende lettertype", "Nicht in der geöffneten Schrift"),
     "This character is not in the opened font.": (
         "Dit teken zit niet in het geopende lettertype.", "Dieses Zeichen ist nicht in der geöffneten Schrift enthalten."),

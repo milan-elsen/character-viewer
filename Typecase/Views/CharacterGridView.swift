@@ -289,11 +289,21 @@ struct GlyphView: View {
                         .lineLimit(1)
                         .padding(2)
                 }
-        } else if custom == nil || missing, !GlyphCoverage.hasGlyph(record.scalar, fontName: fontName) {
-            // No installed font has this character. Newer macOS draws a question mark for it; show an empty box.
+        } else if custom == nil || missing, GlyphCoverage.source(of: record.scalar, fontName: fontName) == .none {
+            // No font has this character, not even the bundled one: an empty box (newer macOS would draw a question mark).
             NoGlyphBox()
                 .frame(width: pointSize * 0.7, height: pointSize * 0.7)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } else if custom == nil || missing, GlyphCoverage.source(of: record.scalar, fontName: fontName) == .bundledFallback {
+            // Only the bundled fallback font can draw it: faint glyph on the yellow warning box.
+            Text(CharacterInfo.displayString(for: record))
+                .font(Font(FallbackFont.ctFont(for: record.scalar, size: pointSize) ?? CTFontCreateWithName("Helvetica" as CFString, pointSize, nil)))
+                .minimumScaleFactor(0.4)
+                .lineLimit(1)
+                .opacity(Self.missingOpacity)
+                .padding(.horizontal, 4)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background { MissingGlyphBox() }
         } else {
             Text(CharacterInfo.displayString(for: record))
                 .font(Self.font(custom: custom, missing: missing, fontName: fontName, size: pointSize))
@@ -325,13 +335,42 @@ struct GlyphView: View {
     }
 }
 
-/// Whether any installed font can draw a character. Looks at the font CoreText would fall back to: the "Last Resort"
-/// font means nothing has it.
-enum GlyphCoverage {
-    private static let lock = NSLock()
-    nonisolated(unsafe) private static var cache: [String: Bool] = [:]
+/// The small fonts bundled with the app (subsets of GNU Unifont) that draw characters no installed font has: one for
+/// the Basic Multilingual Plane and one for the other planes.
+enum FallbackFont {
+    private static let files = ["TypecaseFallback", "TypecaseFallbackUpper"]
 
-    static func hasGlyph(_ scalar: Unicode.Scalar, fontName: String) -> Bool {
+    /// Registers the bundled fonts for this process. Call once at launch.
+    static func register() {
+        for file in files {
+            guard let url = Bundle.main.url(forResource: file, withExtension: "otf") else { continue }
+            CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+        }
+    }
+
+    /// The bundled font that has this character, if any.
+    static func ctFont(for scalar: Unicode.Scalar, size: CGFloat) -> CTFont? {
+        var utf16 = Array(String(Character(scalar)).utf16)
+        var glyphs = [CGGlyph](repeating: 0, count: utf16.count)
+        for file in files {
+            let font = CTFontCreateWithName(file as CFString, size, nil)
+            guard (CTFontCopyPostScriptName(font) as String) == file else { continue }
+            if CTFontGetGlyphsForCharacters(font, &utf16, &glyphs, utf16.count), glyphs.first != 0 { return font }
+        }
+        return nil
+    }
+
+    static func isBundledFont(named name: String) -> Bool { files.contains { name.hasPrefix($0) } }
+}
+
+/// Which font can draw a character: an installed font, only the bundled fallback, or nothing at all.
+enum GlyphCoverage {
+    enum Source { case system, bundledFallback, none }
+
+    private static let lock = NSLock()
+    nonisolated(unsafe) private static var cache: [String: Source] = [:]
+
+    static func source(of scalar: Unicode.Scalar, fontName: String) -> Source {
         let key = "\(scalar.value)|\(fontName)"
         lock.lock()
         defer { lock.unlock() }
@@ -342,9 +381,11 @@ enum GlyphCoverage {
         let string = String(Character(scalar)) as CFString
         let fallback = CTFontCreateForString(base, string, CFRange(location: 0, length: CFStringGetLength(string)))
         let name = CTFontCopyPostScriptName(fallback) as String
-        let covered = !name.localizedCaseInsensitiveContains("LastResort")
-        cache[key] = covered
-        return covered
+        // "Last Resort" is the system's placeholder font; the bundled font may also be picked by CoreText's cascade.
+        let installed = !name.localizedCaseInsensitiveContains("LastResort") && !FallbackFont.isBundledFont(named: name)
+        let result: Source = installed ? .system : (FallbackFont.ctFont(for: scalar, size: 16) != nil ? .bundledFallback : .none)
+        cache[key] = result
+        return result
     }
 }
 

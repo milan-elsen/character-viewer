@@ -40,6 +40,8 @@
 		F1908E447E5B8AAE7BC211E1 /* KeyboardMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42272E7A56BD0187634CC0D /* KeyboardMapper.swift */; };
 		F5145BD97ECAD8DB1F3862A0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A094DD8396FA0D895A2A8 /* SettingsView.swift */; };
 		F9C552FAF8E6C26FDE26B07A /* TypecaseIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4CE4B445A34FAFEEDE637B /* TypecaseIntents.swift */; };
+		B1F0A1C2D3E4F50617283942 /* TypecaseFallback.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F0A1C2D3E4F50617283941 /* TypecaseFallback.otf */; };
+		B1F0A1C2D3E4F50617283944 /* TypecaseFallbackUpper.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1F0A1C2D3E4F50617283943 /* TypecaseFallbackUpper.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		EC498464FB922858C4B24B81 /* Typecase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typecase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B1F26B1647FBB1A774FF16 /* CharacterInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
 		FD4B996DD07A1284E3A8CF11 /* KeyboardService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
+		B1F0A1C2D3E4F50617283941 /* TypecaseFallback.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Fonts/TypecaseFallback.otf; sourceTree = "<group>"; };
+		B1F0A1C2D3E4F50617283943 /* TypecaseFallbackUpper.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; path = Fonts/TypecaseFallbackUpper.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				BEB2DFD2A19C380F804D42FC /* Assets.xcassets */,
 				5A9056A5FF5389F53161A648 /* Localizable.xcstrings */,
 				6F5EE5425B99D4822D77D68B /* PrivacyInfo.xcprivacy */,
+				B1F0A1C2D3E4F50617283941 /* TypecaseFallback.otf */,
+				B1F0A1C2D3E4F50617283943 /* TypecaseFallbackUpper.otf */,
 				0EB360863077CC250079A6FC /* AppIcon.icon */,
 			);
 			path = Resources;
@@ -297,6 +303,8 @@
 				A5DBF368B2F41D69244D1461 /* Localizable.xcstrings in Resources */,
 				0EB360873077CC250079A6FC /* AppIcon.icon in Resources */,
 				C087AB964788422C627C19F4 /* PrivacyInfo.xcprivacy in Resources */,
+				B1F0A1C2D3E4F50617283942 /* TypecaseFallback.otf in Resources */,
+				B1F0A1C2D3E4F50617283944 /* TypecaseFallbackUpper.otf in Resources */,
 				E3E7B259B40F9575DD2AB8E3 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,4 +1,5 @@
 import AppKit
+import CoreText
 import SwiftUI
 
 /// Inspector for the selected character: preview, how to type it, codes, related characters, font alternates.
@@ -35,9 +36,23 @@ private struct DetailContent: View {
         .id(record.codePoint)   // reset scroll position and per-character state when the selection changes
     }
 
+    @AppStorage(SettingsKey.previewFont) private var fontName = ""
+
     private var database: CharacterDatabase { model.database! }
 
     private var relatedRecords: [CharacterRecord] { database.records(for: record.related) }
+
+    /// Warning for characters that no installed font can draw (shown for the system font and for opened fonts alike).
+    private var noFontNote: LocalizedStringKey? {
+        guard !CharacterInfo.isInvisible(record) || CharacterInfo.isSpace(record) else { return nil }
+        let drawnByOpenedFont = model.customFont.map { $0.contains(record.scalar) } ?? false
+        guard !drawnByOpenedFont else { return nil }
+        switch GlyphCoverage.source(of: record.scalar, fontName: fontName) {
+        case .system: return nil
+        case .bundledFallback: return "No installed font has this character. Showing a basic stand-in glyph."
+        case .none: return "No installed font has this character."
+        }
+    }
 
     // MARK: Sections
 
@@ -48,6 +63,16 @@ private struct DetailContent: View {
                     .frame(maxWidth: .infinity)
                 if let font = model.customFont, !font.contains(record.scalar), !CharacterInfo.isInvisible(record) || CharacterInfo.isSpace(record) {
                     Label("Not in “\(font.displayName)”. Showing the fallback font.", systemImage: "exclamationmark.triangle")
+                        .font(.callout)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(8)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background { MissingGlyphBox() }
+                }
+                if let note = noFontNote {
+                    Label(note, systemImage: "exclamationmark.triangle")
                         .font(.callout)
                         .multilineTextAlignment(.leading)
                         .lineLimit(nil)
@@ -181,12 +206,24 @@ struct GlyphPreview: View {
         } else {
             let custom = model.customFont
             let missing = custom.map { !$0.contains(record.scalar) } ?? false
-            if custom == nil || missing, !GlyphCoverage.hasGlyph(record.scalar, fontName: fontName) {
+            let source = custom == nil || missing ? GlyphCoverage.source(of: record.scalar, fontName: fontName) : .system
+            if source == .none {
                 NoGlyphBox()
                     .frame(width: 84, height: 84)
                     .frame(maxWidth: .infinity)
                     .frame(height: 130)
                     .accessibilityElement()
+                    .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
+            } else if source == .bundledFallback {
+                Text(CharacterInfo.displayString(for: record))
+                    .font(Font(FallbackFont.ctFont(for: record.scalar, size: 96) ?? CTFontCreateWithName("Helvetica" as CFString, 96, nil)))
+                    .minimumScaleFactor(0.3)
+                    .lineLimit(1)
+                    .opacity(GlyphView.missingOpacity)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 130)
+                    .background { MissingGlyphBox() }
+                    .textSelection(.enabled)
                     .accessibilityLabel(CharacterInfo.accessibilityLabel(for: record))
             } else {
                 Text(CharacterInfo.displayString(for: record))

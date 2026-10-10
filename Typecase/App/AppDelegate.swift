@@ -6,6 +6,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItemController: StatusItemController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        FallbackFont.register()
         AppDelegate.applyActivationPolicy()
         AppModel.shared.registerHotKey()
         statusItemController = StatusItemController(model: AppModel.shared)
