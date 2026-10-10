@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0595C8F61D636DECECB871C7 /* SystemKeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3970D71C98F4F84BAEB869D4 /* SystemKeyboardLayout.swift */; };
 		0BBB24617CAA7553010DCE59 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A958C3AD14C43CE053AF146 /* ToastView.swift */; };
+		0EB360873077CC250079A6FC /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 0EB360863077CC250079A6FC /* AppIcon.icon */; };
 		2B03974C7D9B191C685321C3 /* ChromelessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6873582A72A902C8C2AC02B0 /* ChromelessWindow.swift */; };
 		441B3EAFFA0D02EF51DE2B18 /* CharacterRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775754870D20EF1840E11F8F /* CharacterRecord.swift */; };
 		4F1442AFB6D7A03997D48E42 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF99964F4A70F9443183152 /* AppModel.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		05A50A5D12AE93A2F618E36B /* DetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0EB360863077CC250079A6FC /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		130EDC2CF8D1FB3A3472229D /* GlobalHotKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GlobalHotKey.swift; sourceTree = "<group>"; };
 		282489ED91180161089F1F23 /* MainView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		28FAD021BC5FCA56BF31D348 /* TypecaseApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TypecaseApp.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				BEB2DFD2A19C380F804D42FC /* Assets.xcassets */,
 				5A9056A5FF5389F53161A648 /* Localizable.xcstrings */,
 				6F5EE5425B99D4822D77D68B /* PrivacyInfo.xcprivacy */,
+				0EB360863077CC250079A6FC /* AppIcon.icon */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				9EFD06EAA8C036155187E505 /* Assets.xcassets in Resources */,
 				A5DBF368B2F41D69244D1461 /* Localizable.xcstrings in Resources */,
+				0EB360873077CC250079A6FC /* AppIcon.icon in Resources */,
 				C087AB964788422C627C19F4 /* PrivacyInfo.xcprivacy in Resources */,
 				E3E7B259B40F9575DD2AB8E3 /* characters.json in Resources */,
 			);
