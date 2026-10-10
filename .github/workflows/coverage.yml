@@ -1,0 +1,40 @@
+name: System font coverage
+
+# Lists the characters that the macOS system fonts on this runner cannot draw, and publishes the list to the
+# `ci-coverage-<runner>` branch. Run it manually from the Actions tab.
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: "macOS runner image (macos-15, macos-26 ...)"
+        default: "macos-26"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  coverage:
+    runs-on: ${{ inputs.runner || 'macos-26' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: List missing characters
+        run: |
+          mkdir -p out
+          sw_vers | tee out/os.txt
+          swift Tools/coverage/system_coverage.swift Data/characters.json > out/missing.txt 2> out/log.txt
+          cat out/log.txt
+          wc -l out/missing.txt
+      - name: Publish
+        env:
+          RUNNER: ${{ inputs.runner || 'macos-26' }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          BRANCH="ci-coverage-$RUNNER"
+          git checkout -q --orphan "$BRANCH"
+          git rm -rfq . > /dev/null
+          cp out/* .
+          git add os.txt missing.txt log.txt
+          git commit -qm "System font coverage on $RUNNER"
+          git push -f origin "$BRANCH"
